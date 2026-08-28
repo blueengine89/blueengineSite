@@ -233,7 +233,35 @@
   </a>
   <ul class="sn-links">
     <li><a href="/index.html">Home</a></li>
-    <li><a href="/services/">Services</a></li>
+    <li class="sn-has-dropdown">
+      <a href="/services/" class="sn-dropdown-trigger">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 3.5l3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="sn-dropdown">
+        <a href="/services/#acc-fix">
+          <span class="sn-dd-icon">🔧</span>
+          <span><span class="sn-dd-label">Fix Broken Orgs</span></span>
+        </a>
+        <a href="/services/#acc-automate">
+          <span class="sn-dd-icon">⚙️</span>
+          <span><span class="sn-dd-label">Smart Automation</span></span>
+        </a>
+        <a href="/services/#acc-implement">
+          <span class="sn-dd-icon">🚀</span>
+          <span><span class="sn-dd-label">New Implementations</span></span>
+        </a>
+        <a href="/services/#acc-training">
+          <span class="sn-dd-icon">🎓</span>
+          <span><span class="sn-dd-label">Admin Support &amp; Training</span></span>
+        </a>
+        <a href="/services/#acc-managed">
+          <span class="sn-dd-icon">🔄</span>
+          <span><span class="sn-dd-label">Managed Services</span></span>
+        </a>
+        <a href="/services/#acc-ai">
+          <span class="sn-dd-icon">🤖</span>
+          <span><span class="sn-dd-label">AI That Actually Helps</span></span>
+        </a>
+      </div>
+    </li>
     <li class="sn-has-dropdown">
       <a href="#" class="sn-dropdown-trigger" onclick="return false;">Who We Serve <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 3.5l3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="sn-dropdown">
@@ -259,6 +287,12 @@
   <div class="mobile-menu">
     <a href="/index.html">Home</a>
     <a href="/services/">Services</a>
+    <a href="/services/#acc-fix">— Fix Broken Orgs</a>
+    <a href="/services/#acc-automate">— Smart Automation</a>
+    <a href="/services/#acc-implement">— New Implementations</a>
+    <a href="/services/#acc-training">— Admin Support &amp; Training</a>
+    <a href="/services/#acc-managed">— Managed Services</a>
+    <a href="/services/#acc-ai">— AI That Actually Helps</a>
     <a href="/for-businesses.html">Growing Businesses</a>
     <a href="/for-nonprofits.html">Nonprofits</a>
     <a href="/about-us/">About</a>

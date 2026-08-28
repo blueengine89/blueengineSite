@@ -27,8 +27,8 @@ const MIME = {
 const REWRITES = {
   '/contact':                        '/pages/contact.html',
   '/contact/':                       '/pages/contact.html',
-  '/services':                       '/pages/Services.html',
-  '/services/':                      '/pages/Services.html',
+  '/services':                       '/services.html',
+  '/services/':                      '/services.html',
   '/about-us':                       '/about-us.html',
   '/about-us/':                      '/about-us.html',
   '/approach':                       '/pages/Approach.html',
