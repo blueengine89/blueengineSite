@@ -1,0 +1,1323 @@
+<!doctype html>
+<html lang="en" data-view="client">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Thalhimer Salesforce Proposal | Blue Engine Solutions</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@1,400;1,600&display=swap">
+<style>
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --surface-2:#EAEFEE; --ink:#1C2629; --muted:#5A686C; --rule:#D5DCDB;
+  --accent:#1F628A; --accent-soft:#DCE8F0; --ochre:#A8741C;
+  --ok:#2E7A4F; --ok-bg:#DDEFE4; --warn:#8F6210; --warn-bg:#F5E8CC; --bad:#A93A3A; --bad-bg:#F4DEDB; --svc:#5A686C; --svc-bg:#E6EAEA;
+  --s-br:#1F628A; --s-cc:#A8741C; --s-ac:#3F7D72; --s-sa:#6D6A8E; --s-ot:#A9B4B6;
+  --b-daily:#1F628A; --b-weekly:#5B92B5; --b-monthly:#A7C4D8; --b-rare:#D9C08F; --b-none:#C9CFD0;
+  --font-d:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --font-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-m:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#111719; --surface:#182124; --surface-2:#1F2A2E; --ink:#E3EAEA; --muted:#97A6AA; --rule:#2B383C;
+    --accent:#74AED3; --accent-soft:#1D3342; --ochre:#D6A24C;
+    --ok:#6CC08F; --ok-bg:#1B3326; --warn:#E0B35A; --warn-bg:#3A2F17; --bad:#E88A80; --bad-bg:#3D2220; --svc:#97A6AA; --svc-bg:#243034;
+    --s-br:#74AED3; --s-cc:#D6A24C; --s-ac:#6FB7A8; --s-sa:#A6A2D0; --s-ot:#5F6E72;
+    --b-daily:#74AED3; --b-weekly:#4E86AC; --b-monthly:#2F5670; --b-rare:#8A7446; --b-none:#3A474B;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#111719; --surface:#182124; --surface-2:#1F2A2E; --ink:#E3EAEA; --muted:#97A6AA; --rule:#2B383C;
+  --accent:#74AED3; --accent-soft:#1D3342; --ochre:#D6A24C;
+  --ok:#6CC08F; --ok-bg:#1B3326; --warn:#E0B35A; --warn-bg:#3A2F17; --bad:#E88A80; --bad-bg:#3D2220; --svc:#97A6AA; --svc-bg:#243034;
+  --s-br:#74AED3; --s-cc:#D6A24C; --s-ac:#6FB7A8; --s-sa:#A6A2D0; --s-ot:#5F6E72;
+  --b-daily:#74AED3; --b-weekly:#4E86AC; --b-monthly:#2F5670; --b-rare:#8A7446; --b-none:#3A474B;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,48px);letter-spacing:.01em}
+h2{font-size:28px;margin-bottom:6px}
+h3{font-size:20px;margin-bottom:4px}
+p{margin:0;max-width:70ch}
+.eyebrow{font-family:var(--font-m);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);font-size:16px}
+.mono{font-family:var(--font-m);font-variant-numeric:tabular-nums}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+header.top{padding-block:28px 14px;display:grid;gap:8px}
+.private{display:inline-flex;gap:8px;align-items:center;font-family:var(--font-m);font-size:12px;color:var(--bad);background:var(--bad-bg);padding:3px 10px;border-radius:4px;width:fit-content}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule);margin-bottom:24px}
+.tablist{display:flex;gap:2px;overflow-x:auto;scrollbar-width:thin}
+.tablist button{font:600 17px var(--font-d);letter-spacing:.02em;color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:12px 14px 9px;cursor:pointer;white-space:nowrap}
+.tablist button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tablist button:hover{color:var(--ink)}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,label:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+section.panel{display:grid;gap:28px}
+.block{display:grid;gap:12px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px}
+.thesis{background:var(--surface);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;display:grid;gap:8px}
+.thesis p.big{font-family:var(--font-d);font-size:clamp(22px,3vw,28px);font-weight:500;line-height:1.2;max-width:60ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.fact{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;display:grid;gap:4px;align-content:start}
+.fact .v{font-family:var(--font-d);font-size:36px;font-weight:600;line-height:1}
+.fact .k{color:var(--muted);font-size:13.5px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:600 13px var(--font-b);color:var(--muted);background:var(--surface-2);position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--font-m);font-size:13px}
+.pill{display:inline-block;font:500 12px var(--font-m);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.st-in{color:var(--ok);background:var(--ok-bg)}
+.st-partial{color:var(--warn);background:var(--warn-bg)}
+.st-not{color:var(--bad);background:var(--bad-bg)}
+.st-svc{color:var(--svc);background:var(--svc-bg)}
+.size{font:600 13px var(--font-m);color:var(--ink)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+ol.clean,ul.clean{margin:0;padding-left:20px;display:grid;gap:6px}
+.decisions{counter-reset:d;display:grid;gap:10px}
+.decision{display:grid;grid-template-columns:34px 1fr;gap:12px;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.decision::before{counter-increment:d;content:counter(d);font:700 26px var(--font-d);color:var(--accent);line-height:1}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-family:var(--font-m);font-size:11px}
+.chart .val{fill:var(--ink);font-size:11px}
+.chart .grid line{stroke:var(--rule)}
+.chart .bar{fill:var(--accent)}
+.chart .bar.ytd{fill:var(--accent);opacity:.45}
+.chart .line{stroke:var(--ochre);fill:none;stroke-width:2}
+.chart .dot{fill:var(--ochre)}
+.s-br{fill:var(--s-br);background:var(--s-br)} .s-cc{fill:var(--s-cc);background:var(--s-cc)} .s-ac{fill:var(--s-ac);background:var(--s-ac)} .s-sa{fill:var(--s-sa);background:var(--s-sa)} .s-ot{fill:var(--s-ot);background:var(--s-ot)}
+.b-daily{fill:var(--b-daily);background:var(--b-daily)} .b-weekly{fill:var(--b-weekly);background:var(--b-weekly)} .b-monthly{fill:var(--b-monthly);background:var(--b-monthly)} .b-rare{fill:var(--b-rare);background:var(--b-rare)} .b-none{fill:var(--b-none);background:var(--b-none)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.row-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+select,input[type="search"],input[type="number"]{font:14px var(--font-b);color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:7px 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 13px var(--font-b);border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+details.req{border-bottom:1px solid var(--rule)}
+details.req:last-child{border-bottom:0}
+details.req summary,.req-head{display:grid;grid-template-columns:70px minmax(0,1fr) 150px 96px 44px 32px;gap:12px;align-items:center;padding:10px 14px}
+details.req summary{list-style:none;cursor:pointer}
+.req-head{font:600 12px var(--font-b);color:var(--muted);background:var(--surface-2);border-bottom:1px solid var(--rule);padding-block:8px}
+.pri{display:inline-block;font:500 12px var(--font-b);padding:3px 9px;border-radius:4px;white-space:nowrap;width:fit-content;border:1px solid transparent}
+.pri-basic{color:var(--pri-basic);background:var(--pri-basic-bg);border-color:var(--pri-basic)}
+.pri-up{color:var(--pri-up);background:var(--pri-up-bg)}
+.pri-nice{color:var(--pri-nice);background:var(--pri-nice-bg)}
+.pri-call{color:var(--pri-call);background:var(--pri-call-bg)}
+.pri-dnw{color:var(--pri-dnw);background:var(--pri-dnw-bg);text-decoration:line-through;text-decoration-thickness:1px}
+.pri-sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0}
+.chip[aria-pressed="true"] .pri-sw{outline:1px solid var(--bg)}
+details.req summary::-webkit-details-marker{display:none}
+details.req summary:hover{background:var(--surface-2)}
+details.req[open] summary{background:var(--surface-2)}
+.req-body{padding:4px 14px 14px 96px;display:grid;gap:6px;color:var(--ink)}
+.req-id{font:500 12px var(--font-m);color:var(--muted)}
+.req-name{font-weight:600}
+.req-meta{font-size:12.5px;color:var(--muted)}
+.phase-tag{font:500 12px var(--font-m);color:var(--accent)}
+@media (max-width:640px){
+  details.req summary{grid-template-columns:1fr auto;row-gap:6px}
+  details.req summary .req-id,details.req summary .req-main{grid-column:1/-1}
+  .req-head{display:none}
+  .req-body{padding-left:14px}
+  .hide-sm{display:none}
+}
+.est{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:20px;align-items:start}
+@media (max-width:860px){.est{grid-template-columns:1fr}}
+.est-out{position:sticky;top:64px;display:grid;gap:12px}
+.est-total{font-family:var(--font-d);font-size:40px;font-weight:600;line-height:1}
+.range-bar{position:relative;height:34px;background:var(--surface-2);border-radius:6px;overflow:hidden}
+.range-bar .call{position:absolute;top:0;bottom:0;background:var(--ok-bg);border-left:2px dashed var(--ok);border-right:2px dashed var(--ok)}
+.range-bar .est-r{position:absolute;top:8px;bottom:8px;background:var(--accent);border-radius:3px;opacity:.85}
+.range-axis{display:flex;justify-content:space-between;font:11px var(--font-m);color:var(--muted)}
+.opt{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:8px 10px;border-radius:6px}
+.opt:hover{background:var(--surface-2)}
+.opt input{margin-top:4px}
+.opt .h{font:500 12.5px var(--font-m);color:var(--muted);white-space:nowrap}
+.opt.covered{opacity:.55}
+fieldset{border:1px solid var(--rule);border-radius:8px;padding:12px 12px 8px;margin:0;background:var(--surface)}
+legend{font:600 18px var(--font-d);padding:0 6px}
+.path{display:grid;gap:4px}
+.qgroup{display:grid;gap:4px}
+.q{display:grid;grid-template-columns:auto 1fr;gap:10px;padding:7px 8px;border-radius:6px;align-items:start}
+.q:hover{background:var(--surface-2)}
+.q input{margin-top:5px}
+.q.done span{color:var(--muted);text-decoration:line-through}
+.btn{font:600 14px var(--font-b);background:var(--accent);color:var(--bg);border:0;border-radius:6px;padding:9px 14px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.note{font-size:13px;color:var(--muted)}
+.callout{background:var(--warn-bg);color:var(--ink);border-radius:8px;padding:14px 16px;display:grid;gap:6px}
+.callout strong{color:var(--warn)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.bucket{display:grid;gap:10px;align-content:start}
+.bucket .tag{font:500 12px var(--font-m);letter-spacing:.05em;text-transform:uppercase}
+.bar-mini{height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden;display:flex}
+.fill-row{display:grid;grid-template-columns:100px 1fr minmax(150px,auto);gap:10px;align-items:center;font-size:13.5px}
+@media (max-width:520px){.fill-row{grid-template-columns:90px 1fr;}.fill-row .fr-n{grid-column:2}}
+.stack{height:14px;display:flex;border-radius:3px;overflow:hidden;background:var(--surface-2)}
+.stack i{display:block;height:100%}
+.srow{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;font-size:13.5px}
+@media (max-width:520px){.srow{grid-template-columns:1fr 44px}.srow .stack{grid-column:1/-1;grid-row:2}}
+@media (prefers-reduced-motion: no-preference){.range-bar .est-r{transition:left .25s,width .25s}}
+:root{--oc-apto:#1F628A;--oc-std:#9AA6A9;--oc-custom:#3F7D72;--fl-most:#1F628A;--fl-some:#5B92B5;--fl-rare:#A7C4D8;--fl-never:#D98C85;--fl-nm:#DDE2E2}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--oc-apto:#74AED3;--oc-std:#65757A;--oc-custom:#6FB7A8;--fl-most:#74AED3;--fl-some:#4E86AC;--fl-rare:#2F5670;--fl-never:#A55A53;--fl-nm:#2E3A3E}}
+:root[data-theme="dark"]{--oc-apto:#74AED3;--oc-std:#65757A;--oc-custom:#6FB7A8;--fl-most:#74AED3;--fl-some:#4E86AC;--fl-rare:#2F5670;--fl-never:#A55A53;--fl-nm:#2E3A3E}
+.oc-apto{background:var(--oc-apto)} .oc-std{background:var(--oc-std)} .oc-custom{background:var(--oc-custom)}
+.fl-most{background:var(--fl-most)} .fl-some{background:var(--fl-some)} .fl-rare{background:var(--fl-rare)} .fl-never{background:var(--fl-never)} .fl-nm{background:var(--fl-nm)}
+.hbars{display:grid;gap:3px;margin-top:10px}
+.hbar{display:grid;grid-template-columns:minmax(120px,190px) 1fr 64px;gap:8px;align-items:center;font-size:12.5px}
+.hbar .hl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hbar .ht{height:12px;background:var(--surface-2);border-radius:2px;overflow:hidden}
+.hbar .ht i{display:block;height:100%}
+.hbar .hv{text-align:right;font-size:12px;color:var(--ink)}
+.fill-row .stack i,.stack i{display:block;height:100%}
+:root{--theirs:#7A5214;--theirs-rule:#C9A45F;--theirs-bg:#FBF6EC;--font-q:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --pri-basic:#4E3A86;--pri-basic-bg:#ECE7F6;--pri-up:#17597F;--pri-up-bg:#DCE8F0;--pri-nice:#5E6242;--pri-nice-bg:#ECEDE2;--pri-dnw:#7A3350;--pri-dnw-bg:#F4E2EA;--pri-call:#24685B;--pri-call-bg:#DDEEE9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--theirs:#E4C080;--theirs-rule:#8A6A2E;--theirs-bg:#231E14;
+  --pri-basic:#C3B4EC;--pri-basic-bg:#2A2340;--pri-up:#8CC0E0;--pri-up-bg:#1D3342;--pri-nice:#C9CCA6;--pri-nice-bg:#2B2D22;--pri-dnw:#E6A6C0;--pri-dnw-bg:#3A2130;--pri-call:#8ED3C2;--pri-call-bg:#1A332E}}
+:root[data-theme="dark"]{--theirs:#E4C080;--theirs-rule:#8A6A2E;--theirs-bg:#231E14;
+  --pri-basic:#C3B4EC;--pri-basic-bg:#2A2340;--pri-up:#8CC0E0;--pri-up-bg:#1D3342;--pri-nice:#C9CCA6;--pri-nice-bg:#2B2D22;--pri-dnw:#E6A6C0;--pri-dnw-bg:#3A2130;--pri-call:#8ED3C2;--pri-call-bg:#1A332E}
+.theirs{font-family:var(--font-q);font-style:italic;font-size:15px;line-height:1.45;color:var(--theirs);background:var(--theirs-bg);border-left:3px solid var(--theirs-rule);padding:6px 10px;border-radius:0 4px 4px 0;white-space:pre-line;max-width:none}
+.theirs b{font-style:normal;font-weight:600}
+.theirs .bq{font:700 30px/0 Georgia,"Times New Roman",serif;font-style:normal;color:var(--theirs-rule);vertical-align:-10px;margin:0 3px 0 0}
+.theirs .bq + b, .theirs .bq:first-child{margin-left:0}
+.theirs .bq:last-child{margin:0 0 0 3px}
+.theirs-meta{font-family:var(--font-q);font-style:italic;font-size:12.5px;color:var(--theirs)}
+.theirs-key{font-family:var(--font-q);font-style:italic;color:var(--theirs);background:var(--theirs-bg);border-left:3px solid var(--theirs-rule);padding:1px 8px}
+.key-line{font-size:13.5px;color:var(--muted)}
+.filter-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:center}
+@media (max-width:520px){.filter-grid{grid-template-columns:1fr}}
+.flabel{font:500 12px var(--font-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.req-main{display:grid;gap:6px;min-width:0}
+.score-btn{font:500 13px var(--font-m);background:none;border:1px solid transparent;border-radius:4px;padding:2px 8px;cursor:pointer;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.score-btn:hover{background:var(--accent-soft)}
+.score-btn[aria-pressed="true"]{background:var(--accent);color:var(--bg);text-decoration:none}
+.score-btn.zero{color:var(--muted);text-decoration:none;cursor:default}
+.waffle-wrap{display:grid;gap:14px}
+.wrow{display:grid;grid-template-columns:170px 1fr;gap:12px;align-items:start}
+@media (max-width:560px){.wrow{grid-template-columns:1fr}}
+.wlabel{display:grid;gap:2px}
+.wlabel b{font-weight:600}
+.wlabel span{font-size:12.5px;color:var(--muted)}
+.waffle{display:flex;flex-wrap:wrap;gap:3px}
+.waffle i{width:13px;height:13px;border-radius:2px;display:block}
+.freq-key{display:grid;gap:6px}
+.freq-key div{display:grid;grid-template-columns:14px 1fr;gap:8px;align-items:center;font-size:13.5px}
+.freq-key i{width:13px;height:13px;border-radius:2px;display:block}
+
+/* ===== Blue Engine brand layer ===== */
+:root{
+  --be-navy:#082868; --be-teal:#1888B0; --be-cyan:#38A0C0;
+  --bg:#F5F8FB; --surface:#FFFFFF; --surface-2:#EEF3F8; --ink:#1A2440; --muted:#45536E; --rule:#E2E8F0;
+  --accent:#1888B0; --accent-soft:#E3F1F7; --ochre:#B07A1E;
+  --ok:#0E6A3B; --ok-bg:#E6F4EC; --warn:#875600; --warn-bg:#FBF3DE; --bad:#B4232A; --bad-bg:#FBEAEA; --svc:#45536E; --svc-bg:#EEF1F5;
+  --s-br:#082868; --s-cc:#1888B0; --s-ac:#38A0C0; --s-sa:#8A97B0; --s-ot:#CBD5E1;
+  --b-daily:#082868; --b-weekly:#1888B0; --b-monthly:#7CC3DB; --b-rare:#C9DCEA; --b-none:#EEF1F5;
+  --oc-apto:#1888B0; --oc-std:#A3B1C6; --oc-custom:#0E6A3B;
+  --fl-most:#082868; --fl-some:#1888B0; --fl-rare:#9ACFE2;
+  --hero-bg:#082868; --hero-ink:#FFFFFF; --hero-muted:#C7D6EA; --stat-ink:#082868;
+  --font-d:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --font-b:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --font-m:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#071330; --surface:#0E1F47; --surface-2:#142A5C; --ink:#EAF1FA; --muted:#A9BAD6; --rule:#22386F;
+    --accent:#5FBEDD; --accent-soft:#16365E; --ochre:#E0B060;
+    --ok:#6CC08F; --ok-bg:#12321F; --warn:#E6BC5E; --warn-bg:#3A2E12; --bad:#F08C86; --bad-bg:#3F1C1E; --svc:#A9BAD6; --svc-bg:#1A2B52;
+    --s-br:#A9D6E6; --s-cc:#5FBEDD; --s-ac:#2E86A8; --s-sa:#7F8FB0; --s-ot:#3A4C78;
+    --b-daily:#A9D6E6; --b-weekly:#5FBEDD; --b-monthly:#2E7FA0; --b-rare:#21507A; --b-none:#1A2B52;
+    --oc-apto:#5FBEDD; --oc-std:#5B6C90; --oc-custom:#6CC08F;
+    --fl-most:#A9D6E6; --fl-some:#5FBEDD; --fl-rare:#2E6F8F;
+    --hero-bg:#0E1F47; --hero-ink:#FFFFFF; --hero-muted:#A9BAD6; --stat-ink:#EAF1FA;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071330; --surface:#0E1F47; --surface-2:#142A5C; --ink:#EAF1FA; --muted:#A9BAD6; --rule:#22386F;
+  --accent:#5FBEDD; --accent-soft:#16365E; --ochre:#E0B060;
+  --ok:#6CC08F; --ok-bg:#12321F; --warn:#E6BC5E; --warn-bg:#3A2E12; --bad:#F08C86; --bad-bg:#3F1C1E; --svc:#A9BAD6; --svc-bg:#1A2B52;
+  --s-br:#A9D6E6; --s-cc:#5FBEDD; --s-ac:#2E86A8; --s-sa:#7F8FB0; --s-ot:#3A4C78;
+  --b-daily:#A9D6E6; --b-weekly:#5FBEDD; --b-monthly:#2E7FA0; --b-rare:#21507A; --b-none:#1A2B52;
+  --oc-apto:#5FBEDD; --oc-std:#5B6C90; --oc-custom:#6CC08F;
+  --fl-most:#A9D6E6; --fl-some:#5FBEDD; --fl-rare:#2E6F8F;
+  --hero-bg:#0E1F47; --hero-ink:#FFFFFF; --hero-muted:#A9BAD6; --stat-ink:#EAF1FA;
+}
+h1,h2,h3{font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(28px,4vw,40px)}
+h2{font-size:22px;color:var(--ink)}
+h3{font-size:16.5px}
+.eyebrow{font-family:var(--font-d);font-weight:700;font-size:12.5px;letter-spacing:.05em}
+.flabel,.st,.bucket .tag{font-family:var(--font-d);font-weight:700;letter-spacing:.04em}
+.mono,.size,.score-btn,td.n,.opt .h,.req-id{font-variant-numeric:tabular-nums}
+/* improvement 1: navy hero band */
+header.top{background:var(--hero-bg);color:var(--hero-ink);border-radius:0 0 14px 14px;padding:22px 26px 26px;margin-bottom:14px;position:relative;overflow:hidden}
+header.top::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:28px solid var(--be-teal);opacity:.18}
+header.top h1{color:var(--hero-ink)}
+header.top .lede{color:var(--hero-muted)}
+header.top .lede strong{color:var(--hero-ink)}
+header.top .eyebrow{color:var(--be-cyan)}
+.brandmark{font:800 12px var(--font-d);letter-spacing:.22em;color:var(--hero-ink);display:flex;align-items:center;gap:10px}
+.brandmark i{width:22px;height:4px;background:var(--be-teal);display:inline-block;border-radius:2px}
+.brandmark span{color:var(--be-cyan)}
+.private{background:rgba(255,255,255,.12);color:#FFD5D2}
+/* improvement 2: tabs in brand type, teal underline */
+.tablist button{font:600 14px var(--font-d);letter-spacing:.01em;padding:13px 14px 10px}
+.tablist button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--be-teal)}
+/* improvement 3: stat tiles with a navy number and teal rule */
+.fact{border-top:3px solid var(--be-teal)}
+.fact .v{font-family:var(--font-d);font-weight:800;font-size:28px;color:var(--stat-ink);letter-spacing:-.01em}
+.thesis{border-left-color:var(--be-teal)}
+.thesis p.big{font-family:var(--font-d);font-weight:600;font-size:clamp(19px,2.4vw,23px);line-height:1.35}
+.decision::before{font-family:var(--font-d);font-weight:800;color:var(--be-teal)}
+.btn{background:var(--be-navy);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent);border-color:var(--accent)}
+:root[data-theme="dark"] .btn{background:var(--accent);color:#071330}
+
+/* ===== Flows guide ===== */
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:var(--surface)}
+.seg button{font:600 13px var(--font-b);border:0;background:none;color:var(--muted);padding:7px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--be-navy);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{background:var(--accent);color:#071330}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{background:var(--accent);color:#071330}}
+.fl-list{display:grid;gap:8px}
+.fl{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) 150px 92px;gap:6px 16px;align-items:start}
+.fl.off{opacity:.72}
+.fl h3{font:600 15px var(--font-b);margin:0 0 3px}
+.fl .what{font-size:14px;margin:0}
+.fl .meta{font-size:12.5px;color:var(--muted);margin-top:5px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.fl .api{font:400 11.5px var(--font-m);color:var(--muted);word-break:break-all}
+.fl .why{font-size:12.5px;color:var(--muted);margin-top:4px}
+.fl .runs .num{font:800 20px var(--font-d);color:var(--stat-ink);line-height:1.1}
+.fl .runs .basis{font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+.fl .runs .rbar{height:5px;background:var(--surface-2);border-radius:3px;margin-top:5px;overflow:hidden}
+.fl .runs .rbar i{display:block;height:100%;background:var(--be-teal)}
+.vd{display:inline-block;font:600 11.5px var(--font-b);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.vd-rebuild{color:var(--ok);background:var(--ok-bg)} .vd-rethink{color:var(--warn);background:var(--warn-bg)}
+.vd-drop{color:var(--bad);background:var(--bad-bg)} .vd-apto{color:var(--svc);background:var(--svc-bg)}
+.st{display:inline-block;font:600 11px var(--font-m);letter-spacing:.04em;text-transform:uppercase;padding:1px 7px;border-radius:4px;margin-right:6px;vertical-align:2px}
+.st-on{color:var(--ok);background:var(--ok-bg)} .st-off{color:var(--muted);background:var(--surface-2)}
+@media (max-width:680px){.fl{grid-template-columns:1fr auto}.fl .vcol{grid-column:2;grid-row:1}.fl .runs{grid-column:1 / -1}}
+
+/* ===== Chart palette v2: distinct hues for contrast ===== */
+:root{
+  --s-br:#082868; --s-cc:#E07B1F; --s-ac:#17A398; --s-sa:#8E5BB5; --s-ot:#B8C2D1;
+  --b-daily:#082868; --b-weekly:#1888B0; --b-monthly:#F0A04B; --b-rare:#F6D7A7; --b-none:#E2E8F0;
+  --oc-apto:#1888B0; --oc-std:#E07B1F; --oc-custom:#2E9E5B;
+  --fl-most:#082868; --fl-some:#1888B0; --fl-rare:#F0C27A; --fl-never:#D9534F; --fl-nm:#E2E8F0;
+  --dg-deal-bg:#E7EDFA; --dg-deal-st:#082868; --dg-money-bg:#FDEFE0; --dg-money-st:#C4650F;
+  --dg-ref-bg:#EEF1F5; --dg-ref-st:#7D8AA3; --dg-list-bg:#E3F4EC; --dg-list-st:#2E8B57; --dg-old-bg:#F5F5F5; --dg-old-st:#B0B6BF;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --s-br:#8FB8F0; --s-cc:#F2A65A; --s-ac:#4FD1C5; --s-sa:#C39BE0; --s-ot:#5B6C90;
+  --b-daily:#8FB8F0; --b-weekly:#3E8ED0; --b-monthly:#F0A04B; --b-rare:#7A5A2A; --b-none:#24345F;
+  --oc-apto:#5FBEDD; --oc-std:#F2A65A; --oc-custom:#6CC08F;
+  --fl-most:#8FB8F0; --fl-some:#3E8ED0; --fl-rare:#B88A3E; --fl-never:#E07A75; --fl-nm:#2E3A5E;
+  --dg-deal-bg:#16295A; --dg-deal-st:#8FB8F0; --dg-money-bg:#3A2914; --dg-money-st:#F2A65A;
+  --dg-ref-bg:#1A2B52; --dg-ref-st:#7F8FB0; --dg-list-bg:#12321F; --dg-list-st:#6CC08F; --dg-old-bg:#141E38; --dg-old-st:#4A5878;
+}}
+:root[data-theme="dark"]{
+  --s-br:#8FB8F0; --s-cc:#F2A65A; --s-ac:#4FD1C5; --s-sa:#C39BE0; --s-ot:#5B6C90;
+  --b-daily:#8FB8F0; --b-weekly:#3E8ED0; --b-monthly:#F0A04B; --b-rare:#7A5A2A; --b-none:#24345F;
+  --oc-apto:#5FBEDD; --oc-std:#F2A65A; --oc-custom:#6CC08F;
+  --fl-most:#8FB8F0; --fl-some:#3E8ED0; --fl-rare:#B88A3E; --fl-never:#E07A75; --fl-nm:#2E3A5E;
+  --dg-deal-bg:#16295A; --dg-deal-st:#8FB8F0; --dg-money-bg:#3A2914; --dg-money-st:#F2A65A;
+  --dg-ref-bg:#1A2B52; --dg-ref-st:#7F8FB0; --dg-list-bg:#12321F; --dg-list-st:#6CC08F; --dg-old-bg:#141E38; --dg-old-st:#4A5878;
+}
+.chart .bar.ytd{opacity:.6}
+.dg-card{display:grid;gap:8px;margin-top:12px}
+.dgm{width:100%;height:auto;display:block}
+.dg rect{stroke-width:1.5}
+.dg-deal rect{fill:var(--dg-deal-bg);stroke:var(--dg-deal-st)} .dg-money rect{fill:var(--dg-money-bg);stroke:var(--dg-money-st)}
+.dg-ref rect{fill:var(--dg-ref-bg);stroke:var(--dg-ref-st)} .dg-list rect{fill:var(--dg-list-bg);stroke:var(--dg-list-st)}
+.dg-old rect{fill:var(--dg-old-bg);stroke:var(--dg-old-st);stroke-dasharray:5 4}
+.dgm text{text-anchor:middle;font-family:var(--font-b)}
+.dg-t{font:700 15px var(--font-d);fill:var(--ink)}
+.dg-a{font-size:11.5px;fill:var(--muted)}
+.dg-n{font-size:13px;font-weight:600;fill:var(--ink);font-variant-numeric:tabular-nums}
+.dg-m{font-size:12.5px;fill:var(--muted);font-style:italic}
+.dg-arr{fill:none;stroke:var(--muted);stroke-width:1.6;marker-end:url(#dga)}
+.dg-legend{margin-top:6px}
+.dgk{display:inline-block;width:14px;height:14px;border-radius:3px;border:1.5px solid;vertical-align:-2px;margin-right:6px}
+.dgk-deal{background:var(--dg-deal-bg);border-color:var(--dg-deal-st)} .dgk-money{background:var(--dg-money-bg);border-color:var(--dg-money-st)}
+.dgk-ref{background:var(--dg-ref-bg);border-color:var(--dg-ref-st)} .dgk-list{background:var(--dg-list-bg);border-color:var(--dg-list-st)}
+.dgk-old{background:var(--dg-old-bg);border-color:var(--dg-old-st);border-style:dashed}
+
+.rt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;margin-top:12px}
+.rt-card{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rt-c);border-radius:8px;padding:12px 14px}
+.rt-card h3{margin:0;font:700 16px var(--font-d)} .rt-card .api{font-size:11.5px;color:var(--muted);margin-bottom:8px}
+.rt-deal{--rt-c:var(--dg-deal-st)} .rt-money{--rt-c:var(--dg-money-st)} .rt-ref{--rt-c:var(--dg-ref-st)} .rt-list{--rt-c:var(--dg-list-st)}
+.rt-tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.rt-tbl th{font:600 12px var(--font-b);color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+.rt-tbl td{padding:5px 6px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.rt-tbl td.n,.rt-tbl th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rt-tbl tr.tot td{font-weight:700;border-bottom:0}
+.rt-bar{height:7px;background:var(--surface-2);border-radius:4px;overflow:hidden;min-width:60px}
+.rt-bar i{display:block;height:100%;background:var(--rt-c)}
+.rt-off{color:var(--muted);font-size:11.5px;margin-left:4px}
+
+.cf{background:rgba(224,123,31,.12);border-left:3px solid #E07B1F;border-radius:0 6px 6px 0;padding:6px 8px;margin-left:-8px}
+.cf-tag{display:block;margin-top:4px;font:600 11.5px var(--font-b);color:#B85E0E}
+:root[data-theme="dark"] .cf-tag{color:#F2A65A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cf-tag{color:#F2A65A}}
+.cf-key{display:inline-block;width:12px;height:12px;background:rgba(224,123,31,.25);border-left:3px solid #E07B1F;vertical-align:-1px;margin-right:4px}
+
+.sp-card{margin-top:12px}
+.sp-path{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;margin-top:8px}
+.sp-stage,.sp-gate{display:inline-flex;flex-direction:column;justify-content:center;padding:7px 11px;border-radius:6px;font:600 13px var(--font-b);line-height:1.25;border:1.5px solid}
+.sp-stage{background:var(--dg-deal-bg);border-color:var(--dg-deal-st);color:var(--ink)}
+.sp-gate{background:var(--surface);border-color:var(--muted);border-style:dashed;color:var(--ink);font-weight:500;border-radius:16px}
+.sp-new{background:var(--dg-money-bg);border-color:var(--dg-money-st)}
+.sp-end{background:var(--dg-list-bg);border-color:var(--dg-list-st)}
+.sp-stage small,.sp-gate small{font:400 11.5px var(--font-b);color:var(--muted)}
+.sp-arr{color:var(--muted);font-size:14px}
+.sp-k{display:inline-block;width:14px;height:14px;border-radius:3px;border:1.5px solid;vertical-align:-2px;margin-right:6px}
+.sp-k-stage{background:var(--dg-deal-bg);border-color:var(--dg-deal-st)} .sp-k-gate{border-color:var(--muted);border-style:dashed;border-radius:8px}
+.sp-k-new{background:var(--dg-money-bg);border-color:var(--dg-money-st)} .sp-k-end{background:var(--dg-list-bg);border-color:var(--dg-list-st)}
+
+.tablist{flex-wrap:wrap;overflow-x:visible;row-gap:0}
+.tablist button{padding:10px 12px 8px}
+
+.xp{display:inline-block;font:600 11px var(--font-b);color:#B85E0E;background:rgba(224,123,31,.14);border:1px solid rgba(224,123,31,.5);border-radius:999px;padding:0 7px;vertical-align:1px}
+:root[data-theme="dark"] .xp{color:#F2A65A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .xp{color:#F2A65A}}
+.xp-need{background:rgba(224,123,31,.10);border-left:3px solid #E07B1F;padding:6px 10px;border-radius:0 6px 6px 0}
+.range-bar .est-m{position:absolute;top:4px;bottom:4px;width:4px;margin-left:-2px;background:var(--be-navy);border-radius:2px}
+:root[data-theme="dark"] .range-bar .est-m{background:var(--accent)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .range-bar .est-m{background:var(--accent)}}
+
+.est-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.est-big .est-total{font-size:44px}
+.est-h{font:500 16px var(--font-b);color:var(--muted)}
+.opt .h{text-align:right;color:var(--ink);font-weight:600}
+.opt .h small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.ph-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0 2px}
+.ph-all{padding:3px 10px;font-size:12px}
+.ph-tbl{width:100%;border-collapse:collapse;font-size:14px}
+.ph-tbl td{padding:7px 4px;border-bottom:1px solid var(--rule);vertical-align:top}
+.ph-tbl tr.tot td{border-bottom:0;border-top:2px solid var(--ink);font-size:15px}
+.ask-tip{position:fixed;z-index:50;max-width:420px;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:8px;box-shadow:0 8px 24px rgba(8,40,104,.18);padding:12px 14px;display:grid;gap:5px;font-size:13.5px;pointer-events:none}
+.ask-tip .tip-name{font:700 15px var(--font-d)}
+.ask-tip p{margin:0}
+
+.dg-line{fill:none;stroke:var(--muted);stroke-width:1.6}
+.dg-trig{stroke:var(--dg-money-st);stroke-width:2}
+.dg-lbl{font:600 12px var(--font-b);fill:var(--dg-money-st)}
+.dg-grp{fill:none;stroke-width:1.2;stroke-dasharray:6 5}
+.dg-grp-out{stroke:var(--dg-money-st)} .dg-grp-in{stroke:var(--dg-deal-st)}
+.dg-g{font:700 13px var(--font-d);fill:var(--muted)}
+
+.ovl{display:inline-block;font-size:12px;color:var(--ok)}
+.ask-tip .ovl{display:block}
+
+.rc{border-top:3px solid var(--ok)}
+.rs{background:var(--ok-bg);border-left:3px solid var(--ok);border-radius:0 6px 6px 0;padding:6px 8px;margin-left:-8px}
+.rs-tag{display:block;margin-top:4px;font:600 11.5px var(--font-b);color:var(--ok)}
+
+.qrow{display:grid;gap:4px;text-align:left;width:100%;background:none;border:0;border-radius:6px;padding:8px 10px;cursor:pointer;font:inherit;color:var(--ink)}
+.qrow:hover{background:var(--surface-2)}
+.qrow-off{opacity:.55}
+.qans{font-size:13px;color:var(--muted);border-left:3px solid var(--ok);padding-left:8px;white-space:pre-line}
+.qb{justify-self:start;font:600 11px var(--font-b);padding:1px 8px;border-radius:999px}
+.qb-ans{color:var(--ok);background:var(--ok-bg)} .qb-ctx{color:var(--warn);background:var(--warn-bg)}
+.qb-done{color:var(--svc);background:var(--svc-bg)} .qb-off{color:var(--muted);background:var(--surface-2)}
+.qdlg{border:1px solid var(--rule);border-radius:10px;padding:18px;width:min(560px,calc(100vw - 32px));background:var(--surface);color:var(--ink)}
+.qdlg::backdrop{background:rgba(8,20,48,.45)}
+.qdlg textarea{font:14px var(--font-b);color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:10px;width:100%;resize:vertical}
+.qd-remove{color:var(--bad);border-color:var(--bad)}
+.fl .runs .rl{font-size:11px;color:var(--muted);text-transform:none}
+
+.hedit{font:600 13px var(--font-b);color:var(--ink);background:none;border:1px dashed transparent;border-radius:4px;padding:1px 6px;cursor:text}
+.hedit:hover,.hedit:focus-visible{border-color:var(--accent);background:var(--accent-soft)}
+.hedit.edited{color:var(--be-navy);background:var(--accent-soft);border-color:var(--accent)}
+:root[data-theme="dark"] .hedit.edited{color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hedit.edited{color:var(--ink)}}
+.hreset{background:none;border:0;color:var(--muted);cursor:pointer;font-size:13px;padding:0 2px}
+.hreset:hover{color:var(--bad)}
+.hinput{width:68px;font:600 13px var(--font-b);padding:2px 6px;border:1px solid var(--accent);border-radius:4px;background:var(--surface);color:var(--ink)}
+
+header.top .viewseg{position:absolute;top:16px;right:20px;z-index:2;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35)}
+header.top .viewseg button{color:#DCE6F5}
+header.top .viewseg button[aria-pressed="true"]{background:#fff;color:var(--be-navy)}
+@media (max-width:640px){header.top .viewseg{position:static;justify-self:start}}
+:root[data-view="client"] .int-only{display:none !important}
+:root[data-view="client"] .hedit{pointer-events:none;cursor:default;border-color:transparent !important;background:none !important}
+:root[data-view="client"] .hreset{display:none}
+.cl-only{display:none}
+:root[data-view="client"] .cl-only{display:inline}
+:root[data-view="client"] #itemOpts .xp,:root[data-view="client"] .ask-tip .xp-need{display:none}
+.ph-tbl td.ph-h{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+/* ===== Proposal deck (client view) ===== */
+.deck{display:grid;gap:12px}
+.slide{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:clamp(22px,4vw,48px);min-height:min(560px,72vh);display:flex;flex-direction:column;justify-content:center;gap:22px;position:relative;overflow:hidden}
+.slide[hidden],section.panel[hidden]{display:none}
+:root[data-view="client"] .tablist button{order:3}
+:root[data-view="client"] #t-proposal{order:0}
+:root[data-view="client"] #t-estimator{order:1}
+:root[data-view="client"] .tablist .tabmore{order:2}
+:root[data-view="client"] .tablist:not(.open) button[role="tab"]:not(#t-proposal):not(#t-estimator):not([aria-selected="true"]){display:none}
+.tablist .tabmore{color:var(--be-teal)}
+.tabmore .chev{display:inline-block;transition:transform .2s}
+.tablist.open .tabmore .chev{transform:rotate(90deg)}
+/* ===== Proposal deck: Thalhimer branding ===== */
+#proposal,#estimator,.ask-tip{--tl-navy:#0B3D6B;--tl-head:#0B3D6B;--tl-red:#E4002B;--tl-teal:#1F8FA8;--tl-teal-lt:#9BD3DD;--tl-gray:#6B6E71;--tl-tint:#EEF7F9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(#proposal,#estimator,.ask-tip){--tl-head:#EAF1FA;--tl-gray:#A9BAD6;--tl-tint:#142A3C}}
+:root[data-theme="dark"] :is(#proposal,#estimator,.ask-tip){--tl-head:#EAF1FA;--tl-gray:#A9BAD6;--tl-tint:#142A3C}
+#proposal .slide{border-radius:4px;border-top:4px solid var(--tl-teal)}
+#proposal .slide h2{color:var(--tl-head);font-weight:700}
+#proposal .slide .kick{align-self:flex-start;background:var(--tl-teal);color:#fff;font:600 17px var(--font-d);letter-spacing:.07em;text-transform:uppercase;padding:9px 40px 9px clamp(22px,4vw,48px);margin-left:calc(-1 * clamp(22px,4vw,48px));clip-path:polygon(0 0,100% 0,calc(100% - 18px) 100%,0 100%)}
+#proposal .slide.hero{background:linear-gradient(135deg,var(--surface) 0%,var(--tl-tint) 100%);color:var(--ink);border-color:var(--rule);border-top-color:var(--tl-teal)}
+#proposal .slide.hero h2{color:var(--tl-head);font-size:clamp(36px,5.6vw,60px);max-width:16ch}
+#proposal .slide.hero .sub{color:var(--tl-teal);font-size:clamp(18px,2.2vw,24px);font-weight:500;max-width:34ch}
+#proposal .slide.hero::after{border-color:var(--tl-teal-lt);opacity:.45}
+#proposal .slide.hero::before{content:"";position:absolute;right:120px;bottom:-140px;width:260px;height:260px;border-radius:50%;background:var(--tl-teal-lt);opacity:.18}
+#proposal .sl-by{color:var(--tl-head)}
+#proposal .sl-by i{background:var(--tl-teal)}
+#proposal .slide h2.h-wide{max-width:30ch;font-size:clamp(26px,3.6vw,40px)}
+#proposal .slide h2 .hl{color:var(--tl-teal)}
+#proposal .c-fix{--c:#E07B1F}
+#proposal .ph-big{font:800 clamp(26px,3vw,34px)/1 var(--font-d);color:var(--tl-teal);letter-spacing:-.01em}
+#dkPlanCost .sl-col{grid-template-rows:auto auto 1fr auto}
+#dkPlanCost ul{align-content:start}
+#proposal .ph-cost{font:800 26px/1 var(--font-d);color:var(--tl-head);border-top:2px solid var(--tl-teal);padding-top:12px;margin-top:6px}
+#proposal .dk-tot{align-self:flex-end;font:600 17px var(--font-d);color:var(--muted);display:flex;gap:14px;align-items:baseline}
+#proposal .dk-tot b{font:800 26px var(--font-d);color:var(--tl-head)}
+#proposal .sl-steps{grid-template-columns:repeat(6,minmax(0,1fr))}
+#proposal .sl-step{padding-right:10px}
+#proposal .sl-step .when{font-size:11px}
+#proposal .sl-step b{font-size:14px}
+#proposal .sl-step span{font-size:12.5px}
+#proposal .rec-cols{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+#proposal .rec{border-radius:4px;padding:20px 20px 22px;display:grid;gap:8px;align-content:start;color:#fff}
+#proposal .rec h3{font:700 19px/1.2 var(--font-d);color:inherit;margin:0}
+#proposal .rec p{font-size:14.5px;line-height:1.45;margin:0;opacity:.95}
+#proposal .rec-n{font:800 28px/1 var(--font-d);opacity:.55}
+#proposal .rec-1{background:var(--tl-teal)}
+#proposal .rec-2{background:var(--tl-navy)}
+#proposal .rec-3{background:#E07B1F}
+#proposal .rec-4{background:#5BB4C8;color:#0B2A4A}
+#proposal .sl-stat{border-top-color:var(--tl-red)}
+#proposal .sl-stat b{color:var(--tl-head)}
+#proposal .sl-col{background:var(--tl-tint);border-radius:2px;border-top-color:var(--c,var(--tl-teal))}
+#proposal .sl-col h3{color:var(--tl-head)}
+#proposal .sl-col .tag{color:var(--c,var(--tl-teal))}
+#proposal .c-navy{--c:var(--tl-navy)}
+#proposal .sl-step::before{border-color:var(--tl-teal)}
+#proposal .sl-step.key::before{background:var(--tl-red);border-color:var(--tl-red)}
+#proposal .sl-step .when{color:var(--tl-teal)}
+#proposal .sl-total{color:var(--tl-head)}
+#proposal .sl-next li::before{background:var(--tl-red);border-radius:2px}
+#proposal .dk-dots button[aria-current="true"]{background:var(--tl-teal)}
+#proposal .dk-nav .btn{border-radius:0;text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+#proposal .dk-nav .btn:not(.ghost){background:var(--tl-teal);color:#fff}
+#proposal .dk-nav .btn.ghost{color:var(--tl-teal);border-color:var(--tl-teal)}
+/* ===== Scope estimator: Thalhimer branding ===== */
+#estimator h2,#estimator h3,#estimator legend{color:var(--tl-head)}
+#estimator > .block:first-child h2{font-size:26px}
+#estimator fieldset{border-radius:2px;border-top:4px solid var(--tl-teal)}
+#estimator legend{font-weight:700}
+#estimator .eyebrow{color:var(--tl-teal);letter-spacing:.07em}
+#estimator .est-out{border-radius:2px;border-top:4px solid var(--tl-red)}
+#estimator .est-out > .eyebrow{align-self:start;justify-self:start;background:var(--tl-teal);color:#fff;padding:7px 30px 7px 18px;margin-left:-18px;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+#estimator .est-total{color:var(--tl-head);font-weight:800}
+#estimator .ph-tbl tr.tot td{border-top-color:var(--tl-navy)}
+#estimator .chip{border-radius:2px}
+#estimator .chip[aria-pressed="true"]{background:var(--tl-navy);border-color:var(--tl-navy);color:#fff}
+#estimator .ph-all{color:var(--tl-teal);border-color:var(--tl-teal);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:11px}
+#estimator .btn{border-radius:0;text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+#estimator .btn.ghost{color:var(--tl-red);border-color:var(--tl-red)}
+#estimator input[type="checkbox"]{accent-color:var(--tl-teal)}
+#estimator .card{border-radius:2px;border-top:3px solid var(--tl-teal)}
+#estimator .tbl-wrap{border-radius:2px}
+#estimator th{background:var(--tl-tint);color:var(--tl-head)}
+.ask-tip{border-radius:2px;border-top:3px solid var(--tl-teal)}
+.ask-tip .tip-name{color:var(--tl-head)}
+
+.slide h2{font:800 clamp(24px,3.4vw,36px)/1.15 var(--font-d);letter-spacing:-.015em;margin:0;max-width:24ch}
+.slide .kick{font:700 13px var(--font-d);letter-spacing:.08em;text-transform:uppercase;color:var(--be-teal)}
+.slide .sub{font-size:clamp(15px,1.6vw,18px);color:var(--muted);max-width:62ch}
+.slide p{max-width:62ch}
+.slide.hero{background:var(--hero-bg);color:var(--hero-ink);border-color:var(--hero-bg)}
+.slide.hero h2{color:#fff;font-size:clamp(30px,4.6vw,50px);max-width:20ch}
+.slide.hero .sub{color:var(--hero-muted)}
+.slide.hero .kick{color:var(--be-cyan)}
+.slide.hero::after{content:"";position:absolute;right:-90px;bottom:-90px;width:340px;height:340px;border-radius:50%;border:40px solid var(--be-teal);opacity:.2}
+.sl-by{font:700 12px var(--font-d);letter-spacing:.2em;color:#fff;display:flex;align-items:center;gap:10px}
+.sl-by i{width:22px;height:4px;background:var(--be-teal);display:inline-block;border-radius:2px}
+.sl-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.sl-stat{border-top:3px solid var(--be-teal);padding-top:10px;display:grid;gap:4px}
+.sl-stat b{font:800 clamp(26px,3vw,36px)/1 var(--font-d);color:var(--stat-ink);letter-spacing:-.01em}
+.sl-stat span{font-size:14px;color:var(--muted)}
+.sl-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.sl-col{background:var(--surface-2);border-radius:10px;padding:16px 18px;display:grid;gap:8px;align-content:start;border-top:4px solid var(--c,var(--be-teal))}
+.sl-col h3{font:700 17px var(--font-d);margin:0}
+.sl-col ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px}
+.sl-col .tag{font:700 11.5px var(--font-d);letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--be-teal))}
+.c-ok{--c:var(--ok)} .c-warn{--c:#E07B1F} .c-bad{--c:var(--bad)} .c-navy{--c:var(--be-navy)}
+:root[data-theme="dark"] .c-navy{--c:var(--accent)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .c-navy{--c:var(--accent)}}
+.sl-quotes{display:grid;gap:14px}
+.sl-q{font-family:var(--font-q);font-style:italic;font-size:clamp(17px,1.9vw,21px);line-height:1.4;color:var(--theirs);background:var(--theirs-bg);border-left:4px solid var(--theirs-rule);padding:12px 18px;border-radius:0 8px 8px 0;max-width:none}
+.sl-q::before{content:"\201C";font:700 44px/0 Georgia,serif;font-style:normal;color:var(--theirs-rule);vertical-align:-16px;margin-right:4px}
+.sl-q::after{content:"\201D";font:700 44px/0 Georgia,serif;font-style:normal;color:var(--theirs-rule);vertical-align:-16px;margin-left:2px}
+.sl-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;position:relative}
+.sl-step{padding:14px 14px 0 0;border-top:3px solid var(--rule);display:grid;gap:4px;align-content:start;position:relative}
+.sl-step::before{content:"";position:absolute;top:-9px;left:0;width:15px;height:15px;border-radius:50%;background:var(--surface);border:3px solid var(--be-teal)}
+.sl-step.key::before{background:var(--be-teal)}
+.sl-step b{font:700 15px var(--font-d)}
+.sl-step .when{font:700 12px var(--font-d);letter-spacing:.05em;text-transform:uppercase;color:var(--be-teal)}
+.sl-step span{font-size:13.5px;color:var(--muted)}
+.sl-price{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,380px);gap:28px;align-items:center}
+@media (max-width:760px){.sl-price{grid-template-columns:1fr}}
+.sl-total{font:800 clamp(40px,6vw,64px)/1 var(--font-d);color:var(--stat-ink);letter-spacing:-.02em}
+.sl-next{counter-reset:n;display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.sl-next li{counter-increment:n;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;font-size:clamp(15px,1.6vw,18px)}
+.sl-next li::before{content:counter(n);font:800 20px var(--font-d);color:#fff;background:var(--be-teal);border-radius:50%;width:36px;height:36px;display:grid;place-items:center}
+.dk-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.dk-dots{display:flex;gap:6px;flex-wrap:wrap}
+.dk-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--rule);cursor:pointer}
+.dk-dots button[aria-current="true"]{background:var(--be-teal);width:26px;border-radius:5px}
+.dk-nav{display:flex;align-items:center;gap:8px}
+.dk-nav .btn{padding:8px 14px}
+.dk-nav .btn:disabled{opacity:.35;cursor:default}
+.dk-count{font:600 13px var(--font-b);color:var(--muted);min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
+.deck:fullscreen{background:var(--bg);padding:24px 32px;align-content:center;overflow:auto}
+.deck:fullscreen .slide{min-height:calc(100vh - 110px)}
+</style>
+<style>
+[hidden]{display:none !important}
+.est-out .btn{width:100%}
+.ab-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ab-logo{height:30px;width:auto;margin-right:10px}
+.ab-chip{font:600 12.5px var(--font-b);color:#0B3D6B;background:#E3F2F6;border-radius:999px;padding:5px 12px}
+.ab-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.6fr);gap:32px;align-items:center}
+.ab-main{display:grid;gap:16px}
+.ab-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ab-list li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.ab-i{width:40px;height:40px;border-radius:10px;background:#E3F2F6;color:#1F8FA8;display:grid;place-items:center}
+.ab-list li:nth-child(2) .ab-i{background:#E4E9F2;color:#0B3D6B} .ab-list li:nth-child(3) .ab-i{background:#FCEBDD;color:#C4650F}
+.ab-i svg{width:22px;height:22px}
+.ab-list b{display:block;font:700 16px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.ab-list span{font-size:14px;color:var(--muted)}
+.ab-badges{display:grid;gap:16px;justify-items:center}
+.ab-rating{display:grid;justify-items:center;gap:4px;text-decoration:none;background:#fff;color:#0B3D6B;border:1px solid var(--rule);border-top:4px solid #1F8FA8;border-radius:12px;padding:20px 22px;width:100%;max-width:250px;box-shadow:0 10px 24px rgba(11,61,107,.14)}
+.ab-src{width:170px;height:auto;margin-bottom:6px}
+.ab-score{font:800 56px/1 var(--font-d)}
+.ab-stars{font-size:22px;letter-spacing:3px;color:#FFC94D}
+.ab-cap{font-size:13px;color:#5A6A85}
+.ab-partner{max-width:250px;width:100%;height:auto;border-radius:8px}
+@media (max-width:760px){.ab-grid{grid-template-columns:1fr}}
+#estimator .est{grid-template-columns:minmax(0,1fr) minmax(200px,250px)}
+#estimator .est-big .est-total{font-size:36px}
+@media (max-width:860px){#estimator .est{grid-template-columns:1fr}}
+/* visual pass */
+#proposal .slide.hero{padding:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);min-height:inherit;height:100%}
+.hero-txt{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;z-index:1}
+.hero-for{display:grid;gap:8px;justify-items:start}
+.hero-for span{font:700 12px var(--font-d);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero-for img{height:44px;width:auto}
+.hero-logo{height:30px;width:auto;align-self:flex-start}
+.hero-ph{background-size:cover;background-position:center;position:relative;min-height:320px}
+.hero-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(238,247,249,.9) 0%,rgba(31,143,168,.18) 35%,rgba(11,61,107,.12) 100%)}
+#proposal .slide.hero::after,#proposal .slide.hero::before{display:none}
+#proposal .slide.hero .kick{margin-left:calc(-1 * clamp(24px,4vw,48px))}
+#proposal .rec-cols{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){#proposal .rec-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.rec-ic{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.18);display:grid;place-items:center;margin-bottom:4px}
+.rec-ic svg{width:24px;height:24px}
+.rec-4 .rec-ic{background:rgba(11,42,74,.12)}
+.cap{grid-template-columns:auto;}
+.cap-ic{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;margin-bottom:6px}
+.cap-ic svg{width:24px;height:24px}
+.cap-ic.c-t{background:#E3F2F6;color:#1F8FA8} .cap-ic.c-n{background:#E4E9F2;color:#0B3D6B} .cap-ic.c-o{background:#FCEBDD;color:#C4650F}
+.cap{border-top:0;padding:18px;border-radius:6px;background:var(--surface);box-shadow:0 4px 14px rgba(11,61,107,.07);border:1px solid var(--rule)}
+.how-ic li::before{display:none}
+.how-ic li{grid-template-columns:52px 1fr}
+.how-i{grid-row:1 / span 2;width:44px;height:44px;border-radius:50%;background:#1F8FA8;color:#fff;display:grid;place-items:center}
+.how-ic li:nth-child(2) .how-i{background:#0B3D6B} .how-ic li:nth-child(3) .how-i{background:#E07B1F} .how-ic li:nth-child(4) .how-i{background:#5BB4C8}
+.how-i svg{width:22px;height:22px}
+.about-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;align-items:center}
+.about-top > div:first-child{display:grid;gap:14px}
+.about-ph{min-height:170px;height:100%;border-radius:6px;background-size:cover;background-position:center;box-shadow:0 6px 18px rgba(11,61,107,.12)}
+@media (max-width:760px){.hero-grid,.about-top{grid-template-columns:1fr} .hero-ph{min-height:180px} .about-ph{min-height:150px}}
+.ban{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:#1D163F;color:#fff;padding:18px 28px;margin:16px 0 22px;border-radius:4px;border-bottom:4px solid #1F8FA8}
+.ban-logo{height:34px;width:auto;display:block}
+.ban-div{width:1px;align-self:stretch;background:rgba(255,255,255,.25)}
+.ban h1{font:600 clamp(20px,2.4vw,26px)/1.1 var(--font-d);color:#fff;margin:0;letter-spacing:.01em}
+.ban-by{margin-left:auto;display:grid;justify-items:end;gap:2px}
+.ban-by span{font:500 11px var(--font-b);color:#B9C3DA;letter-spacing:.04em}
+.ban-by img{height:22px;width:auto;display:block}
+.ban-by-old{font:800 12px var(--font-d);letter-spacing:.18em;color:#fff;display:flex;align-items:center;gap:8px}
+.ban-by-old i{width:18px;height:3px;background:#1F8FA8;border-radius:2px;display:inline-block}
+@media (max-width:640px){.ban-div{display:none} .ban-by{margin-left:0;justify-items:start}}
+/* design pass */
+#proposal .slide{gap:26px}
+#proposal .slide h2{max-width:26ch}
+#proposal .sl-stat{border-top-color:#1F8FA8}
+#proposal .sl-step.key::before{background:#1F8FA8;border-color:#1F8FA8}
+.status{display:grid;gap:10px}
+.st-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 18px;border-radius:4px;background:var(--tl-tint,#EEF7F9)}
+.st-row .st-ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:800 20px var(--font-d);color:#fff}
+.st-row.ok .st-ic{background:var(--ok)} .st-row.fix .st-ic{background:#E07B1F}
+.st-row b{display:block;font:700 17px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.st-row div span{font-size:14px;color:var(--muted)}
+.st-row em{font:700 11.5px var(--font-d);letter-spacing:.06em;text-transform:uppercase;font-style:normal;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.st-row.ok em{color:var(--ok);background:var(--ok-bg)} .st-row.fix em{color:#B85E0E;background:rgba(224,123,31,.14)}
+.split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
+.split-l{display:grid;gap:16px}
+.checks{list-style:none;margin:0;padding:0;display:grid}
+.checks li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.checks li:last-child{border-bottom:0}
+.checks i{width:34px;height:34px;border-radius:50%;background:#1F8FA8;color:#fff;display:grid;place-items:center;font:800 16px var(--font-d);font-style:normal}
+.checks b{display:block;font:700 17px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.checks span{font-size:14px;color:var(--muted)}
+#dkPlan .sl-col,#dkPlanCost .sl-col{padding:0 0 18px;overflow:hidden;background:var(--surface);border:1px solid var(--rule);border-radius:4px}
+#dkPlan .sl-col > :not(.ph-big),#dkPlanCost .sl-col > :not(.ph-big){margin-left:18px;margin-right:18px}
+#proposal #dkPlan .ph-big,#proposal #dkPlanCost .ph-big{display:block;color:#fff;padding:14px 18px;font-size:26px;background:#1F8FA8}
+#proposal #dkPlan .sl-col:nth-child(2) .ph-big,#proposal #dkPlanCost .sl-col:nth-child(2) .ph-big{background:#0B3D6B}
+#proposal #dkPlan .sl-col:nth-child(3) .ph-big,#proposal #dkPlanCost .sl-col:nth-child(3) .ph-big{background:#E07B1F}
+.caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 28px}
+.cap{border-top:2px solid var(--rule);padding-top:12px;display:grid;gap:4px;align-content:start}
+.cap span{font:800 13px var(--font-d);color:#1F8FA8;letter-spacing:.04em}
+.cap b{font:700 17px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.cap p{font-size:14px;color:var(--muted);margin:0}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.case{border:1px solid var(--rule);border-radius:4px;padding:22px;display:grid;gap:8px;align-content:start;box-shadow:0 6px 18px rgba(11,61,107,.07);background:var(--surface)}
+.case-logo{height:64px;display:flex;align-items:center;margin-bottom:6px}
+.case-logo img{max-height:56px;max-width:180px;object-fit:contain}
+.case-tag{font:700 11.5px var(--font-d);letter-spacing:.06em;text-transform:uppercase;color:#1F8FA8}
+.case h3{font:700 20px/1.2 var(--font-d);color:var(--tl-head,#0B3D6B);margin:0;min-height:2.4em}
+.cases{align-items:stretch} .case{grid-template-rows:auto auto auto 1fr}
+.case p{font-size:15px;margin:0;color:var(--ink)}
+.how{list-style:none;counter-reset:h;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 36px}
+.how li{counter-increment:h;display:grid;grid-template-columns:56px 1fr;gap:4px 14px}
+.how li::before{content:counter(h,decimal-leading-zero);grid-row:1 / span 2;font:800 34px/1 var(--font-d);color:#9BD3DD}
+.trust{display:grid;grid-template-columns:auto auto 1fr;gap:0;border:1px solid var(--rule);border-radius:4px;background:var(--tl-tint,#EEF7F9)}
+.trust > div{padding:12px 20px;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.trust > div:first-child{border-left:0}
+.trust b{font:800 22px/1.1 var(--font-d);color:var(--tl-head,#0B3D6B)}
+.trust span{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.team{grid-template-columns:repeat(3,minmax(0,1fr))} .trust{grid-template-columns:1fr} .trust > div{border-left:0;border-top:1px solid var(--rule)} .trust > div:first-child{border-top:0}}
+.team-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-top:1px solid var(--rule);padding-top:14px}
+.team-h b{font:700 15px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.team-h span{font-size:13.5px;color:var(--muted)}
+.pt-row{display:flex;flex-wrap:wrap;gap:12px 28px}
+.pt-row > div{display:flex;align-items:center;gap:10px}
+.pt-row b{font:700 15px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.pt-row .ab-i{width:36px;height:36px}
+.pt-row > div:nth-child(2) .ab-i{background:#E4E9F2;color:#0B3D6B} .pt-row > div:nth-child(3) .ab-i{background:#FCEBDD;color:#C4650F}
+.tm span{min-height:2.6em}
+.tm .yrs{display:grid;justify-items:center;gap:0;font-size:12px;line-height:1.25;color:var(--muted);margin-top:6px;padding-top:8px;border-top:2px solid #E3F2F6;min-width:70%}
+.tm .yrs b{font:800 20px/1.1 var(--font-d);color:#1F8FA8}
+.pship{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}
+.pship-txt{display:grid;gap:16px}
+.pship-ph{display:grid;gap:10px}
+.pship-cap{margin:0;font:600 13.5px var(--font-b);color:#1F8FA8;text-align:center}
+.pship-ph img{width:100%;height:190px;object-fit:cover;border-radius:8px;box-shadow:0 8px 20px rgba(11,61,107,.14)}
+.pship-ph img:first-child{object-position:center 30%} .pship-ph img:last-child{object-position:center 45%}
+@media (max-width:760px){.pship{grid-template-columns:1fr} .pship-ph img{height:170px}}
+.how b{font:700 17px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.how span{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.split,.cases,.how{grid-template-columns:1fr} .caps{grid-template-columns:1fr 1fr} .st-row{grid-template-columns:40px 1fr} .st-row em{display:none}}
+header.top{padding:14px 26px 16px;gap:4px}
+header.top::after{width:150px;height:150px;top:-50px;right:-40px;border-width:20px}
+.team{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.tm{display:grid;justify-items:center;text-align:center;gap:3px}
+.tm img,.tm .ini{width:min(104px,100%);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;margin-bottom:8px;border:3px solid var(--tl-teal-lt,#9BD3DD)}
+.tm .ini{display:grid;place-items:center;background:#1F8FA8;color:#fff;font:800 32px var(--font-d);font-style:normal}
+.tm b{font:700 16px var(--font-d);color:var(--tl-head,#0B3D6B)}
+.tm span{font-size:13.5px;color:var(--muted)}
+.tm small{font-size:12px;color:var(--muted)}
+.cap-cols{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.logo-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.logo-wall .lg{background:#fff;border:1px solid var(--rule);border-radius:6px;height:150px;display:grid;place-items:center;padding:10px 22px;box-shadow:0 4px 14px rgba(11,61,107,.06)}
+
+.bond-pair{display:flex;gap:10px;align-items:center}
+.logo-wall .lg-bond img{max-height:120px}
+.bond-cap{font:600 13px/1.35 var(--font-b);color:var(--muted)}
+.logo-wall .lg-ph{font:600 12px var(--font-b);color:#B85E0E;text-align:center}
+.logo-wall img{max-width:100%;max-height:84px;object-fit:contain}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}
+.side-nav{position:sticky;top:16px;display:grid;gap:2px;border-left:2px solid var(--rule);max-height:calc(100vh - 32px);overflow:auto}
+.side-nav .sn-h{font:700 11.5px var(--font-d);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px 4px}
+.side-nav .sn-h:not(:first-child){margin-top:10px}
+.side-nav button{all:unset;cursor:pointer;display:flex;gap:10px;align-items:baseline;padding:7px 12px;margin-left:-2px;border-left:3px solid transparent;font:500 14px var(--font-b);color:var(--muted);line-height:1.3}
+.side-nav button .n{font:700 12px var(--font-d);color:#1F8FA8;min-width:16px}
+.side-nav button:hover{color:var(--ink);background:var(--surface-2)}
+.side-nav button[aria-current="true"]{color:var(--ink);font-weight:600;border-left-color:#1F8FA8;background:var(--surface)}
+.side-nav button:focus-visible{outline:2px solid #1F8FA8;outline-offset:-2px}
+.side-nav .sn-est{font-weight:600;color:var(--ink)}
+main{min-width:0}
+@media (max-width:900px){.layout{grid-template-columns:1fr} .side-nav{position:static;display:flex;flex-wrap:nowrap;overflow-x:auto;border-left:0;border-bottom:1px solid var(--rule)} .side-nav .sn-h{display:none} .side-nav button{white-space:nowrap;border-left:0;border-bottom:3px solid transparent;margin:0} .side-nav button[aria-current="true"]{border-bottom-color:#1F8FA8}}
+.prop-foot{margin-top:28px;padding-top:16px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+/* phones */
+@media (max-width:640px){
+  .wrap{padding-inline:12px}
+  .ban{display:grid;grid-template-columns:1fr auto;grid-template-areas:"logo by" "title title";padding:12px 14px;gap:6px 12px;margin:10px 0 12px}
+  .ban-logo{grid-area:logo} .ban-by{grid-area:by} .ban h1{grid-area:title} .ban-div{display:none}
+  .ban-logo{height:22px}
+  .ban h1{font-size:17px}
+  .ban-by{margin-left:auto;justify-items:end} .ban-by span{display:none} .ban-by img{height:16px}
+  #proposal .slide{min-height:0;padding:20px 18px 24px;gap:18px}
+  #proposal .slide .kick{font-size:13px;padding:7px 26px 7px 18px;margin-left:-18px}
+  #proposal .slide h2,#proposal .slide h2.h-wide{font-size:24px}
+  #proposal .slide .sub{font-size:15px}
+  .hero-txt{padding:22px 18px} #proposal .slide.hero .kick{margin-left:-18px}
+  .hero-for img{height:34px} #proposal .slide.hero h2{font-size:32px}
+  .hero-ph{min-height:150px}
+  #proposal .sl-steps{grid-template-columns:1fr;gap:0;border-left:3px solid var(--rule);margin-left:8px}
+  #proposal .sl-step{border-top:0;padding:4px 0 14px 22px}
+  #proposal .sl-step::before{top:6px;left:-10px}
+  #proposal .sl-step .when{font-size:11.5px} #proposal .sl-step b{font-size:15px} #proposal .sl-step span{font-size:13px}
+  .rec-cols,#proposal .rec-cols{grid-template-columns:1fr !important}
+  .team{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:18px 10px}
+  .logo-wall{grid-template-columns:repeat(2,minmax(0,1fr)) !important} .logo-wall .lg{height:100px}
+  .logo-wall img{max-height:60px} .logo-wall .lg-bond img{max-height:84px}
+  .caps{grid-template-columns:1fr}
+  .ab-grid{gap:20px} .ab-badges{grid-template-columns:1fr 1fr;align-items:center} .ab-score{font-size:40px} .ab-rating{padding:14px}
+  .pt-row{gap:10px 18px}
+  .dk-bar{gap:10px} .dk-dots{display:none} #dkFull{display:none}
+  .dk-nav{width:100%;justify-content:space-between} .dk-nav .btn{padding:10px 18px}
+  .no-touch{display:none}
+  #estimator .est{display:flex;flex-direction:column} #estimator .est-out{position:static;order:-1}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="ban">
+    <img class="ban-logo" src="thalhimer-logo.png" alt="Thalhimer">
+    <span class="ban-div" aria-hidden="true"></span>
+    <h1>Salesforce Proposal</h1>
+    <div class="ban-by"><span>Prepared by</span><img src="/brand_assets/logo%20chevron%20transparent%20white%20text.png" alt="Blue Engine Solutions"></div>
+  </header>
+
+  <div class="layout">
+  <nav class="side-nav" id="sideNav" aria-label="Proposal sections"></nav>
+  <main>
+
+  <section class="panel" id="proposal" role="tabpanel" aria-labelledby="t-proposal">
+    <div class="deck" id="deck">
+
+      <div class="slide hero">
+        <div class="hero-grid">
+          <div class="hero-txt">
+            <div class="hero-for"><span>Prepared for</span><img src="thalhimer-logo-navy.png" alt="Thalhimer"></div>
+            <div class="kick">Proposal · October 2026</div>
+            <h2>Clean, Modern Salesforce</h2>
+            <p class="sub">The hub for your Yardi integration and advanced marketing.</p>
+          </div>
+          <div class="hero-ph" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=75')"></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Where Thalhimer is today</div>
+        <h2 class="h-wide">The back office runs on Salesforce every day. <span class="hl">It's all manual.</span><br>The broker side sits mostly empty.</h2>
+        <div class="status">
+          <div class="st-row ok"><span class="st-ic">✓</span><div><b>The back office runs daily</b><span>Commissions and payouts every day · Years of valuable deal history</span></div><em>Works today</em></div>
+          <div class="st-row fix"><span class="st-ic">!</span><div><b>Manual entry everywhere</b><span>Lease schedules keyed in line by line · Documents copied between records · Reports rebuilt in spreadsheets</span></div><em>We can fix</em></div>
+          <div class="st-row fix"><span class="st-ic">!</span><div><b>Brokers don't use it</b><span>No sales pipeline or forecast · No lead or campaign tracking · Cluttered screens brokers avoid</span></div><em>We can fix</em></div>
+        </div>
+      </div>
+
+
+      <div class="slide">
+        <div class="kick">Our recommendation</div>
+        <h2>Move to a new, clean Salesforce org</h2>
+        <div class="sl-cols rec-cols">
+          <div class="rec rec-2"><span class="rec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><h3>Seamless back office with Yardi</h3><p>Commissions, invoices and payouts run in Salesforce and sync with Yardi automatically.</p></div>
+          <div class="rec rec-3"><span class="rec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><h3>Seamless multi-channel marketing</h3><p>Email, website and listing campaigns from one place, with results brokers can see.</p></div>
+          <div class="rec rec-4"><span class="rec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><h3>Keep what works</h3><p>The back office, years of deal history and your team's Salesforce skills all carry over. We improve it, not replace it.</p></div>
+          <div class="rec rec-1"><span class="rec-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><h3>Effortless for brokers</h3><p>Brokers work from Outlook. AI logs their deals, contacts and follow-ups for them. The system does the busywork, not the broker.</p></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">The plan</div>
+        <h2>Three phases, each one useful on its own</h2>
+        <div class="sl-cols" id="dkPlan">
+          <div class="sl-col"><span class="ph-big">Phase 1</span><h3>Run the business and the pipeline</h3><ul>
+            <li>Back office: commissions, invoicing and payouts, without the manual entry</li><li>Lease schedules and billing that build themselves</li><li>Pipeline, forecasting and dashboards</li><li>Outlook connection</li><li>REN news alerts on brokers' contacts and companies</li><li>Data migration, testing and training</li></ul></div>
+          <div class="sl-col"><span class="ph-big">Phase 2</span><h3>Multi-channel marketing</h3><ul>
+            <li>Email, website and listing campaigns from one place</li><li>Lead capture and routing</li><li>Document generation: marketing packages, pitch books and tour books</li><li>Campaign results brokers can see</li></ul></div>
+          <div class="sl-col"><span class="ph-big">Phase 3</span><h3>Yardi integration and AI tools</h3><ul>
+            <li>Yardi sends over-the-term commissions to Salesforce each month</li><li>Salesforce sends money data to Yardi for the books</li><li>AI tools that log deals, contacts and follow-ups for brokers</li></ul></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Our head start</div>
+        <div class="split">
+          <div class="split-l"><h2>We've already done the homework</h2><p class="sub">We start with your org already mapped, so the plan and the price rest on facts.</p></div>
+          <ul class="checks">
+            <li><i>✓</i><div><b>Apto mapped</b><span>Every Apto feature your team relies on, from comps to commissions to payouts.</span></div></li>
+            <li><i>✓</i><div><b>Automation reviewed</b><span>Every automation running today: what it does, and whether to rebuild, rethink or retire it.</span></div></li>
+            <li><i>✓</i><div><b>Usage measured</b><span>How each team actually uses Salesforce, so we build for real habits.</span></div></li>
+            <li><i>✓</i><div><b>Requirements sized</b><span>Every item on your requirements list, matched to a phase and an estimate.</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Timeline</div>
+        <h2>Live on the new org well before Apto ends</h2>
+        <div class="sl-steps">
+          <div class="sl-step key"><span class="when">Nov 2026</span><b>Kickoff</b><span>Discovery and design start</span></div>
+          <div class="sl-step"><span class="when">Feb 2027</span><b>Yardi goes live</b><span>Your accounting move</span></div>
+          <div class="sl-step key"><span class="when">Mar 2027</span><b>Phase 1 completed</b><span>Back office, pipeline, REN integration</span></div>
+          <div class="sl-step key"><span class="when">May 2027</span><b>Phase 2 completed</b><span>Multi-channel marketing</span></div>
+          <div class="sl-step key"><span class="when">Jun 2027</span><b>Phase 3 completed</b><span>Yardi feeds and AI tools</span></div>
+          <div class="sl-step"><span class="when">Dec 2027</span><b>Apto ends</b><span>Six months of runway to spare</span></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Investment</div>
+        <h2>Priced by phase, so you choose what to build and when</h2>
+        <div class="sl-cols" id="dkPlanCost"></div>
+        <div class="dk-tot" id="dkTotLine"></div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">About Blue Engine</div>
+        <div class="ab-head">
+          <img class="ab-logo" src="/brand_assets/logo%20chevron%20transparent%20navy%20text.png" alt="Blue Engine Solutions">
+          <span class="ab-chip">Established 2019</span><span class="ab-chip">Washington, DC</span>
+        </div>
+        <div class="ab-grid">
+          <div class="ab-main">
+            <h2>We make complex things simple.</h2>
+            <p class="sub">That's our philosophy for every Salesforce build. Salesforce can do almost anything; our job is to make it feel easy for the people who use it every day.</p>
+            <ul class="ab-list">
+              <li><span class="ab-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><div><b>Fewer clicks, fewer fields</b><span>Each screen shows what that person needs, and nothing else.</span></div></li>
+              <li><span class="ab-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span><div><b>Plain language</b><span>No jargon in our meetings, our training or our documentation.</span></div></li>
+              <li><span class="ab-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><div><b>Built to last</b><span>Clean, documented setups your team can understand and own.</span></div></li>
+            </ul>
+          </div>
+          <div class="ab-badges">
+            <a class="ab-rating" href="https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=a0N3u00000ONlmUEAT" target="_blank" rel="noopener">
+              <img class="ab-src" src="/brand_assets/salesforce-appexchange-logo.webp" alt="Salesforce AppExchange">
+              <span class="ab-score">4.9</span>
+              <span class="ab-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+              <span class="ab-cap">Client rating</span>
+            </a>
+            <img class="ab-partner" src="/brand_assets/salesforce-registered-consulting-partner.png" alt="Salesforce Certified Partner">
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Our team</div>
+        <h2>Meet some of our team</h2>
+                <div class="team">
+          <div class="tm"><img src="/brand_assets/Team%20Photos/jon-headshot-v2.jpg" alt=""><b>Jon Mervis</b><span>Founder and Principal</span><small class="yrs"><b>11+</b> years of Salesforce experience</small></div>
+          <div class="tm"><img src="/brand_assets/Team%20Photos/nicholas-headshot-v2.jpg" alt=""><b>Nicholas Zuaro</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>12+</b> years of Salesforce experience</small></div>
+          <div class="tm"><img src="/brand_assets/Team%20Photos/geoff-headshot-v2.jpg" alt=""><b>Geoff Campbell</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>7+</b> years of Salesforce experience</small></div>
+          <div class="tm"><img src="/brand_assets/Team%20Photos/luke-headshot-v2.jpg" alt=""><b>Luke Thorson</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>7+</b> years of Salesforce experience</small></div>
+          <div class="tm"><img src="/brand_assets/Team%20Photos/wes.jpg" alt=""><b>Wes Childress</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>11+</b> years of Salesforce experience</small></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Partnership</div>
+        <div class="pship">
+          <div class="pship-txt">
+            <h2>A partner, not a ticket queue</h2>
+            <p class="sub">We believe in long-term partnership. Our clients stay with us 3+ years because we stay flexible to their needs.</p>
+            <ul class="ab-list">
+              <li><span class="ab-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><div><b>We train</b><span>Hands-on training and short video guides your team keeps.</span></div></li>
+              <li><span class="ab-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><b>We help with adoption</b><span>We stay with your team until the new system is how work gets done.</span></div></li>
+              <li><span class="ab-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg></span><div><b>We provide ongoing support</b><span>We stay flexible as your needs change, long after launch.</span></div></li>
+            </ul>
+          </div>
+          <div class="pship-ph">
+            <img src="/brand_assets/Partnership/client-event.jpg" alt="Blue Engine team at a client's community event">
+            <img src="/brand_assets/Partnership/client-team-visit.jpg" alt="Blue Engine with a client's leadership team">
+            <p class="pship-cap">And when our clients have important events, we show up.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">What we do</div>
+        <h2>Capabilities</h2>
+        <div class="caps">
+          <div class="cap"><span class="cap-ic c-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><b>Org cleanup and rebuild</b><p>Untangle years of customization and rebuild on a clean, documented data model.</p></div>
+          <div class="cap"><span class="cap-ic c-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><b>Integrations</b><p>Connect Salesforce to accounting, marketing and website tools so data moves without double entry.</p></div>
+          <div class="cap"><span class="cap-ic c-o"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><b>AI that actually helps</b><p>Agents, drafting and scoring that save real time, not demos.</p></div>
+          <div class="cap"><span class="cap-ic c-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span><b>Reports and dashboards</b><p>Dashboards leadership actually checks, with metrics that drive decisions.</p></div>
+          <div class="cap"><span class="cap-ic c-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><b>Health checks</b><p>An honest audit of what is broken or bloated, with a clear roadmap.</p></div>
+          <div class="cap"><span class="cap-ic c-o"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg></span><b>Managed services</b><p>Ongoing support and improvement after launch, without a full-time hire.</p></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Key clients</div>
+        <h2>Businesses that rely on us</h2>
+        <div class="logo-wall">
+          <div class="lg"><img src="/Client%20Logos/Topgolf-Emblem.png" alt="Topgolf"></div>
+          <div class="lg lg-bond"><img src="/Client%20Logos/bond_building_logo.png" alt="Bond Building"></div>
+          <div class="lg"><img src="/Client%20Logos/hero%20devs%20logo.png" alt="HeroDevs"></div>
+          <div class="lg"><img src="/Client%20Logos/penn%20logo.png" alt="University of Pennsylvania"></div>
+          <div class="lg"><img src="/Client%20Logos/WAG_Signature_logo_RGB.png" alt="Walgreens"></div>
+          <div class="lg"><img src="/Client%20Logos/umd-logo-final.png" alt="University of Maryland"></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="kick">Client results</div>
+        <h2>Work we're proud of</h2>
+        <div class="cases">
+          <article class="case"><div class="case-logo"><img src="/Client%20Logos/bond_civilutility_logo-v2.png" alt="Bond Civil &amp; Utility Construction"></div><span class="case-tag">Construction</span><h3>Bond Civil &amp; Utility Construction</h3><p>Scenario forecasting by region and department, automated manual processes, and integrations that end double entry.</p></article>
+          <article class="case"><div class="case-logo"><img src="/Client%20Logos/Topgolf-Emblem.png" alt="Topgolf"></div><span class="case-tag">Sports technology</span><h3>Toptracer (Topgolf)</h3><p>Salesforce workflows that manage annual renewals, flag at-risk accounts before they lapse, and show the whole renewal cycle, plus integrations that automate the data moving in and out of Salesforce.</p></article>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="dk-bar">
+      <div class="dk-dots" id="dkDots" role="group" aria-label="Slides"></div>
+      <div class="dk-nav">
+        <button type="button" class="btn ghost" id="dkFull">Full screen</button>
+        <button type="button" class="btn ghost" id="dkPrev">← Back</button>
+        <span class="dk-count" id="dkCount"></span>
+        <button type="button" class="btn" id="dkNext">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="estimator" role="tabpanel" aria-labelledby="t-estimator" hidden>
+    <div class="block">
+      <h2>Scope estimator</h2>
+      <p class="muted">Check or uncheck any item to see the estimate change.<span class="no-touch"> Hover an item to read it in your team's own words.</span></p>
+    </div>
+    <div class="est">
+      <div style="display:grid;gap:16px">
+        <fieldset><legend>1 · Base work</legend><div id="baseOpts"></div></fieldset>
+        <fieldset><legend>2 · Requirement items</legend>
+          <div class="filter-grid" style="margin-bottom:6px">
+            <span class="flabel">Your priority<br><span style="text-transform:none;letter-spacing:0;font-weight:400">pick one or more</span></span><div class="chips" id="estPri" role="group" aria-label="Filter items by priority"></div>
+          </div>
+          <div id="itemOpts"></div>
+        </fieldset>
+      </div>
+      <aside class="est-out card" aria-live="polite">
+        <div class="eyebrow">Estimated cost (midpoint)</div>
+        <div class="est-big"><span class="est-total" id="estDollars">–</span><span class="est-h" id="estHours"></span></div>
+        <table class="ph-tbl" id="phaseTbl"></table>
+        <button type="button" class="btn ghost" id="clearItems">Clear all items</button>
+        <button type="button" class="btn ghost" id="resetItems">Reset to proposal</button>
+        <p class="note">Software licenses (Salesforce, REN Systems, marketing tools) are separate.</p>
+      </aside>
+    </div>
+  </section>
+
+  </main>
+  </div>
+</div>
+
+<script>
+(function(){
+  var store = {
+    get: function(k, d){ try { var v = localStorage.getItem("thp:" + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { localStorage.setItem("thp:" + k, JSON.stringify(v)); } catch(e){} }
+  };
+  var fmt = function(n){ return Math.round(n).toLocaleString("en-US"); };
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); };
+
+  var ST = {in:["In place","st-in"], partial:["Partial","st-partial"], not:["Not there","st-not"], svc:["Service","st-svc"]};
+  var PRI = {basic:"Basic must have", up:"Must have upgrade", nice:"Nice to have", call:"From our calls", dnw:"Do not want"};
+  var R = [
+    ["001A","Yardi → Salesforce: over-the-term commission feed","Finance","up","not","M–L",3,""],
+    ["001B","Salesforce → Yardi: accounting feed","Finance","up","not","M",3,""],
+    ["002","Revenue Recognition Visibility","Finance","basic","partial","M",1,""],
+    ["003","Commission Tracking","Finance","basic","in","",0,""],
+    ["004","Invoice Generation","Finance","basic","in","",0,""],
+    ["005","Automated billing (emailed invoices and past-due reminders)","Finance","up","not","M",1,""],
+    ["006","Accounting Integration","Finance","basic","partial","S",1,""],
+    ["007","Reporting Framework","Finance","basic","in","",0,""],
+    ["008","Agent Commissions","Finance","basic","partial","M",1,""],
+    ["009","C&W Fee Automation","Finance","basic","partial","M",1,""],
+    ["010","Data Entry Controls","Finance","up","partial","S–M",1,""],
+    ["011","Custom Reports","Finance","up","not","M",1,""],
+    ["012","Unified Transaction Record","Finance","up","not","L",1,""],
+    ["013","Automated Lease Schedules","Finance","up","not","M",1,""],
+    ["014","Role-Based Permissions","IT","basic","partial","M",1,"", true],
+    ["015","Mobile Access","IT","up","partial","S",1,""],
+    ["016","Lead Capture","Marketing","basic","not","M",2,""],
+    ["017","Automated Lead Routing","Marketing","up","not","S",2,""],
+    ["018","(Document Generation) Marketing Package Automation","Marketing","up","not","L",2,""],
+    ["019","(Document Generation) Pitch & Tourbook Automation","Marketing","nice","not","L",2,""],
+    ["020","Property Marketing Integration","Marketing","basic","partial","M",2,""],
+    ["021","Multichannel Marketing Automation","Marketing","basic","not","L",2,""],
+    ["022","Campaign Attribution","Marketing","up","not","M–L",2,""],
+    ["023","Document & Asset Management","Marketing","up","partial","M",2,""],
+    ["024","AI-Driven CRM","Other","nice","not","M–L",3,""],
+    ["025","Text Activation","Other","nice","not","M",4,""],
+    ["026","Unified Contact Database","Sales","up","partial","M",1,""],
+    ["027","Public Contact Visibility","Sales","basic","partial","S",1,""],
+    ["028","Outlook Email Integration","Sales","basic","partial","M",1,""],
+    ["029","Pursuit Tracking","Sales","up","not","M",1,""],
+    ["030","Task Management","Sales","basic","in","",0,""],
+    ["031","Call Lists","Sales","up","partial","M",2,""],
+    ["032","Pipeline Management","Sales","basic","partial","L",1,""],
+    ["033","Forecasting","Sales","basic","partial","M",1,""],
+    ["034","Broker Dashboards","Sales","up","partial","M",1,""],
+    ["035","Operations Dashboards","Sales","basic","partial","M",1,""],
+    ["036","Deal Management (kanban)","Sales","nice","partial","S",1,""],
+    ["037","Comp & Research Reporting","Sales","basic","in","",0,""],
+    ["038","Listing Activity Reporting","Sales","up","partial","M–L",2,""],
+    ["039","Listing Maintenance (stacking plans)","Sales","nice","not","L",4,""],
+    ["040","Prospecting & Industry Tracking","Sales","up","partial","M",2,""],
+    ["044","Customizable fields, uncluttered UI","Sales","up","partial","M",1,"", true],
+    ["047","Accounting Reports (8 named)","Finance","basic","in","",0,""],
+    ["048","Documents roll down to the comp","Finance","call","not","S–M",1,""],
+    ["049","Lease dates calculate themselves","Sales","call","not","S",1,""],
+    ["050","Listing update report for CoStar","Marketing","call","not","S",2,""],
+    ["051","Opportunity subtypes for cross-sell","Sales","call","not","S",1,""],
+    ["052","CPS access: lease data, stacking plans, expirations","Sales","call","not","S–M",4,""],
+    ["053","Commission schedule from a payment-frequency field","Finance","call","not","S",1,""],
+    ["054","Commission rate applies to every rent step","Finance","call","not","S",1,""],
+    ["055","Client statement of everything outstanding","Finance","call","not","M",1,""],
+    ["056","Billing activity visible to brokers on the comp","Sales","call","not","S",1,""],
+    ["057","Lease expiration reminders that reach the client","Sales","call","not","S",2,""],
+    ["058","(REN Integration) News alerts on a broker’s contacts and companies","Sales","call","not","S",1,""]
+  ].map(function(r){ return {id:"ASK-" + r[0], name:r[1], area:r[2], pri:r[3], st:r[4], size:r[5], phase:r[6], ev:r[7], rebuildCovers:!!r[8]}; });
+
+  var SIZE = {"S":[10,20],"S–M":[15,40],"M":[20,60],"M–L":[40,90],"L":[60,120],"XL":[120,240]};
+
+  // Client's exact wording from their requirements doc, in ASK order (ASK-001 = row 1)
+  var VERB = [["Yardi Compatibility", "Platform integration with Yardi", "Finance", "Must have upgrades"], ["Revenue Recognition Visibility", "Track deal value through booking and revenue recognition", "Finance", "Basic must haves"], ["Commission Tracking", "Track commission allocation and brokerage compensation", "Finance", "Basic must haves"], ["Invoice Generation", "Generate invoices directly from closed deals", "Finance", "Basic must haves"], ["Automated Billing", "Automatic follow up billing of oustanding invoices individually or in bulk", "Finance", "Must have upgrades"], ["Accounting Integration", "Integrated brokerage and accounting workflows", "Finance", "Basic must haves"], ["Reporting Framework", "Operational, sales and financial reporting with configurable reports", "Finance", "Basic must haves"], ["Agent Commissions", "Agent commission plan management, holdback and upfront billing reports for twice-monthly cutoff reconciliation against GL in MRI/Yardi.", "Finance", "Basic must haves"], ["C&W Fee Automation", "C&W expense fee entry with automatic deducation from commission with market selection", "Finance", "Basic must haves"], ["Data Entry Controls", "Validation rules or alerts for commission percentages that fall outside a designated range. Approval workflows for entries that exceed defined thresholds. Customizable/intuitive comp ID structure.", "Finance", "Must have upgrades"], ["Custom Reports", "Ability to create reports currently compiled manually", "Finance", "Must have upgrades"], ["Unified Transaction Record", "Single transaction record capable of handling mixed payment structures without requiring parallel/duplicate comp entries.", "Finance", "Must have upgrades"], ["Automated Lease Schedules", "Generate lease schedules automatically based on rent, escalation, abatement, terms entered on the comp form.", "Finance", "Must have upgrades"], ["Role-Based Permissions", "Configurable permissions by role, office and department", "IT", "Basic must haves"], ["Mobile Access", "Ability to perform CRM actions from mobile devices", "IT", "Must have upgrades"], ["Lead Capture", "Capture website, listing and inquiry leads into CRM", "Marketing", "Basic must haves"], ["Automated Lead Routing", "Automatically route inquiries to brokers or teams", "Marketing", "Must have upgrades"], ["Marketing Package Automation", "Streamline property marketing package creation", "Marketing", "Must have upgrades"], ["Pitch & Tourbook Automation", "Streamline creation of pitches/proposals and tourbook creation with client-facing access", "Marketing", "Nice to have"], ["Property Marketing Integration", "CRM integration with listing websites and marketing platforms. This could be through SharpLaunch Integration or other means (Canva integration, weebly integration). We should be able to Sync listings to marketing platform without double entry.", "Marketing", "Basic must haves"], ["Multichannel Marketing automation driven by segmentation", "Send targeted marketing campaigns from integrated platform with detailed audience segmenting capabilities that pull from contact information and behavior (activity, selectable prefrences, past deal behavior). This includes email and SMS.", "Marketing", "Basic must haves"], ["Campaign Attribution", "Track engagement and influence on pipeline and revenue. This should include IDs for source, campaign, medium, term & other trackable attributes from online events", "Marketing", "Must have upgrades"], ["Document & Asset Management", "Central repository for marketing and transaction assets. This could be through Canva integration or similar, we should have versioned, approved assets available for the sales people on demand matched clearly to the associated transactions.", "Marketing", "Must have upgrades"], ["AI-Driven CRM", "Natural language creation of contacts, tasks and activities. AI recommendations and automation for relationship management", "Other", "Nice to have"], ["Text Activation", "Create tasks and updates through SMS/voice workflows", "Other", "Nice to have"], ["Unified Contact Database", "Single company-wide contact record with duplicate management and data audit functions in a shared ownership model and bulk import options. We should be able to use visual indicators to ensure it's clear to all users what info is public vs. private", "Sales", "Must have upgrades"], ["Public Contact Visibility", "All brokers can view company contacts; configurable privacy controls. Ability to selectively mark sales notes and activities as public or private", "Sales", "Basic must haves"], ["Outlook Email Integration", "Bi-directional Outlook integration with email logging to contact records. Sync contacts between CRM and Outlook. Automatically log calls, emails and interactions against contacts. At primary contact points with brokers, they should be able to perform key actions inside Outlook, even on mobile.", "Sales", "Basic must haves"], ["Pursuit Tracking", "Clear ability to associate/identify active clients and pursuits by broker", "Sales", "Must have upgrades"], ["Task Management", "Create and manage follow-up tasks tied to contacts and specific transactions/opportunities/contacts", "Sales", "Basic must haves"], ["Call Lists", "Static and dynamic call lists for prospecting and relationship management. These should be easy to configure at the admin level firm-wide or individual level for specific broker needs.", "Sales", "Must have upgrades"], ["Pipeline Management", "Track opportunities from pursuit through closed deal. Stages should have clear relationship to forecasting.", "Sales", "Basic must haves"], ["Forecasting", "Revenue forecasting and pipeline projections", "Sales", "Basic must haves"], ["Broker Dashboards", "Individual dashboards showing pipeline, historical and future revenue", "Sales", "Must have upgrades"], ["Operations Dashboards", "Dashboards by office for managing brokers and operations showing pipeline, historic and future revenue", "Sales", "Basic must haves"], ["Deal Management", "Create, manage and close brokerage transactions utilizing visual workflow process (kanban or similar)", "Sales", "Nice to have"], ["Comp & Research Reporting", "Ability to create custom reports and dashboards for research purposes, tracking both internal and external comps.", "Sales", "Basic must haves"], ["Listing Activity Reporting", "Summarize marketing activities (tours, call campaigns, blast emails) to generate client-facing reports. Integrate with website & email campaign engagement.", "Sales", "Must have upgrades"], ["Listing Maintenance", "Visual stacking plans showing vacancies and curent lease expirations", "Sales", "Nice to have"], ["Prospecting & Industry Tracking", "Build targeted lists by industry, location, requirement, etc for direct use by brokers", "Sales", "Must have upgrades"], ["Standalone Private Contact Ownership", "Broker-owned private contact databases", "Sales", "Do not want"], ["Broker-Controlled Contact Privacy by Default", "Default private contact model creating silos", "Sales", "Do not want"], ["cross-vertical usage", "Brokerage, TRP, TMF and CPS all use the same CRM", "Sales", "Must have upgrades"], ["Customizable field set with uncluttered UI", "We need to be able to dynamically adjust the CRM wiith data fields with the ability to deploy them to sales users easily. Keep Sales interface as decluttered as possible while caputing the right information at the right time. Dynamic logic to only require the information we need when we need it.", "Sales", "Must have upgrades"], ["Client Coordinator Training", "Detailed training for Client Coordinators that focuses on specific scenarios they encounter eegulatrly. Clear and accessible documentation with \"reason why\" formatting. Clear point of contact to assist with non-standard transactions and how to manage or correct data entry in edge cases.", "Support and Training", "Basic must haves"], ["Ongoing support structure", "Ongoing support available for reasonable cost with emphasis on accessibility - we don't want a long development cycle for an individual report need. We expect high-quality service and a centralized point of contact.", "Support and Training", "Basic must haves"], ["Accounting reports", "Sales Report By Deal \nUpfront Commissions Receipt Report By Deal\nOTC Receipts by Deal\nConsulting Fees By Office\nPending Upfronts - used for ASC 606 calculations\nCommission Expense By Agent - Upfront - used for Payroll\nCommission Expense by Agent OTC - used for Payroll\nBudget Totals by Office - used during the Budget Process", "Finance", "Basic must haves"]];
+  var CALLQ = {"ASK-053": ["Commission schedule from a payment-frequency field", "if we had a field that they could check or, that they could check to say if it's an annual, if it's due all at one time, or if it's due half now, half later, would that then be able to pull over into here so that we don't have to manually put in each commission schedule?", "6 Oct call", "Commission schedule, 12:27"], "ASK-054": ["Commission rate applies to every rent step", "So it's mainly just, again, the commission items that we have to manually put in and we have to keep putting in, you know, whatever the percentage rate is.", "6 Oct call", "Commission schedule, 45:09"], "ASK-055": ["Client statement of everything outstanding", "We'd like to be able to create a statement that would summarize everything outstanding for a specific client, as opposed to having to generate 17 invoices and 7 piecemeal.", "6 Oct call", "Invoices, 31:00"], "ASK-056": ["Billing activity visible to brokers", "Being able to put that in, like, a comprehensive activity stream, I think, would be really nice, just so that, you know, we kind of encourage the brokers to be in the platform", "6 Oct call", "Broker visibility and renewals, 47:37"], "ASK-057": ["Lease expiration reminders that reach the client", "It'd be cool if we could have a client experience for that.", "6 Oct call", "Broker visibility and renewals, 49:17"], "ASK-058": ["News alerts on a broker’s contacts and companies", "So if a broker is working with 200 clients, this platform can read their contacts. And anytime those companies are in the news or some kind of announcement, they’ll get an alert about it.", "9 Oct call", "News alerts, 24:21"], "ASK-048": ["Documents flow from assignment and project to comp", "the auditors are now requiring that those listing agreements now also be attached to every comp.", "28 Sep call", "Comps, opportunities and documents, 37:34 (Liz Greving)"], "ASK-049": ["Lease dates calculated from commencement and terms", "We just enter the lease commencement date and the terms, and then it does the rest for us.", "28 Sep call", "Comps, opportunities and documents, 28:26 (Liz Greving)"], "ASK-050": ["Listing update report for CoStar", "We would love to be able to, at some point, just run a report that we could send to them as opposed to having to email them every single update.", "28 Sep call", "Comps, opportunities and documents, 25:52 (Liz Greving, about CoStar)"], "ASK-051": ["Opportunity subtypes for cross-sell on one property", "if we build the opportunity types out correctly, like, as we add other services or things like that, that opportunity, like, subtype is going to matter a lot.", "28 Sep call", "Other service lines, 20:17 (Eliza Barry)"], "ASK-052": ["CPS access for lease data, contacts, stacking plans and lease expiration reports", "I mean, for property management, for example, they're struggling with organizing lease data and contact data, you know, so having a central location for all of that information and being able to build out, you know, accurate and complete stacking plans and lease expiration reports.", "28 Sep call", "Other service lines, 19:12 (Liz Greving)"]};
+  var RV = {"ASK-001": "add", "ASK-002": "require", "ASK-003": "require", "ASK-004": "require", "ASK-005": "add", "ASK-006": "require", "ASK-007": "require", "ASK-008": "require", "ASK-009": "require", "ASK-010": "add", "ASK-011": "investigate", "ASK-012": "add", "ASK-013": "add", "ASK-014": "require", "ASK-015": "add", "ASK-016": "add", "ASK-017": "add", "ASK-018": "add", "ASK-019": "add", "ASK-020": "require", "ASK-021": "add", "ASK-022": "add", "ASK-023": "add", "ASK-024": "investigate", "ASK-025": "investigate", "ASK-026": "add", "ASK-027": "require", "ASK-028": "require", "ASK-029": "add", "ASK-030": "require", "ASK-031": "add", "ASK-032": "add", "ASK-033": "add", "ASK-034": "add", "ASK-035": "require", "ASK-036": "add", "ASK-037": "require", "ASK-038": "add", "ASK-039": "add", "ASK-040": "add", "ASK-041": "remove", "ASK-042": "remove", "ASK-043": "add", "ASK-044": "add", "ASK-045": "require", "ASK-046": "require", "ASK-047": "require", "ASK-048": "add", "ASK-049": "add", "ASK-050": "add", "ASK-051": "add", "ASK-052": "add", "ASK-053": "add", "ASK-054": "add", "ASK-055": "add", "ASK-056": "add", "ASK-057": "add", "ASK-058": "add"};
+  RV["ASK-001A"] = RV["ASK-001B"] = RV["ASK-001"];
+  R.forEach(function(r){ var v = CALLQ[r.id] || VERB[parseInt(r.id.slice(4), 10) - 1]; r.vName = v[0]; r.vDesc = v[1]; r.vArea = v[2]; r.vPri = v[3]; r.verb = RV[r.id] || ""; });
+
+  var PRIS = ["basic","up","nice","call"];
+  /* ---------- Estimator ---------- */
+  var FACTOR = 0.375, RATE = 225;
+  var MID = {}; Object.keys(SIZE).forEach(function(k){ MID[k] = (SIZE[k][0] + SIZE[k][1]) / 2; });
+  var BASE = [["Discovery and design sessions", 40, 1, "8–10 working sessions with prep and notes, plus the written design"],
+    ["Build the new org", 395, 0, "Data model, back office (commissions, invoices, payments, payouts), automation, sharing and permissions, WordPress and S3 documents, reports and dashboards"],
+    ["Data migration and cleanup", 92.5, 1],
+    ["Testing, training, go-live", 57.5, 1]];
+  var COVERS = ["ASK-014", "ASK-044"];
+  var ADJ = {"ASK-006": [0, "Included in base work: back office (the Ready-to-Book hand-off)."], "ASK-008": [0, "Included in base work: back office (commission plans, holdbacks, cut-off report)."], "ASK-009": [15, "Mostly in base work: back office. Only the C&W referral-fee rule is extra."], "ASK-027": [0, "Included in base work: sharing and permissions."], "ASK-029": [0, "Included in ASK-032: a pursuit is the first pipeline stage."], "ASK-012": [27.5, "The comp and payment-schedule design sits in base work (data model, back office). Only renewal handling is extra."], "ASK-026": [15, "Contact cleanup is in base work: data migration. Only duplicate rules and public/private indicators are extra."], "ASK-035": [15, "Built from the same components as ASK-034, filtered by office."], "ASK-002": [15, "A report and dashboard on data the back office already holds."], "ASK-020": [15, "WordPress is in base work. Only the other listing platforms are extra."], "ASK-023": [15, "File storage is in base work: S3 documents. Only the asset-library view is extra."], "ASK-022": [40, "Shares the campaign setup built for ASK-021."], "ASK-031": [15, "Call lists are saved views of the ASK-040 prospecting search."], "ASK-038": [40, "Marketing Activity is already in the data model. Only the client-facing report is extra."]};
+  function adj(r){ return ADJ[r.id] || null; }
+  var OV = {"base": {"1": 100.4, "2": 60, "3": 25}, "items": {"ASK-011": 5, "ASK-013": 10, "ASK-016": 10, "ASK-018": 25, "ASK-019": 15, "ASK-020": 10, "ASK-022": 12, "ASK-023": 10, "ASK-024": 15, "ASK-026": 0, "ASK-028": 10, "ASK-032": 8, "ASK-033": 8, "ASK-038": 10, "ASK-048": 6, "ASK-051": 4, "ASK-053": 4, "ASK-054": 4, "ASK-056": 0, "ASK-058": 8}};
+  function baseH(i, b){ return OV.base[i] != null ? OV.base[i] : eff(b[1], b[2]); }
+  function itemH(r){ if (OV.items[r.id] != null) return OV.items[r.id]; var a = adj(r); return a ? a[0] * FACTOR : eff(MID[r.size], 0); }
+  function hoursCell(key, h, edited){
+    return '<span class="h"><button type="button" class="hedit' + (edited ? ' edited' : '') + '" data-k="' + key + '" tabindex="-1">' + fmt(h) + 'h</button>' +
+      (edited ? '<button type="button" class="hreset" data-k="' + key + '" title="Back to the estimate" aria-label="Back to the estimate">↺</button>' : '') + '</span>';
+  }
+  function eff(h, human){ return human ? h : h * FACTOR; }
+  var es = store.get("est1", null) || {baseOff:{}, items:null, pri:""};
+  function defaultItems(){ var o = {}; R.forEach(function(r){ if (r.size && r.phase >= 1 && r.phase <= 3 && COVERS.indexOf(r.id) < 0) o[r.id] = true; }); return o; }
+  if (!es.items) es.items = defaultItems();
+  es.baseOff = {};
+  if (es.items["ASK-001"]) { delete es.items["ASK-001"]; es.items["ASK-001A"] = true; es.items["ASK-001B"] = true; }
+  var NOTE = {"ASK-058": "Plus the REN Systems subscription, about $79 per agent per month, for brokers who opt in."};
+  var FEEDS = {"ASK-001A": "Monthly. Over-the-term commission per lease → OTC invoice and payment in Salesforce → broker payouts.", "ASK-001B": "Daily or per cut-off. Invoices, client payments, broker payouts → Yardi batch for accounting to post."};
+  var baseBox = document.getElementById("baseOpts"), itemBox = document.getElementById("itemOpts"), priBox = document.getElementById("estPri");
+
+  function renderBase(){
+    baseBox.innerHTML = BASE.map(function(b, i){
+      return '<label class="opt"><input type="checkbox" id="base-' + i + '" data-i="' + i + '"' + ' checked disabled><span>' + b[0] + '' + (b[3] ? '<br><span class="muted small">' + esc(b[3]) + '</span>' : '') + '</span>' + hoursCell("b:" + i, baseH(i, b), OV.base[i] != null) + '</label>';
+    }).join("");
+  }
+  renderBase();
+  baseBox.addEventListener("change", function(e){
+    var inp = e.target; if (!inp.dataset || inp.dataset.i == null || inp.type !== "checkbox") return;
+    if (inp.checked) delete es.baseOff[inp.dataset.i]; else es.baseOff[inp.dataset.i] = true; calc();
+  });
+  function money(h){ var k = h * RATE / 1000; if (!k) return ""; return "$" + (k < 10 ? k.toFixed(1) : fmt(k)) + "k"; }
+
+  priBox.innerHTML = ['<button type="button" class="chip" data-p="">All</button>'].concat(PRIS.map(function(p){ return '<button type="button" class="chip" data-p="' + p + '"><i class="pri-sw" style="background:var(--pri-' + p + ')"></i>' + PRI[p] + '</button>'; })).join("");
+  if (!Array.isArray(es.pri)) es.pri = es.pri ? [es.pri] : [];
+  function syncPri(){ priBox.querySelectorAll("button").forEach(function(b){ var on = b.dataset.p ? es.pri.indexOf(b.dataset.p) >= 0 : !es.pri.length; b.setAttribute("aria-pressed", on ? "true" : "false"); }); }
+  priBox.addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    var p = b.dataset.p;
+    if (!p) es.pri = [];
+    else { var i = es.pri.indexOf(p); if (i >= 0) es.pri.splice(i, 1); else es.pri.push(p); if (es.pri.length === PRIS.length) es.pri = []; }
+    syncPri(); renderItems(); calc();
+  });
+
+  var PHASE_NAMES = {1:"Phase 1 · run the business and the pipeline", 2:"Phase 2 · multi-channel marketing", 3:"Phase 3 · Yardi integration and AI tools", 4:"Later"};
+  function visible(r){ return r.size && (!es.pri.length || es.pri.indexOf(r.pri) >= 0); }
+  function phaseList(ph){ return R.filter(function(r){ return r.phase === ph && visible(r) && COVERS.indexOf(r.id) < 0; }); }
+
+  function renderItems(){
+    var html = "";
+    [1,2,3,4].forEach(function(ph){
+      var list = R.filter(function(r){ return r.phase === ph && visible(r); });
+      if (!list.length) return;
+      var sel = phaseList(ph), allOn = sel.length && sel.every(function(r){ return es.items[r.id]; });
+      html += '<div class="ph-head"><span class="eyebrow">' + PHASE_NAMES[ph] + '</span><button type="button" class="chip ph-all" data-ph="' + ph + '">' + (allOn ? 'Clear phase ' + ph : 'Select all') + '</button></div>';
+      list.forEach(function(r){
+        var cov = COVERS.indexOf(r.id) >= 0, h = itemH(r), a = adj(r);
+        html += '<label class="opt" data-tip="' + r.id + '"' + (cov ? ' style="opacity:.55"' : '') + '><input type="checkbox" id="item-' + r.id + '" data-id="' + r.id + '"' + (es.items[r.id] ? " checked" : "") + (cov ? " disabled" : "") + '><span>' + esc(r.name) +
+          ' <span class="muted small">' + r.id + '</span> <span class="pri pri-' + r.pri + '">' + PRI[r.pri] + '</span>' + '' +
+          (cov ? '<br><span class="small muted">Covered by the base work</span>' : '') + (FEEDS[r.id] ? '<br><span class="small muted">' + esc(FEEDS[r.id]) + '</span>' : '') + (NOTE[r.id] ? '<br><span class="small muted">' + esc(NOTE[r.id]) + '</span>' : '') + (a ? '<br><span class="ovl">' + esc(a[1]) + '</span>' : '') + '</span>' + hoursCell("i:" + r.id, h, OV.items[r.id] != null) + '</label>';
+      });
+    });
+    itemBox.innerHTML = html || '<p class="muted small">No items match.</p>';
+    itemBox.querySelectorAll("input").forEach(function(inp){
+      inp.addEventListener("change", function(){ if (inp.checked) es.items[inp.dataset.id] = true; else delete es.items[inp.dataset.id]; renderItems(); calc(); });
+    });
+  }
+  itemBox.addEventListener("click", function(e){
+    var b = e.target.closest(".ph-all"); if (!b) return;
+    e.preventDefault();
+    var sel = phaseList(+b.dataset.ph), allOn = sel.every(function(r){ return es.items[r.id]; });
+    sel.forEach(function(r){ if (allOn) delete es.items[r.id]; else es.items[r.id] = true; });
+    renderItems(); calc();
+  });
+  document.getElementById("clearItems").addEventListener("click", function(){ es.items = {}; renderItems(); calc(); });
+
+  /* hover card with the ask's details */
+  var tip = document.createElement("div"); tip.className = "ask-tip"; tip.hidden = true; document.body.appendChild(tip);
+  var RX = {}; R.forEach(function(r){ RX[r.id] = r; });
+  function showTip(el, x, y){
+    var r = RX[el.getAttribute("data-tip")]; if (!r) return;
+    tip.innerHTML = '<div class="req-id">' + r.id + ' · ' + esc(r.area) + ' · phase ' + (r.phase || '–') + '</div><div class="tip-name">' + esc(r.name) + '</div>' +
+      '<div><span class="pri pri-' + r.pri + '">' + PRI[r.pri] + '</span> </div>' +
+      '<div class="eyebrow" style="margin-top:6px">Thalhimer\'s words</div><div class="theirs"><span class="bq">\u201C</span>' + (CALLQ[r.id] ? '' : '<b>' + esc(r.vName) + '.</b> ') + esc(r.vDesc) + '<span class="bq">\u201D</span></div>' +
+      (CALLQ[r.id] ? '<div class="theirs-meta">' + esc(r.vPri) + '</div>' : '') +
+      (adj(r) ? '<p class="ovl"><strong>Overlap:</strong> ' + esc(adj(r)[1]) + '</p>' : '');
+    tip.hidden = false;
+    var w = tip.offsetWidth, hgt = tip.offsetHeight, vw = window.innerWidth, vh = window.innerHeight;
+    var left = Math.min(x + 18, vw - w - 12); if (left < 12) left = 12;
+    var top = y + 14; if (top + hgt > vh - 12) top = Math.max(12, y - hgt - 14);
+    tip.style.left = left + "px"; tip.style.top = top + "px";
+  }
+  itemBox.addEventListener("mousemove", function(e){
+    var el = e.target.closest("[data-tip]");
+    if (!el || e.target.closest(".ph-all")) { tip.hidden = true; return; }
+    showTip(el, e.clientX, e.clientY);
+  });
+  itemBox.addEventListener("mouseleave", function(){ tip.hidden = true; });
+  itemBox.addEventListener("focusin", function(e){
+    var el = e.target.closest("[data-tip]"); if (!el) return;
+    var rc = el.getBoundingClientRect(); showTip(el, rc.left + 40, rc.bottom);
+  });
+  itemBox.addEventListener("focusout", function(){ tip.hidden = true; });
+  window.addEventListener("scroll", function(){ tip.hidden = true; }, {passive:true});
+
+  function calc(){
+    var base = 0, ph = {1:0, 2:0, 3:0, 4:0}, cnt = {1:0, 2:0, 3:0, 4:0}, xp = 0;
+    BASE.forEach(function(x, i){ if (!es.baseOff[i]) base += baseH(i, x); });
+    R.forEach(function(r){ if (es.items[r.id] && r.size && COVERS.indexOf(r.id) < 0) { ph[r.phase] += itemH(r); cnt[r.phase]++; } });
+    var h = base + ph[1] + ph[2] + ph[3] + ph[4], d = h * RATE;
+    store.set("est1", es);
+    document.getElementById("estDollars").textContent = "$" + fmt(d / 1000) + "k";
+    
+    var row = function(label, hours, sub, cls){ return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><td>' + label + '</td><td class="n"><strong>' + (money(hours) || "$0") + '</strong></td></tr>'; };
+    var it = function(n){ return n + (n === 1 ? " item" : " items"); };
+    var html = row("Phase 1", base + ph[1], "Base work " + money(base) + " + " + it(cnt[1]) + " " + money(ph[1])) +
+      row("Phase 2", ph[2], it(cnt[2])) + row("Phase 3", ph[3], it(cnt[3]));
+    if (cnt[4]) html += row("Later", ph[4], it(cnt[4]));
+    html += row("Total", h, "", "tot");
+    document.getElementById("phaseTbl").innerHTML = html;
+  }
+  function hoursCell(){ return ''; }
+  document.getElementById("resetItems").addEventListener("click", function(){ es = {baseOff:{}, items:defaultItems(), pri:[]}; syncPri(); renderBase(); renderItems(); calc(); });
+  syncPri(); renderItems(); calc();
+})();
+</script>
+<script>
+(function(){
+  var deck = document.getElementById("deck"), panel = document.getElementById("proposal");
+  var slides = Array.prototype.slice.call(deck.querySelectorAll(".slide"));
+  var dots = document.getElementById("dkDots"), cnt = document.getElementById("dkCount");
+  var prev = document.getElementById("dkPrev"), next = document.getElementById("dkNext"), full = document.getElementById("dkFull");
+  var i = 0;
+  dots.innerHTML = slides.map(function(s, k){ return '<button type="button" aria-label="Slide ' + (k + 1) + '"></button>'; }).join("");
+  var dotBtns = Array.prototype.slice.call(dots.children);
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.hidden = k !== i; });
+    dotBtns.forEach(function(b, k){ b.setAttribute("aria-current", k === i ? "true" : "false"); });
+    cnt.textContent = (i + 1) + " / " + slides.length;
+    prev.disabled = i === 0; next.disabled = i === slides.length - 1;
+    try { sessionStorage.setItem("thb:slide", i); } catch(e){}
+  }
+  dots.addEventListener("click", function(e){ var k = dotBtns.indexOf(e.target); if (k >= 0) go(k); });
+  prev.addEventListener("click", function(){ go(i - 1); });
+  next.addEventListener("click", function(){ go(i + 1); });
+  deck.addEventListener("click", function(e){ if (document.fullscreenElement === deck && !e.target.closest("button")) go(i + 1); });
+  document.addEventListener("keydown", function(e){
+    if (panel.hidden || e.target.closest('input,textarea,select,[role="tab"]')) return;
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); go(i + 1); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(i - 1); }
+  });
+  if (!document.fullscreenEnabled) full.hidden = true;
+  full.addEventListener("click", function(){
+    try { if (document.fullscreenElement) document.exitFullscreen(); else deck.requestFullscreen(); } catch(e){}
+  });
+  document.addEventListener("fullscreenchange", function(){ full.textContent = document.fullscreenElement ? "Exit full screen" : "Full screen"; });
+  var start = 0; try { start = parseInt(sessionStorage.getItem("thb:slide"), 10) || 0; } catch(e){}
+  go(start);
+
+  var src = document.getElementById("phaseTbl"), tot = document.getElementById("estDollars");
+  function mirror(){
+    var rows = Array.prototype.slice.call(src.querySelectorAll("tr"));
+    var cost = function(r){ return r ? r.cells[r.cells.length - 1].textContent : "–"; };
+    var box = document.getElementById("dkPlanCost");
+    box.innerHTML = document.getElementById("dkPlan").innerHTML;
+    Array.prototype.forEach.call(box.querySelectorAll(".sl-col"), function(c, k){
+      var d = document.createElement("div"); d.className = "ph-cost"; d.textContent = cost(rows[k]); c.appendChild(d);
+    });
+    var t = src.querySelector("tr.tot");
+    document.getElementById("dkTotLine").innerHTML = 'Total, all three phases <b>' + (t ? cost(t) : tot.textContent) + '</b>';
+  }
+  mirror();
+  var mo = new MutationObserver(mirror);
+  mo.observe(src, {childList: true, subtree: true, characterData: true});
+  mo.observe(tot, {childList: true, subtree: true, characterData: true});
+})();
+</script>
+<script>
+(function(){
+  var prop = document.getElementById("proposal"), est = document.getElementById("estimator"), deck = document.getElementById("deck");
+  var slides = Array.prototype.slice.call(deck.querySelectorAll(".slide"));
+  var dots = Array.prototype.slice.call(document.querySelectorAll("#dkDots button"));
+  var nav = document.getElementById("sideNav");
+  nav.innerHTML = '<div class="sn-h">Proposal</div>' + slides.map(function(sl, k){
+    var t = k === 0 ? "Introduction" : (sl.querySelector(".kick") || {}).textContent || ("Slide " + (k + 1));
+    return '<button type="button" data-k="' + k + '"><span class="n">' + (k + 1) + '</span>' + t + '</button>';
+  }).join("") + '<div class="sn-h">Pricing</div><button type="button" data-est="1" class="sn-est"><span class="n">$</span>Scope estimator</button>';
+  var btns = Array.prototype.slice.call(nav.querySelectorAll("button"));
+  function show(which){
+    prop.hidden = which !== "proposal"; est.hidden = which !== "estimator";
+    try { history.replaceState(null, "", which === "estimator" ? "#estimator" : location.pathname); } catch(e){}
+    sync();
+  }
+  nav.addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.est) { show("estimator"); window.scrollTo(0, 0); return; }
+    show("proposal"); if (dots[+b.dataset.k]) dots[+b.dataset.k].click();
+  });
+  function sync(){
+    var cur = est.hidden ? slides.findIndex(function(sl){ return !sl.hidden; }) : -1;
+    btns.forEach(function(b, k){ var on = b.dataset.est ? !est.hidden : (+b.dataset.k === cur); b.setAttribute("aria-current", on ? "true" : "false"); });
+  }
+  new MutationObserver(sync).observe(document.getElementById("dkCount"), {childList: true, characterData: true, subtree: true});
+  show(location.hash === "#estimator" ? "estimator" : "proposal");
+})();
+</script>
+</html>
