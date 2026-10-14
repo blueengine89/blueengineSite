@@ -706,6 +706,8 @@ header.top .viewseg button[aria-pressed="true"]{background:#fff;color:var(--be-n
 .case h3{font:700 20px/1.2 var(--font-d);color:var(--tl-head,#0B3D6B);margin:0;min-height:2.4em}
 .cases{align-items:stretch} .case{grid-template-rows:auto auto auto 1fr}
 .case p{font-size:15px;margin:0;color:var(--ink)}
+.case ul{margin:4px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14.5px;color:var(--ink)}
+.case li::marker{color:#1F8FA8}
 .how{list-style:none;counter-reset:h;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 36px}
 .how li{counter-increment:h;display:grid;grid-template-columns:56px 1fr;gap:4px 14px}
 .how li::before{content:counter(h,decimal-leading-zero);grid-row:1 / span 2;font:800 34px/1 var(--font-d);color:#9BD3DD}
@@ -987,8 +989,8 @@ main{min-width:0}
         <div class="kick">Client results</div>
         <h2>Work we're proud of</h2>
         <div class="cases">
-          <article class="case"><div class="case-logo"><img src="/Client%20Logos/bond_civilutility_logo-v2.png" alt="Bond Civil &amp; Utility Construction"></div><span class="case-tag">Construction</span><h3>Bond Civil &amp; Utility Construction</h3><p>Scenario forecasting by region and department, automated manual processes, and integrations that end double entry.</p></article>
-          <article class="case"><div class="case-logo"><img src="/Client%20Logos/Topgolf-Emblem.png" alt="Topgolf"></div><span class="case-tag">Sports technology</span><h3>Toptracer (Topgolf)</h3><p>Salesforce workflows that manage annual renewals, flag at-risk accounts before they lapse, and show the whole renewal cycle, plus integrations that automate the data moving in and out of Salesforce.</p></article>
+          <article class="case"><div class="case-logo"><img src="/Client%20Logos/bond_civilutility_logo-v2.png" alt="Bond Civil &amp; Utility Construction"></div><span class="case-tag">Construction</span><h3>Bond Civil &amp; Utility Construction</h3><ul><li>Scenario forecasting by region and department</li><li>Automated legacy manual processes</li><li>Integrations that end double entry</li></ul></article>
+          <article class="case"><div class="case-logo"><img src="/Client%20Logos/Topgolf-Emblem.png" alt="Topgolf"></div><span class="case-tag">Sports technology</span><h3>Toptracer (Topgolf)</h3><ul><li>Run recurring revenue for 1,200+ golf facilities worldwide in Salesforce</li><li>Replaced their renewal spreadsheet with live reports and dashboards</li><li>Track every contract from signing to renewal</li><li>Built a mobile pricing tool so reps can quote from their phones</li></ul></article>
         </div>
       </div>
 
