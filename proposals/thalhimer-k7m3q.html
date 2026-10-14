@@ -1009,7 +1009,7 @@ main{min-width:0}
   <section class="panel" id="estimator" role="tabpanel" aria-labelledby="t-estimator" hidden>
     <div class="block">
       <h2>Scope estimator</h2>
-      <p class="muted">Check or uncheck any item to see the estimate change.<span class="no-touch"> Hover an item to read it in your team's own words.</span></p>
+      <p class="muted">The plan below lists every requirement your team provided, plus the additional needs we identified together on our calls. Check or uncheck any item to see the estimate change.<span class="no-touch"> Hover an item to read it in your team's own words.</span></p>
     </div>
     <div class="est">
       <div style="display:grid;gap:16px">
@@ -1178,7 +1178,7 @@ main{min-width:0}
       list.forEach(function(r){
         var cov = COVERS.indexOf(r.id) >= 0, h = itemH(r), a = adj(r);
         html += '<label class="opt" data-tip="' + r.id + '"' + (cov ? ' style="opacity:.55"' : '') + '><input type="checkbox" id="item-' + r.id + '" data-id="' + r.id + '"' + (es.items[r.id] ? " checked" : "") + (cov ? " disabled" : "") + '><span>' + esc(r.name) +
-          ' <span class="muted small">' + r.id + '</span> <span class="pri pri-' + r.pri + '">' + PRI[r.pri] + '</span>' + '' +
+          ' <span class="pri pri-' + r.pri + '">' + PRI[r.pri] + '</span>' + '' +
           (cov ? '<br><span class="small muted">Covered by the base work</span>' : '') + (FEEDS[r.id] ? '<br><span class="small muted">' + esc(FEEDS[r.id]) + '</span>' : '') + (NOTE[r.id] ? '<br><span class="small muted">' + esc(NOTE[r.id]) + '</span>' : '') + (a ? '<br><span class="ovl">' + esc(a[1]) + '</span>' : '') + '</span>' + hoursCell("i:" + r.id, h, OV.items[r.id] != null) + '</label>';
       });
     });
