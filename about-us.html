@@ -139,6 +139,13 @@ body{background:var(--warm);}
 .team-photo-sm{border-radius:14px;overflow:hidden;box-shadow:0 12px 36px rgba(15,28,46,.1);}
 .team-photo-sm img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .6s ease;}
 .team-photo-sm:hover img{transform:scale(1.03);}
+.team-people{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem 1.5rem;}
+.person{flex:0 0 calc(25% - 1.2rem);text-align:center;}
+.person img{width:150px;height:150px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 1rem;border:4px solid #fff;box-shadow:0 12px 30px rgba(15,28,46,.14);}
+.person h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--navy);margin:0 0 .25rem;}
+.person-title{font-size:.95rem;color:var(--light);margin:0 0 .6rem;}
+.person-yrs{font-size:.85rem;color:var(--light);margin:0;}
+.person-yrs b{display:block;font-family:'Epilogue',sans-serif;font-size:1.5rem;color:var(--teal);line-height:1.1;}
 .team-caption{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-top:.75rem;padding-left:.25rem;}
 
 /* ── CTA ── */
@@ -163,6 +170,7 @@ body{background:var(--warm);}
   .jon-img{aspect-ratio:1/1;}
   .team-photos-grid{grid-template-columns:1fr;}
   .team-photos-right{padding-top:0;}
+  .person{flex-basis:calc(50% - .75rem);} .person img{width:120px;height:120px;}
   .team-photo-sm img{aspect-ratio:4/3;}
 }
 @media(max-width:560px){
@@ -330,20 +338,50 @@ body{background:var(--warm);}
   <div class="team-inner">
     <div class="team-header reveal">
       <span class="team-label-tag">The Team</span>
-      <h2 class="team-h2">Small by design. <em>Senior by default.</em></h2>
+      <h2 class="team-h2">Meet some of <em>our team.</em></h2>
     </div>
-    <div class="team-photos-grid">
-      <div class="reveal">
-        <div class="team-photo-main">
-          <img src="/brand_assets/Team Photos/team happy hour.webp" alt="Blue Engine team">
-        </div>
-        <p class="team-caption">The team — Washington, DC</p>
+    <div class="team-people">
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/julie-headshot.jpg" alt="Julie Beshara">
+        <h3>Julie Beshara</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>12+</b> years of Salesforce experience</p>
       </div>
-      <div class="team-photos-right reveal reveal-delay-1">
-        <div class="team-photo-sm">
-          <img src="/brand_assets/Team Photos/team dinner" alt="Team dinner">
-        </div>
-        <p class="team-caption">Team dinner, 2024</p>
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/nicholas-headshot-v2.jpg" alt="Nicholas Zuaro">
+        <h3>Nicholas Zuaro</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>12+</b> years of Salesforce experience</p>
+      </div>
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/geoff-headshot-v2.jpg" alt="Geoff Campbell">
+        <h3>Geoff Campbell</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>7+</b> years of Salesforce experience</p>
+      </div>
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/anumeet-headshot.jpg" alt="Anumeet Kaur">
+        <h3>Anumeet Kaur</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>13+</b> years of Salesforce experience</p>
+      </div>
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/luke-headshot-v2.jpg" alt="Luke Thorson">
+        <h3>Luke Thorson</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>7+</b> years of Salesforce experience</p>
+      </div>
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/teresa-headshot.jpg" alt="Teresa Ventura">
+        <h3>Teresa Ventura</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>10+</b> years of Salesforce experience</p>
+      </div>
+      <div class="person reveal">
+        <img src="/brand_assets/Team Photos/wes.jpg" alt="Wes Childress">
+        <h3>Wes Childress</h3>
+        <p class="person-title">Senior Salesforce Consultant</p>
+        <p class="person-yrs"><b>11+</b> years of Salesforce experience</p>
       </div>
     </div>
   </div>
