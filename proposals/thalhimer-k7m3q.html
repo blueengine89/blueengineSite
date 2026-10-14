@@ -726,6 +726,8 @@ header.top .viewseg button[aria-pressed="true"]{background:#fff;color:var(--be-n
 .pt-row .ab-i{width:36px;height:36px}
 .pt-row > div:nth-child(2) .ab-i{background:#E4E9F2;color:#0B3D6B} .pt-row > div:nth-child(3) .ab-i{background:#FCEBDD;color:#C4650F}
 .tm span{min-height:2.6em}
+#proposal .team{display:flex !important;flex-wrap:wrap;justify-content:center;gap:20px 10px}
+#proposal .team .tm{flex:0 0 calc(25% - 10px)}
 .tm .yrs{display:grid;justify-items:center;gap:0;font-size:12px;line-height:1.25;color:var(--muted);margin-top:6px;padding-top:8px;border-top:2px solid #E3F2F6;min-width:70%}
 .tm .yrs b{font:800 20px/1.1 var(--font-d);color:#1F8FA8}
 .pship{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}
@@ -790,6 +792,7 @@ main{min-width:0}
   #proposal .sl-step .when{font-size:11.5px} #proposal .sl-step b{font-size:15px} #proposal .sl-step span{font-size:13px}
   .rec-cols,#proposal .rec-cols{grid-template-columns:1fr !important}
   .team{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:18px 10px}
+  #proposal .team .tm{flex-basis:calc(50% - 10px)}
   .logo-wall{grid-template-columns:repeat(2,minmax(0,1fr)) !important} .logo-wall .lg{height:100px}
   .logo-wall img{max-height:60px} .logo-wall .lg-bond img{max-height:84px}
   .caps{grid-template-columns:1fr}
@@ -932,8 +935,10 @@ main{min-width:0}
         <h2>Meet some of our team</h2>
                 <div class="team">
           <div class="tm"><img src="/brand_assets/Team%20Photos/jon-headshot-v2.jpg" alt=""><b>Jon Mervis</b><span>Founder and Principal</span><small class="yrs"><b>11+</b> years of Salesforce experience</small></div>
+          <div class="tm"><img src="/brand_assets/Team%20Photos/anumeet-headshot.jpg" alt=""><b>Anumeet Kaur</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>13+</b> years of Salesforce experience</small></div>
           <div class="tm"><img src="/brand_assets/Team%20Photos/nicholas-headshot-v2.jpg" alt=""><b>Nicholas Zuaro</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>12+</b> years of Salesforce experience</small></div>
           <div class="tm"><img src="/brand_assets/Team%20Photos/geoff-headshot-v2.jpg" alt=""><b>Geoff Campbell</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>7+</b> years of Salesforce experience</small></div>
+          <div class="tm"><img src="/brand_assets/Team%20Photos/julie-headshot.jpg" alt=""><b>Julie Beshara</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>12+</b> years of Salesforce experience</small></div>
           <div class="tm"><img src="/brand_assets/Team%20Photos/luke-headshot-v2.jpg" alt=""><b>Luke Thorson</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>7+</b> years of Salesforce experience</small></div>
           <div class="tm"><img src="/brand_assets/Team%20Photos/wes.jpg" alt=""><b>Wes Childress</b><span>Senior Salesforce Consultant</span><small class="yrs"><b>11+</b> years of Salesforce experience</small></div>
         </div>
