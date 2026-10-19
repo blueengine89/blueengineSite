@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nonprofit stories: Salesforce Case Studies | Blue Engine Solutions</title>
+<meta name="description" content="How Blue Engine helped nonprofits like Community Development Long Island and Imadi automate state reporting and track volunteer impact in Salesforce.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A8BB5">
+<link rel="canonical" href="https://www.blueenginesolutions.com/case-studies-nonprofits">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blue Engine Solutions">
+<meta property="og:url" content="https://www.blueenginesolutions.com/case-studies-nonprofits">
+<meta property="og:title" content="Nonprofit stories: Salesforce Case Studies | Blue Engine Solutions">
+<meta property="og:description" content="How Blue Engine helped nonprofits like Community Development Long Island and Imadi automate state reporting and track volunteer impact in Salesforce.">
+<meta property="og:image" content="https://www.blueenginesolutions.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nonprofit stories: Salesforce Case Studies | Blue Engine Solutions">
+<meta name="twitter:description" content="How Blue Engine helped nonprofits like Community Development Long Island and Imadi automate state reporting and track volunteer impact in Salesforce.">
+<meta name="twitter:image" content="https://www.blueenginesolutions.com/og-image.png">
+<link rel="stylesheet" href="/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--warm:#F5F8FB;--mid:#5a6272;--rule:rgba(26,58,92,0.1);--spring:cubic-bezier(.34,1.56,.64,1);
+  --lift-1:0 1px 2px rgba(26,58,92,.05),0 6px 18px -6px rgba(26,58,92,.14);
+  --lift-2:0 2px 4px rgba(26,58,92,.05),0 22px 48px -16px rgba(26,58,92,.28),0 40px 90px -40px rgba(43,140,174,.25);
+  --c-blue:#E3EFF8;--a-blue:#1F6F98;--c-peach:#FBE8DC;--a-peach:#A9502A;--c-sage:#E2EFE6;--a-sage:#2C714C;--c-slate:#E7E8F3;--a-slate:#465090;}
+body{background:var(--warm);}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s var(--spring);}
+.reveal.up{opacity:1;transform:none;}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}
+.label{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep);}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px;}
+
+/* sticky story bar */
+.cs-bar{position:fixed;top:72px;left:0;right:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);box-shadow:0 8px 24px -16px rgba(26,58,92,.35);transform:translateY(-110%);opacity:0;transition:transform .45s var(--spring),opacity .3s;pointer-events:none;}
+.cs-bar.show{transform:none;opacity:1;pointer-events:auto;}
+.cs-bar-in{max-width:1240px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:18px;}
+.seg{display:flex;background:#EEF3F8;border-radius:999px;padding:4px;gap:2px;flex:none;}
+.seg a{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;padding:7px 14px;border-radius:999px;transition:background-color .2s,color .2s;}
+.seg a:hover{background:#fff;}
+.seg a:active{transform:scale(.97);}
+.seg a[aria-current="page"]{background:var(--navy);color:#fff;}
+.chips{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;}
+.chips a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink-mid);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background-color .2s;}
+.chips a:hover{background:#EEF3F8;}
+.chips a i{width:10px;height:10px;border-radius:50%;flex:none;}
+.talk-btn{margin-left:auto;display:inline-flex;align-items:center;gap:10px;flex:none;background:var(--red);color:#fff;text-decoration:none;font-family:'Epilogue',sans-serif;font-size:15px;font-weight:600;padding:5px 16px 5px 5px;border-radius:999px;box-shadow:0 6px 16px -8px rgba(196,48,64,.7);transition:transform .25s var(--spring),background-color .2s;}
+.talk-btn img{width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.7);}
+.talk-btn:hover{background:var(--red-deep);transform:translateY(-1px);}
+.talk-btn:active{transform:scale(.97);}
+
+/* overview hero */
+.ov-hero{position:relative;min-height:640px;padding:11rem 5rem 12rem;color:#fff;overflow:hidden;isolation:isolate;display:flex;align-items:center;}
+.ov-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;}
+.ov-hero .tint{position:absolute;inset:0;background:#1A3A5C;mix-blend-mode:multiply;opacity:.55;z-index:-2;}
+.ov-hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0) 55%),linear-gradient(90deg,rgba(12,30,52,.75),rgba(12,30,52,0) 70%);}
+.ov-in{max-width:1200px;margin:0 auto;width:100%;}
+.ov-hero .label{color:#9fd4e8;display:block;margin-bottom:1.2rem;}
+.ov-hero h1{font-size:clamp(2.8rem,5vw,5.2rem);line-height:1.02;letter-spacing:-.03em;color:#fff;max-width:760px;}
+.ov-hero h1 em{font-style:italic;color:#9fd4e8;}
+.ov-hero p{font-weight:300;line-height:1.7;color:rgba(255,255,255,.85);max-width:540px;margin-top:1.4rem;}
+
+/* path chooser */
+.paths{position:relative;z-index:2;max-width:calc(1200px + 10rem);margin:-8rem auto 0;padding:0 5rem;}
+.paths h2{font-family:'Epilogue',sans-serif;font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:1rem;}
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.path{display:grid;grid-template-columns:42% 1fr;background:#fff;border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--lift-2);transition:transform .45s var(--spring),box-shadow .3s;}
+.path:hover{transform:translateY(-6px);}
+.path:active{transform:scale(.985);}
+.path .ph{position:relative;min-height:260px;}
+.path .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.path .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),rgba(0,0,0,0) 60%);}
+.path .tx{padding:2rem 2rem 1.8rem;display:flex;flex-direction:column;gap:.8rem;}
+.path h3{font-size:2rem;line-height:1.1;letter-spacing:-.03em;color:var(--navy);}
+.path p{font-size:16px;line-height:1.6;color:var(--ink-mid);font-weight:300;}
+.path .go{margin-top:auto;align-self:flex-start;font-family:'Epilogue',sans-serif;font-weight:600;font-size:17px;color:#fff;background:var(--navy);padding:13px 22px;border-radius:999px;display:inline-flex;gap:10px;align-items:center;box-shadow:0 8px 20px -10px rgba(26,58,92,.6);transition:background-color .2s;}
+.path .go span{transition:transform .3s var(--spring);}
+.path:hover .go{background:var(--royal);}
+.path:hover .go span{transform:translateX(5px);}
+
+/* path hero */
+.pg-hero{padding:9.5rem 5rem 4.5rem;background:var(--navy);color:#fff;position:relative;overflow:hidden;isolation:isolate;}
+.pg-hero::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 90% at 90% 0%,rgba(61,166,205,.25),transparent 60%),radial-gradient(40% 70% at 0% 100%,rgba(25,118,210,.2),transparent 65%);}
+.pg-in{max-width:1200px;margin:0 auto;}
+.pg-hero .seg{background:rgba(255,255,255,.1);display:inline-flex;margin-bottom:2rem;}
+.pg-hero .seg a{color:rgba(255,255,255,.85);}
+.pg-hero .seg a:hover{background:rgba(255,255,255,.12);}
+.pg-hero .seg a[aria-current="page"]{background:#fff;color:var(--navy);}
+.pg-hero h1{font-size:clamp(2.4rem,4.4vw,4.4rem);line-height:1.04;letter-spacing:-.03em;color:#fff;}
+.pg-hero h1 em{font-style:italic;color:#9fd4e8;}
+.pg-hero p{font-weight:300;line-height:1.7;color:rgba(255,255,255,.82);max-width:600px;margin-top:1.2rem;}
+
+/* stories */
+.stories{padding:5rem 2rem 2rem;}
+.story{max-width:1240px;margin:0 auto 3rem;border-radius:24px;padding:24px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:2.6rem;align-items:center;scroll-margin-top:150px;box-shadow:var(--lift-1);}
+.story.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);}
+.story.flip .story-photo{order:2;}
+.story-photo{position:relative;margin:0;border-radius:16px;overflow:hidden;align-self:stretch;min-height:440px;}
+.story-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
+.story:hover .story-photo img{transform:scale(1.03);}
+.story-photo .tint{position:absolute;inset:0;mix-blend-mode:multiply;opacity:.16;}
+.story-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0) 40%);}
+.story-photo figcaption{position:absolute;left:22px;bottom:18px;z-index:1;color:#fff;font-family:'Epilogue',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+.story-tx{padding:1.6rem 1.6rem 1.6rem .4rem;}
+.story.flip .story-tx{padding:1.6rem .4rem 1.6rem 1.6rem;}
+.client-mark{display:flex;align-items:center;gap:14px;margin-bottom:1.4rem;min-height:48px;flex-wrap:wrap;}
+.wordmark{font-family:'Playfair Display',serif;font-weight:800;font-size:1.7rem;letter-spacing:-.02em;color:var(--navy);line-height:1;}
+.logo-wide{height:28px;width:auto;}
+.logo-sq{height:52px;width:auto;}
+.logo-imadi{height:60px;width:auto;}
+.mark-sub{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);border-left:1px solid rgba(26,58,92,.25);padding-left:14px;}
+.story h2{font-size:clamp(1.7rem,2.4vw,2.4rem);line-height:1.12;letter-spacing:-.03em;color:var(--navy);margin-bottom:1rem;}
+.story .lede{color:var(--ink-mid);font-weight:300;line-height:1.7;margin-bottom:1.4rem;}
+.fact{display:flex;align-items:baseline;gap:14px;padding:1rem 0;border-top:1px solid rgba(26,58,92,.14);border-bottom:1px solid rgba(26,58,92,.14);margin-bottom:1.3rem;}
+.fact b{font-family:'Playfair Display',serif;font-size:2.7rem;line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.fact span{font-size:15px;line-height:1.45;color:var(--ink-mid);}
+.did{list-style:none;display:grid;gap:.65rem;}
+.did li{position:relative;padding-left:1.6rem;font-size:16px;line-height:1.6;color:var(--ink-mid);}
+.did li::before{content:'';position:absolute;left:0;top:.6em;width:9px;height:9px;border-radius:50%;}
+.c-blue{background:var(--c-blue);}  .c-blue .fact b{color:var(--a-blue);}  .c-blue .did li::before{background:var(--a-blue);} .c-blue .story-photo .tint{background:var(--a-blue);}
+.c-peach{background:var(--c-peach);} .c-peach .fact b{color:var(--a-peach);} .c-peach .did li::before{background:var(--a-peach);} .c-peach .story-photo .tint{background:var(--a-peach);}
+.c-sage{background:var(--c-sage);}  .c-sage .fact b{color:var(--a-sage);}  .c-sage .did li::before{background:var(--a-sage);}  .c-sage .story-photo .tint{background:var(--a-sage);}
+.c-slate{background:var(--c-slate);} .c-slate .fact b{color:var(--a-slate);} .c-slate .did li::before{background:var(--a-slate);} .c-slate .story-photo .tint{background:var(--a-slate);}
+.other{max-width:1240px;margin:0 auto 1rem;display:flex;justify-content:center;}
+.other a{display:inline-flex;align-items:center;gap:10px;font-family:'Epilogue',sans-serif;font-weight:600;color:var(--teal-deep);text-decoration:none;padding:12px 20px;border-radius:999px;border:1px solid var(--teal-border);background:#fff;transition:transform .25s var(--spring),background-color .2s;}
+.other a:hover{background:var(--teal-pale);transform:translateY(-2px);}
+.other a:active{transform:scale(.97);}
+
+/* warm CTA */
+.talk{padding:6rem 2rem 7rem;scroll-margin-top:140px;}
+.talk-card{max-width:1080px;margin:0 auto;background:#E1EFF2;border-radius:28px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);overflow:hidden;box-shadow:var(--lift-1);position:relative;}
+.talk-photo{position:relative;min-height:440px;}
+.talk-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.nameplate{position:absolute;left:28px;bottom:26px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35);}
+.nameplate b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;line-height:1.2;}
+.nameplate span{font-size:14px;opacity:.9;}
+.talk-tx{padding:3.2rem 3.4rem 3.2rem 1.6rem;display:flex;flex-direction:column;justify-content:center;}
+.talk-tx .label{margin-bottom:1rem;}
+.talk-tx h2{font-size:clamp(2rem,3.2vw,3rem);line-height:1.08;letter-spacing:-.03em;color:var(--navy);margin-bottom:1.1rem;}
+.talk-tx h2 em{font-style:italic;color:var(--teal-deep);}
+.talk-tx p{color:var(--ink-mid);font-weight:300;line-height:1.75;margin-bottom:1.8rem;}
+
+@media (max-width:960px){
+  .cs-bar-in{padding:8px 12px;gap:10px;}
+  .chips{display:none;}
+  .seg a{padding:6px 10px;}
+  .talk-btn{font-size:14px;padding:4px 12px 4px 4px;}
+  .talk-btn img{width:28px;height:28px;}
+  .ov-hero{padding:8.5rem 1.25rem 10rem;min-height:520px;}
+  .paths{padding:0 1rem;margin-top:-7rem;}
+  .path-grid{grid-template-columns:1fr;}
+  .path{grid-template-columns:1fr;}
+  .path .ph{min-height:180px;}
+  .pg-hero{padding:8rem 1.25rem 3rem;}
+  .stories{padding:2.5rem .75rem 1rem;}
+  .story,.story.flip{grid-template-columns:1fr;gap:0;padding:12px;border-radius:20px;}
+  .story.flip .story-photo{order:0;}
+  .story-photo{min-height:240px;}
+  .story-tx,.story.flip .story-tx{padding:1.4rem .6rem .8rem;}
+  .mark-sub{border-left:0;padding-left:0;flex-basis:100%;}
+  .client-mark{gap:6px 12px;}
+  .talk{padding:4rem .75rem 5rem;}
+  .talk-card{grid-template-columns:1fr;}
+  .talk-photo{min-height:340px;}
+  .talk-tx{padding:1.4rem 1.4rem 2.2rem;}
+}
+.sm{display:none;}
+@media (max-width:600px){ .cs-bar .t-long,.cs-bar .lg{display:none;} .cs-bar .sm{display:inline;} .cs-bar .seg a{padding:6px 9px;} .cs-bar-in{gap:8px;} }
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.story-photo img,.path,.cs-bar{transition:none}}
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+<script src="/nav.js"></script>
+<div class="cs-bar" id="csBar" aria-label="Story navigation">
+  <div class="cs-bar-in"><div class="chips"><a href="#cdli"><i style="background:var(--a-blue)"></i>CDLI</a><a href="#imadi"><i style="background:var(--a-peach)"></i>Imadi</a></div>
+  <a class="talk-btn" href="#talk" aria-label="Talk to Jon"><img src="/brand_assets/Team%20Photos/jon-headshot.jpg" alt=""><span>Talk<span class="t-long"> to Jon</span></span></a></div>
+</div>
+
+<section class="pg-hero" data-hero>
+  <div class="pg-in">
+    <h1>Less paperwork, <em>more mission.</em></h1>
+    <p>How two nonprofits got hours back and finally saw their impact in one place.</p>
+  </div>
+</section>
+<section class="stories">
+<article class="story c-blue reveal" id="cdli">
+  <figure class="story-photo"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80" alt="A small model house with a set of keys" loading="lazy"><div class="tint"></div><figcaption>Nonprofit · Long Island</figcaption></figure>
+  <div class="story-tx">
+    <div class="client-mark"><span class="wordmark">CDLI</span><span class="mark-sub">Community Development Long Island</span></div>
+    <h2>State reports, built automatically and on demand.</h2>
+    <p class="lede">CDLI&#x27;s required state reports were built entirely by hand every cycle. We automated the whole workflow in Salesforce.</p>
+    <div class="fact"><b>100%</b><span>of the manual reporting process eliminated</span></div>
+    <ul class="did"><li>Data that used to be pulled from several sources now lives in one place</li><li>Records reconcile automatically, so the numbers match</li><li>Accurate reports in the state&#x27;s format, whenever staff need them</li><li>Hours of staff time freed up every reporting cycle</li></ul>
+  </div>
+</article>
+<article class="story c-peach flip reveal" id="imadi">
+  <figure class="story-photo"><img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?auto=format&fit=crop&w=1400&q=80" alt="Kids at summer camp playing with a rainbow parachute on a hillside" style="object-position:center 60%" loading="lazy"><div class="tint"></div><figcaption>Nonprofit · Maryland and DC</figcaption></figure>
+  <div class="story-tx">
+    <div class="client-mark"><span class="wordmark">Imadi</span></div>
+    <h2>Every volunteer&#x27;s impact, tracked as it happens.</h2>
+    <p class="lede">Imadi surrounds families of children with complex medical conditions with support, from case management to summer camp. We rebuilt Imadi&#x27;s messy contact records into a clean data model, then added text-message tracking.</p>
+    <div class="fact"><b>100%</b><span>of volunteer impact tracked</span></div>
+    <ul class="did"><li>A clean, simple data model in place of a tangled contact setup</li><li>Automated text messages that capture volunteer activity</li><li>Real-time numbers on the difference volunteers make</li></ul>
+  </div>
+</article>
+
+<div class="other"><a href="/case-studies-businesses">See business stories <span aria-hidden="true">→</span></a></div>
+</section>
+<section class="talk" id="talk">
+  <div class="talk-card reveal">
+    <div class="talk-photo"><img src="/brand_assets/Team%20Photos/jon-headshot.jpg" alt="Jon Mervis, founder of Blue Engine Solutions">
+      <div class="nameplate"><b>Jon Mervis</b><span>Founder, Blue Engine Solutions</span></div></div>
+    <div class="talk-tx">
+      <span class="label">Your story could be next</span>
+      <h2>How can we <em>help you?</em></h2>
+      <p>Book 30 minutes with me. I'll listen, ask a few good questions, and give you an honest take on what would help. If we're not the right fit, I'll tell you that too.</p>
+      <div><a href="/contact/" class="btn btn-blue">Book a call with Jon</a></div>
+    </div>
+  </div>
+</section>
+<div id="site-footer"></div>
+<script src="/footer.js"></script>
+<script>
+const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); }), { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const bar = document.getElementById('csBar'), hero = document.querySelector('[data-hero]');
+function onScroll(){
+  document.querySelector('nav')?.classList.toggle('scrolled', window.scrollY > 40);
+  bar.classList.toggle('show', hero.getBoundingClientRect().bottom < 140);
+}
+window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+</script>
+</body>
+</html>

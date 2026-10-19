@@ -1,213 +1,230 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salesforce Consulting Case Studies & Results | Blue Engine Solutions</title>
+<title>Salesforce Consulting Case Studies &amp; Results | Blue Engine Solutions</title>
 <meta name="description" content="See how Blue Engine has helped nonprofits and growing businesses clean up Salesforce, automate workflows, and reduce costs. Real projects, real results.">
-<meta name="keywords" content="salesforce consulting case studies, salesforce implementation results, salesforce nonprofit case study, salesforce consulting success stories">
-<!-- Favicon & Manifest -->
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1A8BB5">
-<!-- Canonical -->
 <link rel="canonical" href="https://www.blueenginesolutions.com/case-studies">
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Blue Engine Solutions">
 <meta property="og:url" content="https://www.blueenginesolutions.com/case-studies">
-<meta property="og:title" content="Salesforce Consulting Case Studies & Results | Blue Engine Solutions">
+<meta property="og:title" content="Salesforce Consulting Case Studies &amp; Results | Blue Engine Solutions">
 <meta property="og:description" content="See how Blue Engine has helped nonprofits and growing businesses clean up Salesforce, automate workflows, and reduce costs. Real projects, real results.">
 <meta property="og:image" content="https://www.blueenginesolutions.com/og-image.png">
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Salesforce Consulting Case Studies & Results | Blue Engine Solutions">
+<meta name="twitter:title" content="Salesforce Consulting Case Studies &amp; Results | Blue Engine Solutions">
 <meta name="twitter:description" content="See how Blue Engine has helped nonprofits and growing businesses clean up Salesforce, automate workflows, and reduce costs. Real projects, real results.">
 <meta name="twitter:image" content="https://www.blueenginesolutions.com/og-image.png">
 <link rel="stylesheet" href="/brand.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--sand:#EEF3F8;--warm:#F5F8FB;--rust:#8B1A2A;--green:#2a7a5a;--mid:#5a6272;--light:#8e97a8;--rule:rgba(26,58,92,0.1);}
+:root{--warm:#F5F8FB;--mid:#5a6272;--rule:rgba(26,58,92,0.1);--spring:cubic-bezier(.34,1.56,.64,1);
+  --lift-1:0 1px 2px rgba(26,58,92,.05),0 6px 18px -6px rgba(26,58,92,.14);
+  --lift-2:0 2px 4px rgba(26,58,92,.05),0 22px 48px -16px rgba(26,58,92,.28),0 40px 90px -40px rgba(43,140,174,.25);
+  --c-blue:#E3EFF8;--a-blue:#1F6F98;--c-peach:#FBE8DC;--a-peach:#A9502A;--c-sage:#E2EFE6;--a-sage:#2C714C;--c-slate:#E7E8F3;--a-slate:#465090;}
 body{background:var(--warm);}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}.reveal.up{opacity:1;transform:none;}
-.reveal-delay-1{transition-delay:.12s;}.reveal-delay-2{transition-delay:.24s;}.reveal-delay-3{transition-delay:.36s;}.reveal-delay-4{transition-delay:.48s;}
-/* .btn classes — defined in brand.css */
-.section-label{font-family:'Epilogue',sans-serif;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;display:block;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s var(--spring);}
+.reveal.up{opacity:1;transform:none;}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}
+.label{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep);}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px;}
 
-/* ── HERO ── */
-.page-hero{position:relative;padding:11rem 5rem 7rem;overflow:hidden;background:var(--navy);}
-.page-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(59,143,212,.15),transparent 65%);pointer-events:none;}
-.page-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,95,42,.08),transparent 65%);pointer-events:none;}
-.page-hero-inner{max-width:860px;position:relative;z-index:1;}
-.hero-eyebrow{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
-.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,5rem);line-height:1.05;color:white;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .25s forwards;}
-.hero-h1 em{font-style:italic;color:#6ab4e8;}
-.hero-sub{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.58);font-weight:300;max-width:560px;opacity:0;animation:fadeUp .8s .4s forwards;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* sticky story bar */
+.cs-bar{position:fixed;top:72px;left:0;right:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);box-shadow:0 8px 24px -16px rgba(26,58,92,.35);transform:translateY(-110%);opacity:0;transition:transform .45s var(--spring),opacity .3s;pointer-events:none;}
+.cs-bar.show{transform:none;opacity:1;pointer-events:auto;}
+.cs-bar-in{max-width:1240px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:18px;}
+.seg{display:flex;background:#EEF3F8;border-radius:999px;padding:4px;gap:2px;flex:none;}
+.seg a{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:600;color:var(--ink-mid);text-decoration:none;padding:7px 14px;border-radius:999px;transition:background-color .2s,color .2s;}
+.seg a:hover{background:#fff;}
+.seg a:active{transform:scale(.97);}
+.seg a[aria-current="page"]{background:var(--navy);color:#fff;}
+.chips{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;}
+.chips a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink-mid);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background-color .2s;}
+.chips a:hover{background:#EEF3F8;}
+.chips a i{width:10px;height:10px;border-radius:50%;flex:none;}
+.talk-btn{margin-left:auto;display:inline-flex;align-items:center;gap:10px;flex:none;background:var(--red);color:#fff;text-decoration:none;font-family:'Epilogue',sans-serif;font-size:15px;font-weight:600;padding:5px 16px 5px 5px;border-radius:999px;box-shadow:0 6px 16px -8px rgba(196,48,64,.7);transition:transform .25s var(--spring),background-color .2s;}
+.talk-btn img{width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.7);}
+.talk-btn:hover{background:var(--red-deep);transform:translateY(-1px);}
+.talk-btn:active{transform:scale(.97);}
 
-/* ── STATS STRIP ── */
-.stats-strip{background:var(--sand);border-bottom:1px solid var(--rule);padding:4rem 5rem;}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;}
-.stat-block{padding:1.5rem;}
-.stat-num{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--navy);line-height:1;font-weight:700;}
-.stat-label{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-top:.5rem;}
+/* overview hero */
+.ov-hero{position:relative;min-height:640px;padding:11rem 5rem 12rem;color:#fff;overflow:hidden;isolation:isolate;display:flex;align-items:center;}
+.ov-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;}
+.ov-hero .tint{position:absolute;inset:0;background:#1A3A5C;mix-blend-mode:multiply;opacity:.55;z-index:-2;}
+.ov-hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0) 55%),linear-gradient(90deg,rgba(12,30,52,.75),rgba(12,30,52,0) 70%);}
+.ov-in{max-width:1200px;margin:0 auto;width:100%;}
+.ov-hero .label{color:#9fd4e8;display:block;margin-bottom:1.2rem;}
+.ov-hero h1{font-size:clamp(2.8rem,5vw,5.2rem);line-height:1.02;letter-spacing:-.03em;color:#fff;max-width:760px;}
+.ov-hero h1 em{font-style:italic;color:#9fd4e8;}
+.ov-hero p{font-weight:300;line-height:1.7;color:rgba(255,255,255,.85);max-width:540px;margin-top:1.4rem;}
 
-/* ── CASES ── */
-.cases-section{background:var(--warm);padding:9rem 5rem;}
-.cases-inner{max-width:1200px;margin:0 auto;}
-.cases-section .section-label{margin-bottom:1rem;}
-.section-big{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3.5rem);line-height:1.1;color:var(--navy);margin-bottom:3.5rem;}
-.section-big em{font-style:italic;color:var(--teal);}
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.case-card{background:white;border-radius:8px;overflow:hidden;border:1px solid rgba(15,28,46,.06);transition:transform .3s,box-shadow .3s;}
-.case-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);}
-.case-header{height:150px;display:flex;align-items:center;justify-content:center;}
-.chbg1{background:linear-gradient(135deg,#1a3a5f,#2a6a9a);}
-.chbg2{background:linear-gradient(135deg,#2a4a1a,#3a8a4a);}
-.chbg3{background:linear-gradient(135deg,#3a1a10,#8a4a1a);}
-.case-client-name{font-family:'Playfair Display',serif;font-size:2.25rem;color:rgba(255,255,255,.2);font-style:italic;}
-.case-body{padding:2rem;}
-.case-client{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;}
-.case-stat{font-family:'Playfair Display',serif;font-size:3rem;color:var(--navy);line-height:1;font-weight:700;}
-.case-stat-label{font-size:.78rem;font-weight:600;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin:.4rem 0 1rem;}
-.case-desc{font-size:.875rem;line-height:1.75;color:var(--mid);font-weight:300;}
+/* path chooser */
+.paths{position:relative;z-index:2;max-width:calc(1200px + 10rem);margin:-8rem auto 0;padding:0 5rem;}
+.paths h2{font-family:'Epilogue',sans-serif;font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:1rem;}
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.path{display:grid;grid-template-columns:42% 1fr;background:#fff;border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--lift-2);transition:transform .45s var(--spring),box-shadow .3s;}
+.path:hover{transform:translateY(-6px);}
+.path:active{transform:scale(.985);}
+.path .ph{position:relative;min-height:260px;}
+.path .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.path .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),rgba(0,0,0,0) 60%);}
+.path .tx{padding:2rem 2rem 1.8rem;display:flex;flex-direction:column;gap:.8rem;}
+.path h3{font-size:2rem;line-height:1.1;letter-spacing:-.03em;color:var(--navy);}
+.path p{font-size:16px;line-height:1.6;color:var(--ink-mid);font-weight:300;}
+.path .go{margin-top:auto;align-self:flex-start;font-family:'Epilogue',sans-serif;font-weight:600;font-size:17px;color:#fff;background:var(--navy);padding:13px 22px;border-radius:999px;display:inline-flex;gap:10px;align-items:center;box-shadow:0 8px 20px -10px rgba(26,58,92,.6);transition:background-color .2s;}
+.path .go span{transition:transform .3s var(--spring);}
+.path:hover .go{background:var(--royal);}
+.path:hover .go span{transform:translateX(5px);}
 
-/* ── PULLQUOTE ── */
-.pullquote{padding:7rem 5rem;background:var(--sand);text-align:center;position:relative;overflow:hidden;}
-.pullquote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:20rem;line-height:.8;color:rgba(15,28,46,.05);position:absolute;top:-2rem;left:2rem;pointer-events:none;}
-.pq-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;}
-.pq-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,2.5vw,2.4rem);line-height:1.4;color:var(--navy);margin-bottom:2rem;}
-.pq-attribution{display:flex;align-items:center;justify-content:center;gap:1rem;}
-.pq-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--rule);flex-shrink:0;}
-.pq-source{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-align:left;}
-.pq-source span{color:var(--red);display:block;}
+/* path hero */
+.pg-hero{padding:9.5rem 5rem 4.5rem;background:var(--navy);color:#fff;position:relative;overflow:hidden;isolation:isolate;}
+.pg-hero::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 90% at 90% 0%,rgba(61,166,205,.25),transparent 60%),radial-gradient(40% 70% at 0% 100%,rgba(25,118,210,.2),transparent 65%);}
+.pg-in{max-width:1200px;margin:0 auto;}
+.pg-hero .seg{background:rgba(255,255,255,.1);display:inline-flex;margin-bottom:2rem;}
+.pg-hero .seg a{color:rgba(255,255,255,.85);}
+.pg-hero .seg a:hover{background:rgba(255,255,255,.12);}
+.pg-hero .seg a[aria-current="page"]{background:#fff;color:var(--navy);}
+.pg-hero h1{font-size:clamp(2.4rem,4.4vw,4.4rem);line-height:1.04;letter-spacing:-.03em;color:#fff;}
+.pg-hero h1 em{font-style:italic;color:#9fd4e8;}
+.pg-hero p{font-weight:300;line-height:1.7;color:rgba(255,255,255,.82);max-width:600px;margin-top:1.2rem;}
 
-/* ── FINAL CTA ── */
-.final-cta{padding:9rem 5rem;text-align:center;position:relative;overflow:hidden;background:var(--warm);}
-.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(26,95,168,.05),transparent 65%);pointer-events:none;}
-.final-cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;}
-.final-cta-tag{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;display:block;}
-.final-cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.75rem);line-height:1.1;color:var(--navy);margin-bottom:1.25rem;}
-.final-cta-title em{font-style:italic;color:var(--teal);}
-.final-cta-sub{font-size:1rem;color:var(--mid);font-weight:300;line-height:1.78;margin-bottom:2.5rem;}
-.final-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.final-note{font-size:.8rem;color:var(--light);margin-top:1.5rem;font-style:italic;}
+/* stories */
+.stories{padding:5rem 2rem 2rem;}
+.story{max-width:1240px;margin:0 auto 3rem;border-radius:24px;padding:24px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:2.6rem;align-items:center;scroll-margin-top:150px;box-shadow:var(--lift-1);}
+.story.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);}
+.story.flip .story-photo{order:2;}
+.story-photo{position:relative;margin:0;border-radius:16px;overflow:hidden;align-self:stretch;min-height:440px;}
+.story-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
+.story:hover .story-photo img{transform:scale(1.03);}
+.story-photo .tint{position:absolute;inset:0;mix-blend-mode:multiply;opacity:.16;}
+.story-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0) 40%);}
+.story-photo figcaption{position:absolute;left:22px;bottom:18px;z-index:1;color:#fff;font-family:'Epilogue',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+.story-tx{padding:1.6rem 1.6rem 1.6rem .4rem;}
+.story.flip .story-tx{padding:1.6rem .4rem 1.6rem 1.6rem;}
+.client-mark{display:flex;align-items:center;gap:14px;margin-bottom:1.4rem;min-height:48px;flex-wrap:wrap;}
+.wordmark{font-family:'Playfair Display',serif;font-weight:800;font-size:1.7rem;letter-spacing:-.02em;color:var(--navy);line-height:1;}
+.logo-wide{height:28px;width:auto;}
+.logo-sq{height:52px;width:auto;}
+.logo-imadi{height:60px;width:auto;}
+.mark-sub{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);border-left:1px solid rgba(26,58,92,.25);padding-left:14px;}
+.story h2{font-size:clamp(1.7rem,2.4vw,2.4rem);line-height:1.12;letter-spacing:-.03em;color:var(--navy);margin-bottom:1rem;}
+.story .lede{color:var(--ink-mid);font-weight:300;line-height:1.7;margin-bottom:1.4rem;}
+.fact{display:flex;align-items:baseline;gap:14px;padding:1rem 0;border-top:1px solid rgba(26,58,92,.14);border-bottom:1px solid rgba(26,58,92,.14);margin-bottom:1.3rem;}
+.fact b{font-family:'Playfair Display',serif;font-size:2.7rem;line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.fact span{font-size:15px;line-height:1.45;color:var(--ink-mid);}
+.did{list-style:none;display:grid;gap:.65rem;}
+.did li{position:relative;padding-left:1.6rem;font-size:16px;line-height:1.6;color:var(--ink-mid);}
+.did li::before{content:'';position:absolute;left:0;top:.6em;width:9px;height:9px;border-radius:50%;}
+.c-blue{background:var(--c-blue);}  .c-blue .fact b{color:var(--a-blue);}  .c-blue .did li::before{background:var(--a-blue);} .c-blue .story-photo .tint{background:var(--a-blue);}
+.c-peach{background:var(--c-peach);} .c-peach .fact b{color:var(--a-peach);} .c-peach .did li::before{background:var(--a-peach);} .c-peach .story-photo .tint{background:var(--a-peach);}
+.c-sage{background:var(--c-sage);}  .c-sage .fact b{color:var(--a-sage);}  .c-sage .did li::before{background:var(--a-sage);}  .c-sage .story-photo .tint{background:var(--a-sage);}
+.c-slate{background:var(--c-slate);} .c-slate .fact b{color:var(--a-slate);} .c-slate .did li::before{background:var(--a-slate);} .c-slate .story-photo .tint{background:var(--a-slate);}
+.other{max-width:1240px;margin:0 auto 1rem;display:flex;justify-content:center;}
+.other a{display:inline-flex;align-items:center;gap:10px;font-family:'Epilogue',sans-serif;font-weight:600;color:var(--teal-deep);text-decoration:none;padding:12px 20px;border-radius:999px;border:1px solid var(--teal-border);background:#fff;transition:transform .25s var(--spring),background-color .2s;}
+.other a:hover{background:var(--teal-pale);transform:translateY(-2px);}
+.other a:active{transform:scale(.97);}
 
-@media(max-width:960px){
-  .page-hero{padding:9rem 1.5rem 5rem;}
-  .stats-strip{padding:3rem 1.5rem;}.stats-inner{grid-template-columns:1fr;}
-  .cases-section,.pullquote,.final-cta{padding:5rem 1.5rem;}
-  .cases-grid{grid-template-columns:1fr;}
+/* warm CTA */
+.talk{padding:6rem 2rem 7rem;scroll-margin-top:140px;}
+.talk-card{max-width:1080px;margin:0 auto;background:#E1EFF2;border-radius:28px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);overflow:hidden;box-shadow:var(--lift-1);position:relative;}
+.talk-photo{position:relative;min-height:440px;}
+.talk-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.nameplate{position:absolute;left:28px;bottom:26px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35);}
+.nameplate b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;line-height:1.2;}
+.nameplate span{font-size:14px;opacity:.9;}
+.talk-tx{padding:3.2rem 3.4rem 3.2rem 1.6rem;display:flex;flex-direction:column;justify-content:center;}
+.talk-tx .label{margin-bottom:1rem;}
+.talk-tx h2{font-size:clamp(2rem,3.2vw,3rem);line-height:1.08;letter-spacing:-.03em;color:var(--navy);margin-bottom:1.1rem;}
+.talk-tx h2 em{font-style:italic;color:var(--teal-deep);}
+.talk-tx p{color:var(--ink-mid);font-weight:300;line-height:1.75;margin-bottom:1.8rem;}
+
+@media (max-width:960px){
+  .cs-bar-in{padding:8px 12px;gap:10px;}
+  .chips{display:none;}
+  .seg a{padding:6px 10px;}
+  .talk-btn{font-size:14px;padding:4px 12px 4px 4px;}
+  .talk-btn img{width:28px;height:28px;}
+  .ov-hero{padding:8.5rem 1.25rem 10rem;min-height:520px;}
+  .paths{padding:0 1rem;margin-top:-7rem;}
+  .path-grid{grid-template-columns:1fr;}
+  .path{grid-template-columns:1fr;}
+  .path .ph{min-height:180px;}
+  .pg-hero{padding:8rem 1.25rem 3rem;}
+  .stories{padding:2.5rem .75rem 1rem;}
+  .story,.story.flip{grid-template-columns:1fr;gap:0;padding:12px;border-radius:20px;}
+  .story.flip .story-photo{order:0;}
+  .story-photo{min-height:240px;}
+  .story-tx,.story.flip .story-tx{padding:1.4rem .6rem .8rem;}
+  .mark-sub{border-left:0;padding-left:0;flex-basis:100%;}
+  .client-mark{gap:6px 12px;}
+  .talk{padding:4rem .75rem 5rem;}
+  .talk-card{grid-template-columns:1fr;}
+  .talk-photo{min-height:340px;}
+  .talk-tx{padding:1.4rem 1.4rem 2.2rem;}
 }
+.sm{display:none;}
+@media (max-width:600px){ .cs-bar .t-long,.cs-bar .lg{display:none;} .cs-bar .sm{display:inline;} .cs-bar .seg a{padding:6px 9px;} .cs-bar-in{gap:8px;} }
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.story-photo img,.path,.cs-bar{transition:none}}
 </style>
 </head>
 <body>
-
 <div id="site-nav"></div>
 <script src="/nav.js"></script>
-
-<!-- HERO -->
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <span class="hero-eyebrow">Case Studies · Results That Speak</span>
-    <h1 class="hero-h1">Work we're<br><em>proud of.</em></h1>
-    <p class="hero-sub">Real clients, real challenges, real outcomes. Here's a look at what happens when you have the right partner in your corner.</p>
-  </div>
-</section>
-
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-block reveal">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Manual Reporting Automated</div>
-    </div>
-    <div class="stat-block reveal reveal-delay-1">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Impact Tracked</div>
-    </div>
-    <div class="stat-block reveal reveal-delay-2">
-      <div class="stat-num">Improved</div>
-      <div class="stat-label">Churn &amp; Renewal Outcomes</div>
-    </div>
-  </div>
+<div class="cs-bar" id="csBar" aria-label="Story navigation">
+  <div class="cs-bar-in"><div class="seg" role="group" aria-label="Choose a path"><a href="/case-studies" aria-current="page"><span class="lg">All stories</span><span class="sm">All</span></a><a href="/case-studies-nonprofits">Nonprofits</a><a href="/case-studies-businesses">Businesses</a></div><div class="chips"></div>
+  <a class="talk-btn" href="#talk" aria-label="Talk to Jon"><img src="/brand_assets/Team%20Photos/jon-headshot.jpg" alt=""><span>Talk<span class="t-long"> to Jon</span></span></a></div>
 </div>
 
-<!-- CASES -->
-<section class="cases-section">
-  <div class="cases-inner">
-    <span class="section-label reveal">Client Stories</span>
-    <h2 class="section-big reveal reveal-delay-1">Transformations that <em>matter.</em></h2>
-    <div class="cases-grid">
-      <div class="case-card reveal">
-        <div class="case-header chbg1"><div class="case-client-name">CDLI</div></div>
-        <div class="case-body">
-          <div class="case-client">CDLI — Nonprofit, Long Island</div>
-          <div class="case-stat">100%</div>
-          <div class="case-stat-label">Manual Reporting Process Eliminated</div>
-          <p class="case-desc">Their required state reports were built entirely by hand — pulling data from multiple sources, reconciling records, and formatting outputs every cycle. We automated the entire workflow in Salesforce, delivering accurate, on-demand reports and freeing up hours of staff time.</p>
-        </div>
-      </div>
-      <div class="case-card reveal reveal-delay-1">
-        <div class="case-header chbg2"><div class="case-client-name">Imadi</div></div>
-        <div class="case-body">
-          <div class="case-client">Imadi — Human Services</div>
-          <div class="case-stat">100%</div>
-          <div class="case-stat-label">Volunteer Impact Tracked</div>
-          <p class="case-desc">Transformed messy contact architecture into a clean data model, then built automated SMS tracking to measure real volunteer impact in real time.</p>
-        </div>
-      </div>
-      <div class="case-card reveal reveal-delay-2">
-        <div class="case-header chbg3"><div class="case-client-name">Toptracer</div></div>
-        <div class="case-body">
-          <div class="case-client">Toptracer — Sports Technology</div>
-          <div class="case-stat">Optimized</div>
-          <div class="case-stat-label">Annual Renewal &amp; Retention Workflows</div>
-          <p class="case-desc">Built Salesforce workflows to proactively manage annual renewals, surface at-risk accounts before they lapsed, and give the team clear visibility into the full renewal cycle — reducing churn and improving outcomes across the board.</p>
-        </div>
-      </div>
+<section class="ov-hero" data-hero>
+  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80" alt="">
+  <div class="tint"></div>
+  <div class="ov-in">
+    <span class="label">Client stories</span>
+    <h1>Work we're <em>proud of.</em></h1>
+    <p>We're passionate about helping people do their best work. Here's what that looks like for a few of our clients.</p>
+  </div>
+</section>
+<section class="paths" aria-labelledby="choose">
+  <h2 id="choose">Choose your path</h2>
+  <div class="path-grid">
+    <a class="path reveal" href="/case-studies-nonprofits">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1650158569555-c4e8f00ef263?auto=format&fit=crop&w=900&q=80" alt="Three smiling boys riding in a wagon outdoors"></div>
+  <div class="tx"><h3>Nonprofits</h3><p>Reporting that builds itself, and volunteer impact you can finally see.</p><span class="go">See the results <span aria-hidden="true">→</span></span></div>
+</a>
+    <a class="path reveal d1" href="/case-studies-businesses">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1571158096385-a56767c1f57c?auto=format&fit=crop&w=900&q=80" alt="A golfer at a driving range"></div>
+  <div class="tx"><h3>Businesses</h3><p>Recurring revenue at worldwide scale, and a pipeline leaders read at a glance.</p><span class="go">See the results <span aria-hidden="true">→</span></span></div>
+</a>
+  </div>
+</section>
+<section class="talk" id="talk">
+  <div class="talk-card reveal">
+    <div class="talk-photo"><img src="/brand_assets/Team%20Photos/jon-headshot.jpg" alt="Jon Mervis, founder of Blue Engine Solutions">
+      <div class="nameplate"><b>Jon Mervis</b><span>Founder, Blue Engine Solutions</span></div></div>
+    <div class="talk-tx">
+      <span class="label">Your story could be next</span>
+      <h2>How can we <em>help you?</em></h2>
+      <p>Book 30 minutes with me. I'll listen, ask a few good questions, and give you an honest take on what would help. If we're not the right fit, I'll tell you that too.</p>
+      <div><a href="/contact/" class="btn btn-blue">Book a call with Jon</a></div>
     </div>
   </div>
 </section>
-
-<!-- PULLQUOTE -->
-<div class="pullquote reveal">
-  <div class="pq-inner">
-    <p class="pq-text">"Most CRM consultants can push the right buttons. The best ones see around corners — they understand your real business needs and help you actually move the needle."</p>
-    <div class="pq-attribution">
-      <img class="pq-avatar" src="/brand_assets/Team Photos/founder headshot.webp" alt="Jon Mervis">
-      <span class="pq-source">Jon Mervis<span>Founder, Blue Engine Solutions</span></span>
-    </div>
-  </div>
-</div>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="final-cta-inner">
-    <span class="final-cta-tag reveal">Ready to Start?</span>
-    <h2 class="final-cta-title reveal reveal-delay-1">Let's write your<br><em>success story.</em></h2>
-    <p class="final-cta-sub reveal reveal-delay-2">Get a free Salesforce health check and see exactly where you stand — no pitch, no pressure.</p>
-    <div class="final-cta-btns reveal reveal-delay-3">
-      <a href="/contact/" class="btn btn-blue">Schedule a call</a>
-      <a href="/health-assessment/" class="btn btn-outline-dark">Claim your free health check →</a>
-    </div>
-    <p class="final-note reveal reveal-delay-4">Free assessment · No commitment · ~30 minutes</p>
-  </div>
-</section>
-
 <div id="site-footer"></div>
 <script src="/footer.js"></script>
-
 <script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
-}, { threshold: 0.1 });
+const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); }), { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-window.addEventListener('scroll', () => {
+const bar = document.getElementById('csBar'), hero = document.querySelector('[data-hero]');
+function onScroll(){
   document.querySelector('nav')?.classList.toggle('scrolled', window.scrollY > 40);
-});
+  bar.classList.toggle('show', hero.getBoundingClientRect().bottom < 140);
+}
+window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 </script>
 </body>
 </html>

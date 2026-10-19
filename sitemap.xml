@@ -32,9 +32,21 @@
   </url>
   <url>
     <loc>https://www.blueenginesolutions.com/case-studies</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/case-studies-nonprofits</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/case-studies-businesses</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.blueenginesolutions.com/health-assessment</loc>
