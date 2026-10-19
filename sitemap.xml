@@ -138,4 +138,28 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/blog/when-salesforce-doesnt-fit-customizing-salesforce-around-your-workflow</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/blog/whats-included-in-a-salesforce-health-check-and-why-you-need-one</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/blog/5-common-salesforce-challenges-and-how-blue-engine-solutions-solves-them</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/blog/team-photos</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

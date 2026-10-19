@@ -57,6 +57,7 @@
 
 <article class="post-body">
   <div class="post-body-inner">
+<figure class="post-figure post-figure--wide"><img src="/blog/images/salsa-engage-gender.jpg" alt="Gender-neutral restroom sign, illustrating the Gender field issue in the Salsa Engage Salesforce integration" width="800" height="584" fetchpriority="high" decoding="async"></figure>
 <p>Salsa Engage offers a native integration with Salesforce NPSP, which for the most part works great. But I just finished a Salsa Engage integration with Salesforce, and the documentation didn’t cover a few important things. That meant extra time spent figuring it out, so I’ll try to save you at least one headache by explaining the Gender dilemma.</p>
 <p>In Salsa Engage, there is a standard Gender field that isn’t visible or available on the Supporter page. But it exists, and it isn’t mapped to the existing Gender field in Salesforce either.</p>
 <p>The integration created a new “Gender (Salsa)” field in Salesforce, even though the system already has one. And the mapping between that new field and the Gender field in Salsa is locked. Even with the field mapping tool, you can’t simply connect the existing Gender field in Salesforce to the standard Gender field in Salsa.</p>

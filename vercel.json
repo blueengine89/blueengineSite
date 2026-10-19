@@ -45,7 +45,7 @@
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug(salsa-integration-with-salesforce|how-far-is-6-feet-oh-its-182-chickpeas|why-is-the-mailchimp-salesforce-integration-not-working|seeing-duplicates-fix-itbefore-everyone-goes-cross-eyed|the-best-and-worst-salesforce-consultants-in-washington-dc|love-what-you-do|salesforce-vs-hubspot-whats-the-best-crm-for-me|salesforce-highlights-steven)/:rest*",
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug(when-salesforce-doesnt-fit-customizing-salesforce-around-your-workflow|whats-included-in-a-salesforce-health-check-and-why-you-need-one|5-common-salesforce-challenges-and-how-blue-engine-solutions-solves-them|team-photos|salsa-integration-with-salesforce|how-far-is-6-feet-oh-its-182-chickpeas|why-is-the-mailchimp-salesforce-integration-not-working|seeing-duplicates-fix-itbefore-everyone-goes-cross-eyed|the-best-and-worst-salesforce-consultants-in-washington-dc|love-what-you-do|salesforce-vs-hubspot-whats-the-best-crm-for-me|salesforce-highlights-steven)/:rest*",
       "destination": "/blog/:slug",
       "permanent": true
     },
