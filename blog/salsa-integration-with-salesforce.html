@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salsa Engage Integration with Salesforce | Blue Engine Solutions</title>
+<meta name="description" content="Salsa Engage’s Salesforce NPSP integration mostly works, but hidden fields like Gender and County can cause headaches. Here’s what to watch for.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A3A5C">
+<link rel="canonical" href="https://www.blueenginesolutions.com/blog/salsa-integration-with-salesforce">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Blue Engine Solutions">
+<meta property="og:url" content="https://www.blueenginesolutions.com/blog/salsa-integration-with-salesforce">
+<meta property="og:title" content="Salsa Engage Integration with Salesforce | Blue Engine Solutions">
+<meta property="og:description" content="Salsa Engage’s Salesforce NPSP integration mostly works, but hidden fields like Gender and County can cause headaches. Here’s what to watch for.">
+<meta property="og:image" content="https://www.blueenginesolutions.com/og-image.png">
+<link rel="stylesheet" href="/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Salsa Engage Integration with Salesforce",
+  "description": "Salsa Engage’s Salesforce NPSP integration mostly works, but hidden fields like Gender and County can cause headaches. Here’s what to watch for.",
+  "datePublished": "2020-07-24",
+  "mainEntityOfPage": "https://www.blueenginesolutions.com/blog/salsa-integration-with-salesforce",
+  "author": {
+    "@type": "Organization",
+    "name": "Blue Engine Solutions",
+    "url": "https://www.blueenginesolutions.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Engine Solutions",
+    "url": "https://www.blueenginesolutions.com/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+<div id="site-nav"></div>
+<script src="/nav.js"></script>
+
+<section class="spoke-hero">
+  <div class="spoke-hero-inner">
+    <a href="/blog" class="spoke-breadcrumb">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All posts
+    </a>
+    <span class="spoke-eyebrow"><time datetime="2020-07-24">July 24, 2020</time> · 1 min read</span>
+    <h1 class="spoke-hero-h1">Salsa Engage Integration with Salesforce</h1>
+  </div>
+</section>
+
+<article class="post-body">
+  <div class="post-body-inner">
+<p>Salsa Engage offers a native integration with Salesforce NPSP, which for the most part works great. But I just finished a Salsa Engage integration with Salesforce, and the documentation didn’t cover a few important things. That meant extra time spent figuring it out, so I’ll try to save you at least one headache by explaining the Gender dilemma.</p>
+<p>In Salsa Engage, there is a standard Gender field that isn’t visible or available on the Supporter page. But it exists, and it isn’t mapped to the existing Gender field in Salesforce either.</p>
+<p>The integration created a new “Gender (Salsa)” field in Salesforce, even though the system already has one. And the mapping between that new field and the Gender field in Salsa is locked. Even with the field mapping tool, you can’t simply connect the existing Gender field in Salesforce to the standard Gender field in Salsa.</p>
+<p>That’s a problem, because now both systems have two Gender fields. Four in total.</p>
+<p>To solve it, we used Process Builder to copy the values back and forth. But the whole thing seems avoidable, and it would have been much cleaner if the documentation explained it.</p>
+<h2>The County field? That’s hidden too.</h2>
+<p>After too much time wasted, I got this message from Salsa:</p>
+<blockquote>“There are a few fields in the same vein, such as County and Timezone that are held by Engage, that can be queried on and changed, they’re just not available to view/edit from a supporter record.”</blockquote>
+  </div>
+
+<div class="post-pager" role="navigation" aria-label="More posts">
+  <span></span>
+  <a href="/blog/how-far-is-6-feet-oh-its-182-chickpeas" class="post-pager-link post-pager-link--next"><span class="post-pager-label">Newer post</span><span class="post-pager-title">How Far Is 6 Feet? Oh, It’s 182 Chickpeas.</span></a>
+</div>
+</article>
+
+<section class="spoke-cta">
+  <div class="spoke-cta-inner">
+    <h2 class="spoke-cta-h2 reveal">Have a Salesforce problem you want solved?</h2>
+    <p class="spoke-cta-sub reveal d1">Tell us what you're working with. You'll talk directly with a senior consultant.</p>
+    <div class="spoke-cta-btns reveal d2">
+      <a href="/contact/" class="btn-primary">Schedule a Call</a>
+      <a href="/health-assessment/" class="btn btn-outline-light">Get a Free Assessment →</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+<script src="/footer.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

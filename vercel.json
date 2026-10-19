@@ -26,12 +26,61 @@
       "source": "/request",
       "destination": "https://forms.clickup.com/8609665/f/86qw1-8984/OWLASZ7AZOOKLZTXL6",
       "permanent": false
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/blog/:path*",
-      "destination": "https://mervpandacam.wpcomstaging.com/blog/:path*"
+      "source": "/blog/index",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug(salsa-integration-with-salesforce|how-far-is-6-feet-oh-its-182-chickpeas|why-is-the-mailchimp-salesforce-integration-not-working|seeing-duplicates-fix-itbefore-everyone-goes-cross-eyed|the-best-and-worst-salesforce-consultants-in-washington-dc|love-what-you-do|salesforce-vs-hubspot-whats-the-best-crm-for-me|salesforce-highlights-steven)/:rest*",
+      "destination": "/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/:group(category|tag|author|feed)/:name*",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/amk-transportation",
+      "destination": "/case-studies",
+      "permanent": true
+    },
+    {
+      "source": "/:page(adm201|advanced-admin|certified-sales-cloud-consultant|certificate-admin-salesforce|certificate-consultant-salesforce|remotecrm_salesforce_certified_administrator|remotecrm_salesforce_certified_sales_cloud_consultant)",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/:file([^/.]*-(?:png|jpg|jpeg))",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:file((?:pexels-photo|crop-|cropped-|img_|knife-larger|sharpen-knife|blue-engine-|placeholder-|1465|20131006)[^/.]*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:file(startup-photo|email-pic|ab-initials-letter-logo-vector-20891058|bronfman-logo-transparent|parabills-logo-transparent|topgolf-international-inc-logo-vector|toptracer-logo|video-thumnbail|panda_cub_from_wolong_sichuan_china|mans-hands-sharpening-old-knife-on-knife-sharpening-ss-feature-1024x573|nonprofit-cloud-consultant_cmyk)",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
