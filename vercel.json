@@ -5,13 +5,13 @@
     {
       "source": "/",
       "has": [{ "type": "host", "value": "blog.blueenginesolutions.com" }],
-      "destination": "https://blueenginesolutions.com/blog",
+      "destination": "https://www.blueenginesolutions.com/blog",
       "permanent": true
     },
     {
       "source": "/:path+",
       "has": [{ "type": "host", "value": "blog.blueenginesolutions.com" }],
-      "destination": "https://blueenginesolutions.com/:path+",
+      "destination": "https://www.blueenginesolutions.com/:path+",
       "permanent": true
     },
     {
