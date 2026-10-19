@@ -1320,11 +1320,23 @@ main{min-width:0}
     return '<button type="button" data-k="' + k + '"><span class="n">' + (k + 1) + '</span>' + t + '</button>';
   }).join("") + '<div class="sn-h">Pricing</div><button type="button" data-est="1" class="sn-est"><span class="n">$</span>Scope estimator</button>';
   var btns = Array.prototype.slice.call(nav.querySelectorAll("button"));
+  // Each section gets its own address (#the-plan, #estimator) so the back button and shared links work.
+  var slugs = btns.map(function(b){
+    return b.dataset.est ? "estimator" : b.textContent.replace(/^\d+/, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  });
+  var ready = false;
   function show(which){
     prop.hidden = which !== "proposal"; est.hidden = which !== "estimator";
-    try { history.replaceState(null, "", which === "estimator" ? "#estimator" : location.pathname); } catch(e){}
     sync();
   }
+  function route(){
+    var k = slugs.indexOf(location.hash.slice(1));
+    if (k < 0) k = 0;
+    if (btns[k].dataset.est) { show("estimator"); return; }
+    if (dots[+btns[k].dataset.k]) dots[+btns[k].dataset.k].click();
+    show("proposal");
+  }
+  window.addEventListener("popstate", route);
   nav.addEventListener("click", function(e){
     var b = e.target.closest("button"); if (!b) return;
     if (b.dataset.est) { show("estimator"); window.scrollTo(0, 0); return; }
@@ -1332,10 +1344,15 @@ main{min-width:0}
   });
   function sync(){
     var cur = est.hidden ? slides.findIndex(function(sl){ return !sl.hidden; }) : -1;
-    btns.forEach(function(b, k){ var on = b.dataset.est ? !est.hidden : (+b.dataset.k === cur); b.setAttribute("aria-current", on ? "true" : "false"); });
+    var here = -1;
+    btns.forEach(function(b, k){ var on = b.dataset.est ? !est.hidden : (+b.dataset.k === cur); if (on) here = k; b.setAttribute("aria-current", on ? "true" : "false"); });
+    if (here >= 0 && location.hash !== "#" + slugs[here]) {
+      try { history[ready ? "pushState" : "replaceState"](null, "", "#" + slugs[here]); } catch(e){}
+    }
   }
   new MutationObserver(sync).observe(document.getElementById("dkCount"), {childList: true, characterData: true, subtree: true});
-  show(location.hash === "#estimator" ? "estimator" : "proposal");
+  if (location.hash) route(); else show("proposal");
+  ready = true;
 })();
 </script>
 </html>
