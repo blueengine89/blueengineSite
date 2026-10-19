@@ -3,6 +3,18 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "blog.blueenginesolutions.com" }],
+      "destination": "https://blueenginesolutions.com/blog",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "blog.blueenginesolutions.com" }],
+      "destination": "https://blueenginesolutions.com/:path+",
+      "permanent": true
+    },
+    {
       "source": "/about",
       "destination": "/about-us",
       "permanent": true
