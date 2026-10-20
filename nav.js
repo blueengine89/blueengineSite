@@ -275,7 +275,23 @@
         </a>
       </div>
     </li>
-    <li><a href="/about-us/">About</a></li>
+    <li class="sn-has-dropdown">
+      <a href="/about-us/" class="sn-dropdown-trigger">About <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 3.5l3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="sn-dropdown">
+        <a href="/about-us/">
+          <span class="sn-dd-icon">👋</span>
+          <span><span class="sn-dd-label">Who We Are</span></span>
+        </a>
+        <a href="/approach/">
+          <span class="sn-dd-icon">🧭</span>
+          <span><span class="sn-dd-label">Our Approach</span></span>
+        </a>
+        <a href="/about-us/#team">
+          <span class="sn-dd-icon">👥</span>
+          <span><span class="sn-dd-label">Meet the Team</span></span>
+        </a>
+      </div>
+    </li>
     <li><a href="/health-assessment/" class="sn-secondary">Free Diagnostic →</a></li>
     <li><a href="/contact/" class="sn-cta">Contact Us</a></li>
   </ul>
@@ -296,6 +312,9 @@
     <a href="/for-businesses.html">Growing Businesses</a>
     <a href="/for-nonprofits.html">Nonprofits</a>
     <a href="/about-us/">About</a>
+    <a href="/about-us/">— Who We Are</a>
+    <a href="/approach/">— Our Approach</a>
+    <a href="/about-us/#team">— Meet the Team</a>
     <a href="/health-assessment/">Free Diagnostic →</a>
     <a href="/contact/">Contact Us</a>
   </div>

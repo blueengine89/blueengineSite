@@ -237,6 +237,7 @@
     <a href="/about-us/">About</a>
     <a href="/approach/">Our Approach</a>
     <a href="/testimonials/">Testimonials</a>
+    <a href="/case-studies">Case Studies</a>
     <a href="/faq.html">FAQ</a>
     <a href="/blog">Blog</a>
     <a href="/careers/">Careers</a>
