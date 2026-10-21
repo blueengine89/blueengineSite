@@ -98,9 +98,15 @@
   </url>
   <url>
     <loc>https://www.blueenginesolutions.com/blog</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.blueenginesolutions.com/blog/visiting-our-clients-in-person</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.blueenginesolutions.com/blog/the-best-and-worst-salesforce-consultants-in-washington-dc</loc>
