@@ -75,6 +75,9 @@ Before applying a new or changed visual identity to ANY production page (index.h
 ## Section Hierarchy Rule
 Never stack eyebrow + heading + subheading that all say the same thing three different ways. Each layer must add distinct information or be omitted. Default: pick two of the three, and make the heading the only thing a user needs to read. Prefer fewer words at larger size over more words at smaller size.
 
+## Share Image on Every New Page
+Every new page gets share tags in its `<head>`, so links posted on LinkedIn, Slack, etc. show the right image and text. Copy the block from `careers.html` (Open Graph + Twitter Card): set `og:url`, `og:title`, `og:description` for the page, and use `https://www.blueenginesolutions.com/og-image.png` as the image unless the page has its own. Without these, sites grab the first image on the page (e.g. a client logo).
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
