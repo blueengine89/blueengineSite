@@ -86,6 +86,9 @@ Every new page gets share tags in its `<head>`, so links posted on LinkedIn, Sla
 - Do not use default Tailwind blue/indigo as primary color
 
 
+## Company Info (Brand Folder)
+Blue Engine's company info lives outside this website folder, in `G:\My Drive\Blue Engine Brand`: `Who We Are.md` (positioning), `Wording Rules.md`, `Google Business Profiles.md`. Read it for any copy about who we are, services or wording, and update it there, not here. The summary below is a copy for quick reference; the brand folder wins if they differ.
+
 Blue Engine Solutions – 
 **Brand Positioning Summary**
 
