@@ -50,6 +50,9 @@
     "@type": "City",
     "name": "Washington, DC"
   },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "23:00" }
+  ],
   "serviceType": ["Salesforce Consulting", "Salesforce Implementation", "Salesforce Org Cleanup", "Salesforce Automation", "Nonprofit Salesforce Consulting"],
   "sameAs": [
     "https://www.linkedin.com/company/blue-engine-solutions",
@@ -535,8 +538,52 @@
   flex-wrap: wrap;
 }
 
+/* ── RATINGS ── */
+.rating-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.25rem; }
+.rating-badge {
+  display: flex; align-items: center; gap: .7rem;
+  padding: .7rem 1.1rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+.rating-badge:hover { background: rgba(255,255,255,.1); border-color: rgba(61,166,205,.5); }
+.rating-score { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: white; line-height: 1; }
+.rating-stars { color: #F5B841; font-size: .95rem; letter-spacing: .05em; }
+.rating-src { font-family: 'Epilogue', sans-serif; font-size: .85rem; font-weight: 600; color: rgba(255,255,255,.85); display: flex; flex-direction: column; line-height: 1.3; }
+.rating-src small { font-weight: 400; font-size: .78rem; color: rgba(255,255,255,.55); }
+
+/* ── TESTIMONIAL ── */
+.city-review { background: var(--bg); padding: 5rem 5rem; border-bottom: 1px solid var(--border-light); }
+.city-review-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.review-stars { color: #F5B841; font-size: 1.25rem; letter-spacing: .15em; margin-bottom: 1.25rem; }
+.review-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 2rem;
+}
+.review-person { display: inline-flex; align-items: center; gap: .9rem; text-align: left; }
+.review-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--teal-deep));
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .04em;
+  flex-shrink: 0;
+}
+.review-meta { display: flex; flex-direction: column; font-family: 'Epilogue', sans-serif; line-height: 1.35; }
+.review-meta strong { font-size: 1rem; color: var(--ink); }
+.review-meta span { font-size: .85rem; color: var(--ink-mid); }
+.review-more { display: block; width: fit-content; margin: 1.5rem auto 0; font-family: 'Epilogue', sans-serif; font-size: .88rem; color: var(--teal-deep); text-decoration: none; }
+.review-more:hover { text-decoration: underline; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
+  .city-review { padding: 3.5rem 2rem; }
   .city-hero-inner, .city-section, .nap-section, .city-cta {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -574,6 +621,18 @@
       <a href="/contact" class="btn btn-blue">Talk to a Consultant</a>
       <a href="/health-assessment" class="btn btn-outline-light">Free Health Assessment</a>
     </div>
+    <div class="rating-row">
+      <a class="rating-badge" href="https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=a0N3u00000ONlmUEAT" target="_blank" rel="noopener">
+        <span class="rating-score">4.9</span>
+        <span class="rating-stars" aria-hidden="true">★★★★★</span>
+        <span class="rating-src">Salesforce AppExchange<small>26 reviews</small></span>
+      </a>
+      <a class="rating-badge" href="https://clutch.co/profile/blue-engine-salesforce-consultants" target="_blank" rel="noopener">
+        <span class="rating-score">5.0</span>
+        <span class="rating-stars" aria-hidden="true">★★★★★</span>
+        <span class="rating-src">Clutch<small>Verified review</small></span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -606,6 +665,19 @@
     </div>
   </div>
 </div>
+
+<!-- TESTIMONIAL -->
+<section class="city-review">
+  <div class="city-review-inner">
+    <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+    <blockquote class="review-quote">“They have a knack for making complex tech stuff easy to understand, and their insights have made a real difference.”</blockquote>
+    <div class="review-person">
+      <span class="review-avatar" aria-hidden="true">DG</span>
+      <span class="review-meta"><strong>Daniel G.</strong><span>Google review · Washington, DC office</span></span>
+    </div>
+    <a class="review-more" href="https://g.page/salesforcedc" target="_blank" rel="noopener">Read more reviews on Google →</a>
+  </div>
+</section>
 
 <!-- WHY BLUE ENGINE IN DC -->
 <section class="city-section alt">
@@ -749,6 +821,10 @@
         <div class="nap-row">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
           <span class="nap-text"><a href="tel:2402731612">(240) 273-1612</a></span>
+        </div>
+        <div class="nap-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="nap-text">Open daily, 7 AM – 11 PM</span>
         </div>
         <div class="nap-row">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
