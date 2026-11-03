@@ -52,6 +52,11 @@
       "permanent": false
     },
     {
+      "source": "/meetings",
+      "destination": "https://claude.ai/artifact/UcZ1vV26MELMdC33TPo3Sk",
+      "permanent": false
+    },
+    {
       "source": "/blog/index",
       "destination": "/blog",
       "permanent": true
