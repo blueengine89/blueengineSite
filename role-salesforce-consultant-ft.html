@@ -310,15 +310,17 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   margin-bottom: 0.85rem;
 }
 .quote-text strong { font-style: normal; color: var(--ink); font-weight: 600; }
-.quote-attr { display: flex; align-items: center; gap: 0.6rem; }
+.quote-attr { display: flex; align-items: center; gap: 1.25rem; }
 .quote-avatar {
-  width: 32px;
-  height: 32px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1.5px solid var(--border-light);
+  border: 4px solid #fff;
+  box-shadow: 0 12px 30px rgba(15,28,46,.14);
 }
+@media (max-width: 560px) { .quote-avatar { width: 96px; height: 96px; } }
 .quote-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .quote-name { font-size: 13px; font-weight: 600; color: var(--navy); }
 .quote-role { font-size: 12px; color: var(--ink-light); }
@@ -490,7 +492,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
         <div class="quote-card">
           <p class="quote-text">No two projects are exactly the same. It keeps the work <strong>genuinely interesting</strong> and constantly pushes me to learn new tools and new ways of approaching problems.</p>
           <div class="quote-attr">
-            <div class="quote-avatar"><img src="/brand_assets/Team Photos/geoff cropped square.jpg" alt="Geoff Campbell"></div>
+            <div class="quote-avatar"><img src="/brand_assets/Team Photos/geoff-headshot-v2.jpg" alt="Geoff Campbell"></div>
             <div>
               <div class="quote-name">Geoff Campbell</div>
               <div class="quote-role">Salesforce Consultant</div>
@@ -501,7 +503,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
         <div class="quote-card">
           <p class="quote-text">The flexibility has been instrumental — I can <strong>drop my kids off and pick them up from school every day</strong> without sacrificing the quality of my work.</p>
           <div class="quote-attr">
-            <div class="quote-avatar"><img src="/brand_assets/Team Photos/nicholas.jpg" alt="Nicholas Zuaro"></div>
+            <div class="quote-avatar"><img src="/brand_assets/Team Photos/nicholas-headshot-v3.jpg" alt="Nicholas Zuaro"></div>
             <div>
               <div class="quote-name">Nicholas Zuaro</div>
               <div class="quote-role">Salesforce Consultant</div>
@@ -512,7 +514,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
         <div class="quote-card">
           <p class="quote-text">There's real <strong>trust placed in us to think through problems</strong> and take ownership of our work — not just execute tasks. That's rare.</p>
           <div class="quote-attr">
-            <div class="quote-avatar"><img src="/brand_assets/Team Photos/geoff cropped square.jpg" alt="Geoff Campbell"></div>
+            <div class="quote-avatar"><img src="/brand_assets/Team Photos/geoff-headshot-v2.jpg" alt="Geoff Campbell"></div>
             <div>
               <div class="quote-name">Geoff Campbell</div>
               <div class="quote-role">Salesforce Consultant</div>
