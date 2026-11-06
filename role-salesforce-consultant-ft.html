@@ -23,6 +23,52 @@
 <meta name="twitter:title" content="We're Hiring: Salesforce Consultant (Full-Time) | Blue Engine Solutions">
 <meta name="twitter:description" content="Blue Engine Solutions is hiring a full-time Salesforce Consultant for small business and nonprofit clients. Washington, DC.">
 <meta name="twitter:image" content="https://www.blueenginesolutions.com/og-image.png">
+<!-- Google job listing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Salesforce Consultant",
+  "description": "<p>Blue Engine Solutions is a tight-knit Salesforce consultancy serving nonprofits and growing businesses. As a Salesforce Consultant, you'll be the primary point of contact for most of your clients: you'll lead requirements gathering, design the solution, build it, and train the client to own it.</p><p><strong>Responsibilities</strong></p><ul><li>Serve as the main client contact: lead calls, gather requirements, and set expectations</li><li>Customize and configure Salesforce to solve real client problems (flows, objects, layouts, reports, integrations)</li><li>Design clean, scalable solutions</li><li>Provide training and documentation so clients can own what you build</li><li>Collaborate with teammates on larger engagements</li></ul><p><strong>Requirements</strong></p><ul><li>4+ years of hands-on Salesforce implementation and customization experience</li><li>Excellent communication skills</li><li>Knowledge of Salesforce integrations (APIs, middleware, native connectors)</li><li>Comfortable owning a client relationship independently</li><li>Preference for candidates who can come into our DC office about once a month</li></ul><p><strong>Benefits</strong></p><ul><li>401(k) match</li><li>Health insurance</li><li>Quarterly bonus</li><li>15% commission on any client you refer</li><li>Home office stipend</li><li>4 weeks PTO</li></ul><p>Blue Engine Solutions is an equal opportunity employer.</p>",
+  "datePosted": "2026-11-06",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Blue Engine Solutions",
+    "sameAs": "https://www.blueenginesolutions.com",
+    "logo": "https://www.blueenginesolutions.com/brand_assets/logo%20chevron%20transparent%20navy%20text.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Washington",
+      "addressRegion": "DC",
+      "addressCountry": "US"
+    }
+  },
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "USA"
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 100000,
+      "maxValue": 140000,
+      "unitText": "YEAR"
+    }
+  },
+  "experienceRequirements": {
+    "@type": "OccupationalExperienceRequirements",
+    "monthsOfExperience": 48
+  },
+  "directApply": true
+}
+</script>
 <link rel="stylesheet" href="/brand.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -161,10 +207,10 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
 }
 
 /* ── MAIN CONTENT ── */
-.job-section { margin-bottom: 3rem; }
+.job-section { margin-bottom: 0; }
 .job-section-label {
   font-family: 'Epilogue', sans-serif;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -192,31 +238,34 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.35rem;
   margin-top: 0.25rem;
 }
 .job-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  font-size: 15px;
-  line-height: 1.65;
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
   color: var(--ink-mid);
 }
 .job-list li::before {
   content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 5px;
   height: 5px;
   background: var(--teal);
   border-radius: 50%;
   flex-shrink: 0;
-  margin-top: 0.58rem;
+  margin-top: 0.68rem;
 }
 
 .job-divider {
   border: none;
   border-top: 1px solid var(--border-light);
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 /* ── SIDEBAR ── */
@@ -231,7 +280,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
 }
 .sidebar-section-label {
   font-family: 'Epilogue', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -242,7 +291,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
 .detail-list { display: flex; flex-direction: column; gap: 0.8rem; }
 .detail-row { display: flex; flex-direction: column; gap: 2px; }
 .detail-key {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -272,7 +321,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   box-shadow: 0 6px 20px rgba(43, 140, 174, 0.38);
 }
 .sidebar-note {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-light);
   text-align: center;
   font-style: italic;
@@ -309,18 +358,17 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   font-style: italic;
   margin-bottom: 0.85rem;
 }
-.quote-text { position: relative; padding: 0.6rem 3.25rem 0; }
+.quote-text { position: relative; padding: 0.3rem 0 0 2rem; }
 .quote-text::before,
 .quote-text::after {
   position: absolute;
   font-family: 'Playfair Display', serif;
   font-style: normal;
-  font-size: 96px;
-  line-height: 1;
+  font-size: 48px;
   color: var(--teal);
 }
-.quote-text::before { content: '\201C'; left: -0.2rem; top: -0.6rem; }
-.quote-text::after { content: '\201D'; right: -0.2rem; bottom: -3.6rem; }
+.quote-text::before { content: '\201C'; left: -0.1rem; top: -0.35rem; line-height: 1; }
+.quote-text::after { content: '\201D'; position: static; line-height: 0; vertical-align: -0.38em; margin-left: 0.1em; }
 .quote-text strong { font-style: normal; color: var(--ink); font-weight: 600; }
 .quote-attr { display: flex; align-items: center; gap: 1.25rem; }
 .quote-avatar {
@@ -334,8 +382,8 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
 }
 @media (max-width: 560px) { .quote-avatar { width: 96px; height: 96px; } }
 .quote-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.quote-name { font-size: 13px; font-weight: 600; color: var(--navy); }
-.quote-role { font-size: 12px; color: var(--ink-light); }
+.quote-name { font-size: 15px; font-weight: 600; color: var(--navy); }
+.quote-role { font-size: 14px; color: var(--ink-light); }
 
 /* ── BOTTOM APPLY BUTTON ── */
 .main-apply-btn {
@@ -397,11 +445,15 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       </span>
       <span class="chip">
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.24 1 2 3.24 2 6c0 3.75 5 7 5 7s5-3.25 5-7c0-2.76-2.24-5-5-5zm0 6.75a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5z" fill="currentColor"/></svg>
-        Remote (DC/Bethesda preferred)
+        Remote (DC area preferred)
       </span>
       <span class="chip">
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M3 4h5M3 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         4+ Years Salesforce Experience
+      </span>
+      <span class="chip">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 4v6M8.6 5.2c-.3-.4-.9-.6-1.6-.6-.9 0-1.6.4-1.6 1.1 0 1.5 3.3.8 3.3 2.4 0 .7-.7 1.1-1.7 1.1-.8 0-1.4-.3-1.7-.7" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+        $100K–$140K
       </span>
     </div>
 
@@ -416,11 +468,11 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       <span class="job-section-label">About the Company</span>
       <h2 class="job-section-title">A boutique firm where your work actually matters</h2>
       <div class="job-body-text">
-        <p>Blue Engine Solutions is a small, tight-knit Salesforce consultancy. Because of our size, you'll have real autonomy and exposure to every part of a project — from discovery and scoping to configuration, testing, and client training.</p>
-        <p>Our clients span nonprofits and growing businesses.</p>
+        <p>Blue Engine Solutions is a tight-knit Salesforce consultancy. Because of our size, you'll have <strong>real autonomy</strong> and exposure to <strong>every part of a project</strong> — from discovery and scoping to configuration, testing, and client training.</p>
+        <p>Our clients span <strong>nonprofits and growing businesses</strong>.</p>
       </div>
       <div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--bg);border-radius:8px;border:1px solid var(--border-light);">
-        <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1rem;">Some of our clients</p>
+        <p style="font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1rem;">Some of our clients</p>
         <div style="display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;">
           <img src="../Client Logos/topgolf logo.png" alt="Topgolf" style="height:36px;width:auto;max-width:140px;object-fit:contain;opacity:.75;">
           <img src="../Client Logos/penn logo.png" alt="Penn" style="height:36px;width:auto;max-width:140px;object-fit:contain;opacity:.75;">
@@ -433,6 +485,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       </div>
       <div class="job-body-text" style="margin-top:1.25rem;">
         <p>We move fast, communicate directly, and take genuine pride in building systems that <strong>actually work</strong>.</p>
+        <p>We hire smart people and then get out of their way. <strong>No red tape, no bureaucracy</strong> — just room to do your best work. And you won't be one of five people on a team carrying someone who doesn't do their job. <strong>Everyone here pulls their weight.</strong></p>
         <p>We've had <strong>zero layoffs</strong>. Every team member is truly valued, and we hire carefully so we can ride out the ups and downs of business.</p>
       </div>
     </div>
@@ -443,8 +496,8 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       <span class="job-section-label">The Role</span>
       <h2 class="job-section-title">Own your projects from kickoff to go-live</h2>
       <div class="job-body-text">
-        <p>For most projects, you'll be the <strong>primary point of contact</strong> for the client. You'll lead requirements gathering, design the solution, and build it out — leaning on teammates when useful, but owning the outcome. On larger engagements, you'll collaborate with a small team of 1–2 others.</p>
-        <p>This is not a "hand off the requirements to a dev team" kind of role. You'll be the one asking smart questions, designing the architecture, and getting it done.</p>
+        <p>For most projects, you'll be the <strong>primary point of contact</strong> for the client. You'll lead requirements gathering, design the solution, and build it out — leaning on teammates when useful, but <strong>owning the outcome</strong>. On larger engagements, you'll collaborate with a small team of 1–2 others.</p>
+        <p>This is not a "hand off the requirements to a dev team" kind of role. You'll be the one <strong>asking smart questions, designing the architecture, and getting it done</strong>.</p>
       </div>
     </div>
 
@@ -454,12 +507,12 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       <span class="job-section-label">Responsibilities</span>
       <h2 class="job-section-title">What you'll spend your time on</h2>
       <ul class="job-list">
-        <li>Serve as the main client contact — lead calls, gather requirements, and set expectations</li>
-        <li>Customize and configure Salesforce to solve real client problems (flows, objects, layouts, reports, integrations)</li>
-        <li>Design clean, scalable solutions — not just quick fixes</li>
-        <li>Provide training and documentation so clients can own what you build</li>
-        <li>Collaborate with teammates on larger, more complex engagements</li>
-        <li>Stay current on the Salesforce platform and bring fresh ideas to the team</li>
+        <li><strong>Serve as the main client contact</strong> — lead calls, gather requirements, and set expectations</li>
+        <li><strong>Customize and configure Salesforce</strong> to solve real client problems (flows, objects, layouts, reports, integrations)</li>
+        <li><strong>Design clean, scalable solutions</strong> — not just quick fixes</li>
+        <li><strong>Provide training and documentation</strong> so clients can own what you build</li>
+        <li><strong>Collaborate with teammates</strong> on larger, more complex engagements</li>
+        <li><strong>Stay current on the Salesforce platform</strong> and bring fresh ideas to the team</li>
       </ul>
     </div>
 
@@ -470,11 +523,11 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       <h2 class="job-section-title">What we're looking for</h2>
       <ul class="job-list">
         <li><strong>4+ years</strong> of hands-on Salesforce implementation and customization experience</li>
-        <li>Excellent communication skills — you can translate technical solutions into plain language</li>
-        <li>Knowledge of Salesforce integrations with other systems (APIs, middleware, native connectors)</li>
-        <li>A learner's mindset — you're comfortable figuring things out and asking for help when needed</li>
-        <li>Comfortable owning a client relationship independently from day one</li>
-        <li>Preference for candidates who can come into our Bethesda, MD office once per month — we're remote-friendly for day-to-day work</li>
+        <li><strong>Excellent communication skills</strong> — you can translate technical solutions into plain language</li>
+        <li><strong>Knowledge of Salesforce integrations</strong> with other systems (APIs, middleware, native connectors)</li>
+        <li><strong>A learner's mindset</strong> — you're comfortable figuring things out and asking for help when needed</li>
+        <li><strong>Comfortable owning a client relationship</strong> independently from day one</li>
+        <li>Preference for candidates who can come into our <strong>DC office about once a month</strong> (near Union Station) to meet clients face to face and spend time with each other</li>
       </ul>
     </div>
 
@@ -484,8 +537,8 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
       <span class="job-section-label">Where We're Headed</span>
       <h2 class="job-section-title">Help shape a growing team in the age of AI</h2>
       <div class="job-body-text">
-        <p>It's an exciting time to join. We're growing, and you'll help decide where we go next and where we can offer clients the most value as AI changes how work gets done.</p>
-        <p>We lean into every efficiency AI offers. We've built our own AI processes, and we want you to help refine them as the world keeps changing.</p>
+        <p>It's an exciting time to join. We're growing, and <strong>you'll help decide where we go next</strong> and where we can offer clients the most value as AI changes how work gets done.</p>
+        <p>We lean into every efficiency AI offers. We've built our own AI processes, and <strong>we want you to help refine them</strong> as the world keeps changing.</p>
       </div>
       <ul class="job-list" style="margin-top:1.25rem;">
         <li>You love to tinker and learn, and you're fascinated by what AI makes possible</li>
@@ -499,10 +552,11 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
     <div class="job-section">
       <span class="job-section-label">From the Team</span>
       <h2 class="job-section-title">What it's actually like to work here</h2>
+      <img src="/brand_assets/Team Photos/team happy hour.webp" alt="Blue Engine team members at a happy hour" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-soft);margin-bottom:1.25rem;">
       <div class="quotes-section">
 
         <div class="quote-card">
-          <p class="quote-text">No two projects are exactly the same. It keeps the work <strong>genuinely interesting</strong> and constantly pushes me to learn new tools and new ways of approaching problems.</p>
+          <p class="quote-text">No two projects are exactly the same. It keeps the work <strong>genuinely interesting</strong> and constantly pushes me to learn new tools and new ways of approaching problems … There's real <strong>trust placed in us to think through problems</strong> and take ownership of our work — not just execute tasks. That's rare.</p>
           <div class="quote-attr">
             <div class="quote-avatar"><img src="/brand_assets/Team Photos/geoff-headshot-v2.jpg" alt="Geoff Campbell"></div>
             <div>
@@ -523,17 +577,6 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
           </div>
         </div>
 
-        <div class="quote-card">
-          <p class="quote-text">There's real <strong>trust placed in us to think through problems</strong> and take ownership of our work — not just execute tasks. That's rare.</p>
-          <div class="quote-attr">
-            <div class="quote-avatar"><img src="/brand_assets/Team Photos/geoff-headshot-v2.jpg" alt="Geoff Campbell"></div>
-            <div>
-              <div class="quote-name">Geoff Campbell</div>
-              <div class="quote-role">Salesforce Consultant</div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -545,6 +588,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
         Apply for This Role
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink-light);margin-top:2rem;">Blue Engine Solutions is an equal opportunity employer. We welcome people of every background and don't discriminate based on race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, veteran status, or any other protected status.</p>
     </div>
 
   </main>
@@ -563,7 +607,11 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
         </div>
         <div class="detail-row">
           <span class="detail-key">Location</span>
-          <span class="detail-val">Remote (DC/Bethesda preferred)</span>
+          <span class="detail-val">Remote (DC area preferred)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Salary</span>
+          <span class="detail-val">$100,000–$140,000</span>
         </div>
         <div class="detail-row">
           <span class="detail-key">Experience</span>
@@ -571,7 +619,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
         </div>
         <div class="detail-row">
           <span class="detail-key">Office Visits</span>
-          <span class="detail-val">Bethesda, MD (1×/month preferred)</span>
+          <span class="detail-val">DC, near Union Station (about 1×/month)</span>
         </div>
       </div>
     </div>
